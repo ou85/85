@@ -3,16 +3,70 @@
 <head>
     <meta charset="utf-8" />
     <title>85</title>
-<h1>First Header</h1>
+    <link rel="stylesheet" type="text/css" href="mystyles.css" media="screen" />
+    <a href="#JavaScript">jssection</a>
 </head>
 <body>
-    <h2>Second Header</h2>
-    <h3>Third Header</h3>
-    <p>Paragraph</p>
-    <p>Paragraph2</p>
-    <p>Paragraph3</p>
-    <script>
-        document.write("2 + 5 =  "); var sum = 2 + 5; document.write(sum); 
-    </script>
+<div class="main users-index">
+  <div class="container">          
+    <div class="users-index-item">
+      <div class="user-right">
+        <h2 class="users-heading" id=header>Second Header</h2>
+        <h3>Third Header</h3>
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        <p>Paragraph3</p>        
+        <p id = top></p>
+      </div>      
+    </div>
+
+    <div class="users-index-item">        
+      <ul>
+        <li><a href="#contentParagraph">Content</a></li>
+        <li><a href="#mainPageParagraph">Main page</a></li>
+        <li><a href="#documentParagraph">Document</a></li>
+        <li><a href="#expensesParagraph">Expenses</a></li>
+      </ul>
+      <p id="contentParagraph">
+        <h3>Content</h3>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <a href="#top">back</a>
+      <p id="mainPageParagraph">
+        <h4>Main page</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <li><a href="#top">back</a></li>
+          <p id="documentParagraph">
+            <h4>Document</h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <li><a href="#top">back</a></li>        
+
+        <p id="expensesParagraph">
+          <h4>Expenses</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <li><a href="#top">back</a></li>
+    </div>
+    <div class="users-index-item" id="JavaScript"> 
+        <h3 class="users-heading">JavaScript section</h3>
+        <script>
+            /*  Пример арифметической операции
+            и определения переменной
+            в коде JavaScript */
+            document.write("2 + 5 =  ")
+            var sum = 2 + 5
+            document.write(sum)
+            // а это строка комментария
+        </script>
+        <li><a href="#header">top</a></li>
+    </div>
+  </div>
+</div>
 </body>
 </html>
