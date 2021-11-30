@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="mystyles.css" media="screen" />
     <header>
       <div class="header-logo">
-        <a href="#JavaScript">jssection</a>
+        <a href="#JavaScript" id=header>jssection</a>
       </div>
     </header>
 </head>
@@ -15,7 +15,7 @@
   <div class="container">          
     <div class="users-index-item">
       <div class="user-right">
-        <h2 class="users-heading" id=header>Second Header</h2>
+        <h2 class="users-heading">Second Header</h2>
         <h3>Third Header</h3>
         <p>Paragraph1</p>
         <p>Paragraph2</p>
@@ -30,6 +30,7 @@
         <li><a href="#mainPageParagraph">Main page</a></li>
         <li><a href="#documentParagraph">Document</a></li>
         <li><a href="#expensesParagraph">Expenses</a></li>
+        <li><a href="#JavaScript">JSsection</a></li>
       </ul>
       <p id="contentParagraph">
         <h3>Content</h3>
@@ -59,15 +60,38 @@
     </div>
     <div class="users-index-item" id="JavaScript"> 
         <h3 class="users-heading">JavaScript section</h3>
+        <script src="scripts.js"></script>
         <script>
             /*  Пример арифметической операции
             и определения переменной
             в коде JavaScript */
+            const pi = 3.1415;
+            var username = "Tom";
             document.write("2 + 5 =  ")
             var sum = 2 + 5
-            document.write(sum)
-            // а это строка комментария
-        </script>
+            document.write(`${sum}<br/>`)
+
+            console.log("Результат операции");
+            console.log(sum)    // а это строка комментария 
+            console.log("username до изменения:", username);
+            username = "Bob";        
+            console.log("username после изменения:", username);
+            console.log("Number Pi is ", pi);
+
+            document.write("Number Pi is ", pi);  
+                      
+            var a = 10;
+            var b = a++;
+            console.log("a = ", a);
+            console.log("b = ", b);
+            // document.write(a, b);
+            document.write("<br/>a =  ")
+            document.write(a);
+            document.write(`<br/>${a}<br/>${b}<br/>`);
+            document.write(a, b)
+            a = 33
+            document.write(a)
+        </script>     
         <li><a href="#header" class = "header-menus">top</a></li>
     </div>
   </div>
