@@ -131,7 +131,7 @@ body {
   position: relative;
   padding: 40px 10%;
   border-radius: 20px;
-  background: var(--text_light);
+  background: rgba(219, 219, 219, 0.932);                 /*var(--text_light);*/
   color: var(--text_med);
 }
 
