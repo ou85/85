@@ -203,3 +203,15 @@
     width: 100px;
     height: 100px;
   }
+
+
+  .knopka {
+    border:1px solid var(--darkred);  /* #ccc;  рамка*/    
+    background: var(--red);           /*фон */   
+    padding: .2em .75em;              /*отступы внутри */   
+    text-decoration: none;            /*убрать подчеркивание ссылки */  
+    color: var(--text_light); 
+    font-weight: 600;
+    font-size: smaller;
+  }
+    
