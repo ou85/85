@@ -102,7 +102,12 @@
           "March","April","May",
           "June","July","August",
           "September","October","November",
-          "December");         
+          "December");
+          var monthNum = new Array("01","02",
+          "03","04","05",
+          "06","07","08",
+          "09","10","11",
+          "12");          
           function GetClock(){
           var d = new Date();
           var nmonth = d.getMonth(), 
@@ -127,9 +132,15 @@
          
           if(nmin <= 9) 
              nmin = "0" + nmin;
+          
+          if(ndate <= 9) 
+             ndate = "0" + ndate;
          
             // document.getElementById('webpageclock').innerHTML = ""+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+ap+"";
           document.getElementById('webpageclock').innerHTML = ""+nyear+" "+tmonth[nmonth]+" "+ndate+",  "+nhour+":"+nmin+"";
+          document.getElementById('webpagedatetime').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+",  "+nhour+":"+nmin+"";
+          document.getElementById('webpagedate').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+"";
+          document.getElementById('webpagetime').innerHTML = ""+nhour+":"+nmin+"";
           }
          
           window.onload=function(){
@@ -139,7 +150,10 @@
         </script>
 
         <div id="webpageclock" style="font:14pt Arial; color:#FF0000;"></div> 
-
+        <div id="webpagedatetime" style="font:14pt Arial; color:#00ff;"></div>
+        <div id="webpagedate" style="font:14pt Arial; color:#00ff;"></div>
+        <div id="webpagetime" style="font:14pt Arial; color:rgb(7, 7, 150); font-weight: 600;"></div>
+      
         <li><a href="#header" class = "header-menus">top</a></li>         
     </div>
   </div>

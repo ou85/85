@@ -274,7 +274,7 @@ body {
 
 
 .knopka {
-  border:3px solid var(--darkred);  /* #ccc;  рамка*/    
+  border:0px solid var(--darkred);  /* #ccc;  рамка*/    
   background: var(--red);           /*фон */   
   padding: .4em .8em;               /*отступы внутри */   
   text-decoration: none;            /*убрать подчеркивание ссылки */  
@@ -284,4 +284,7 @@ body {
   border-radius: 5px;
   margin-top: 5em;
 }
-    
+.knopka:hover {
+  background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
+  border:2px solid var(--red);
+}    
