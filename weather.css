@@ -131,11 +131,11 @@ body {
   position: relative;
   padding: 40px 10%;
   border-radius: 20px;
-  background: rgba(219, 219, 219, 0.932);                 /*var(--text_light);*/
+  background: rgb(211, 210, 219);     /*var(--text_light);*/
   color: var(--text_med);
 }
 
-.ajax-section .city::after {
+.ajax-section .city::after {            /* shadow under a city */
   content: '';
   width: 90%;
   height: 50px;
@@ -276,7 +276,7 @@ body {
 .knopka {
   border:3px solid var(--darkred);  /* #ccc;  рамка*/    
   background: var(--red);           /*фон */   
-  padding: .4em .8em;              /*отступы внутри */   
+  padding: .4em .8em;               /*отступы внутри */   
   text-decoration: none;            /*убрать подчеркивание ссылки */  
   color: var(--text_light); 
   font-weight: 600;
