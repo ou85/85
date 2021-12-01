@@ -8,8 +8,10 @@
       <div class="header-logo">
         <a href="#JavaScript" id=header>jssection</a>
         <a href="weather.html">weather</a>
+        <!-- 
         <a href="https://maps.googleapis.com/maps/api/timezone/json?location=49.283436,%20-123.130429&timestamp=1478880000&key=AIzaSyAr-BQIdMgSKXacJH4MAsI4NDtNSJiwiVg">time</a>
-      </div>
+        -->
+      </div>      
     </header>
     
 </head>
@@ -118,7 +120,8 @@
             nyear += 1900;
          
           var nhour = d.getHours(),
-              nmin = d.getMinutes()//,
+              nmin = d.getMinutes(),
+              nsec = d.getSeconds()//,
              // ap;        
            ;
             // if(nhour == 0){
@@ -135,12 +138,15 @@
           
           if(ndate <= 9) 
              ndate = "0" + ndate;
+
+          if(nsec <= 9) 
+             nsec = "0" + nsec;
          
             // document.getElementById('webpageclock').innerHTML = ""+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+ap+"";
           document.getElementById('webpageclock').innerHTML = ""+nyear+" "+tmonth[nmonth]+" "+ndate+",  "+nhour+":"+nmin+"";
           document.getElementById('webpagedatetime').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+",  "+nhour+":"+nmin+"";
           document.getElementById('webpagedate').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+"";
-          document.getElementById('webpagetime').innerHTML = ""+nhour+":"+nmin+"";
+          document.getElementById('webpagetime').innerHTML = ""+nhour+":"+nmin+":"+nsec+"";
           }
          
           window.onload=function(){
