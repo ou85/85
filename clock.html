@@ -14,14 +14,35 @@
   --orange: #ff8c00;
 }
 
+.container {
+  margin: 10px auto;
+  width: 30%;
+  height: 50px;
+  /* background-color: #ccc; */  /* for div tetst */
+  position: relative;
+  padding: 1em;  
+  color: var(--text_light);   
+  font-weight: 600;
+  font-size: smaller;
+  text-align: center;
+}
+
 .clock {
   position: absolute;
   top: 10%;                     /* %50 for middle possition */
-  width: 99%;
-  margin: -60px auto 0 -2em;   /* -60px auto 0 auto; for middle position */
-  font-size: 60px;  
-  text-align: right;            /* center for middle position */
-  color: #fff;
+  width: 100%;
+  margin: 0 auto 0 auto;        /* -60px auto 0 auto; for middle position */
+  font-size: 40px;  
+  text-align: left;            /* center for middle position */
+  /* color: #fff;*/
+    
+  /* Выравнивание по центру блока .back */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+
 }
 .clock ul {
   margin: 0 auto;
@@ -35,16 +56,6 @@
   -webkit-animation: myfade 1s ease infinite;
 }
 
-.container {
-  width: 100%;    
-  padding: 2em; 
-  margin: auto auto 0 -2em; 
-
-  color: var(--text_light);   
-  font-weight: 600;
-  font-size: smaller;
-  text-align: right;
-}
 
 .knopka {
   border:0px solid var(--darkred);  /* #ccc;  рамка*/    
@@ -55,8 +66,14 @@
   font-weight: 600;
   font-size: smaller;
   border-radius: 5px;
-  margin-top: 5em;
-  margin-left: 5em;
+
+    /* Выравнивание по центру блока .back */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  
 }
 .knopka:hover {
   background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
@@ -64,11 +81,11 @@
 }    
 
 .back{ 
-    width:100%;
-    height: 50px;   
-    justify-content: left;
-    align-items: center; 
-    margin-top: 20em;
+    margin: 50px auto;
+    width: 100px;
+    height: 50px;
+    /* background-color: #ccc; */
+    position: relative;
   } 
 
 /* Animation */
@@ -110,7 +127,11 @@ body {
 </head>
 
 <body>
-<div class="clock">
+<div class="back">
+  <a class = "knopka" href="index.html">BACK</a></div>
+</div>
+<div class="container"> 
+  <div class="clock">
     <ul>
       <li>Tokyo:</li>
       <li id="hours">00</li>
@@ -119,10 +140,10 @@ body {
       <!--<li id="separator">:</li>
       <li id="seconds">00</li>-->
     </ul>
+  </div>
 </div>
-
-<div class="clock">
-<div class="container">     
+<div class="container"> 
+  <div class="clock">    
         <ul>
           <li>London:</li>          
           <li id="h">00</li>
@@ -131,12 +152,10 @@ body {
           <!--<li id="separator">:</li>
           <li id="seconds">00</li>-->
         </ul>
-    </div>   
+  </div>   
 </div>
 
-<div class="back">
-  <a class = "knopka" href="index.html">BACK</a></div>
-</div>
+
   
 <script>
 window.onload = function() {
