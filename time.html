@@ -230,14 +230,14 @@ window.onload = function() {
     document.getElementById("m").innerHTML = (m < 10 ? '0' : '') + m;    
         
     var h = new Date().getHours();
-    document.getElementById("h").innerHTML = (h < 10 ? '0' : '') + `${h+london}`;
+    document.getElementById("h").innerHTML = (`${h+london}` < 10 ? '0' : '') + `${h+london}`;
 
     var vegas = -17;
     var mv = new Date().getMinutes();
     document.getElementById("mv").innerHTML = (mv < 10 ? '0' : '') + mv;    
         
     var hv = new Date().getHours();
-    document.getElementById("hv").innerHTML = (hv < 10 ? '0' : '') + `${hv+vegas}`;
+    document.getElementById("hv").innerHTML = (`${hv+vegas}` < 10 ? '0' : '') + `${hv+vegas}`;
 
     // First clock  
     // Seconds
