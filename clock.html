@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>World clock</title>  
 <style>
 :root {
   --bg_main: #0a1f44;
@@ -34,8 +36,7 @@
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;  
+  width: 100%;    
   padding: 2em; 
   margin: auto auto 0 -2em; 
 
@@ -62,9 +63,13 @@
   border:2px solid var(--red);
 }    
 
-.back{  
-  margin-top: 20em;
-}
+.back{ 
+    width:100%;
+    height: 50px;   
+    justify-content: left;
+    align-items: center; 
+    margin-top: 20em;
+  } 
 
 /* Animation */
 @-webkit-keyframes myfade {
@@ -160,6 +165,5 @@ window.onload = function() {
   }, 1000);
 }
 </script>
-
 </body>
 </html>
