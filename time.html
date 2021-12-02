@@ -16,9 +16,9 @@
 
 .container {
   margin: 10px auto;
-  width: 30%;
+  width: 50%;
   height: 50px;
-  /* background-color: #ccc; */  /* for div tetst */
+  /* background-color: #ccc; */   /* for div tetst */
   position: relative;
   padding: 1em;  
   color: var(--text_light);   
@@ -123,6 +123,22 @@ body {
   background: var(--bg_main);
   color: var(--text_dark); 
 }
+
+table {
+   border-collapse: collapse;
+   /*убираем пустые промежутки между ячейками*/
+   border: 0px solid grey;
+   /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+   align-self: center;
+}
+th {
+   border: 0px solid grey;
+}
+
+td {
+   border: 0px solid grey;
+}
+
 </style>
 </head>
 
@@ -130,18 +146,19 @@ body {
 <div class="back">
   <a class = "knopka" href="index.html">BACK</a></div>
 </div>
-<div class="container"> 
+<!--<div class="container"> 
   <div class="clock">
     <ul>
       <li>Tokyo:</li>
       <li id="hours">00</li>
       <li id="separator">:</li>
       <li id="minutes">00</li>
-      <!--<li id="separator">:</li>
-      <li id="seconds">00</li>-->
+      <li id="separator">:</li>
+      <li id="seconds">00</li>
     </ul>
   </div>
 </div>
+
 <div class="container"> 
   <div class="clock">    
         <ul>
@@ -149,25 +166,78 @@ body {
           <li id="h">00</li>
           <li id="separator">:</li>
           <li id="m">00</li>
-          <!--<li id="separator">:</li>
-          <li id="seconds">00</li>-->
+          <li id="separator">:</li>
+          <li id="seconds">00</li>
         </ul>
   </div>   
+</div>-->
+
+<div class="container"> 
+  <div class="clock"> 
+    <table width = 100%>
+      <td width = 45% align = right>Tokyo</td>
+      <td width = 5%></td>
+      <td width = 50% align =left>
+        <ul>
+          <li id="hours">00</li>
+          <li id="separator">:</li>
+          <li id="minutes">00</li>
+        </ul>
+      </td>
+    </table>
+  </div>
 </div>
 
+<div class="container"> 
+  <div class="clock"> 
+    <table width = 100%>
+      <td width = 45% align = right>London</td>
+      <td width = 5%></td>
+      <td width = 50% align =left>
+        <ul>
+          <li id="h">00</li>
+          <li id="separator">:</li>
+          <li id="m">00</li>
+        </ul>
+      </td>
+    </table>
+  </div>
+</div>
 
+<div class="container"> 
+  <div class="clock"> 
+    <table width = 100%>
+      <td width = 45% align = right>Las Vegas</td>
+      <td width = 5%></td>
+      <td width = 50% align =left>
+        <ul>
+          <li id="hv">00</li>
+          <li id="separator">:</li>
+          <li id="mv">00</li>
+        </ul>
+      </td>
+    </table>
+  </div>
+</div>
   
 <script>
 window.onload = function() {
   setInterval(function() {
 
     // Second clock
-    var gap = -9;
+    var london = -9;
     var m = new Date().getMinutes();
     document.getElementById("m").innerHTML = (m < 10 ? '0' : '') + m;    
         
     var h = new Date().getHours();
-    document.getElementById("h").innerHTML = (h < 10 ? '0' : '') + `${h+gap}`;
+    document.getElementById("h").innerHTML = (h < 10 ? '0' : '') + `${h+london}`;
+
+    var vegas = -17;
+    var mv = new Date().getMinutes();
+    document.getElementById("mv").innerHTML = (mv < 10 ? '0' : '') + mv;    
+        
+    var hv = new Date().getHours();
+    document.getElementById("hv").innerHTML = (hv < 10 ? '0' : '') + `${hv+vegas}`;
 
     // First clock  
     // Seconds
