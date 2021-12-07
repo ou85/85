@@ -17,7 +17,7 @@
 .container {
   margin: 10px auto;
   width: 50%;
-  height: 300px;
+  height: 30px;
   /* background-color: #ccc; */   /* for div tetst */
   position: relative;
   padding: 1em;  
@@ -127,23 +127,18 @@ body {
 table {
    border-collapse: collapse;
    /*убираем пустые промежутки между ячейками*/
-   border: 0px solid grey;
+   border: 2px solid grey;
    /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
    align-self: center;
    
 }
 th {
    
-   border: 0px solid grey;
-}
-
-tr {
-   border: 0px solid grey;
-   height: 120px;   
+   border: 2px solid grey;
 }
 
 td {
-   border: 0px solid grey;
+   border: 2px solid grey;
    
 }
 
@@ -182,11 +177,9 @@ td {
 
 <div class="container"> 
   <div class="clock"> 
-
     <table width = 100%>
-      <tr>
       <td width = 45% align = right>Tokyo
-        <div id="current" style="font:14pt Arial; color:var(--orange)"></div>
+        <div id="current" style="font:14pt Arial; color:#FF0000;"></div>
       </td>
       <td width = 5%></td>
       <td width = 50% align =left>
@@ -196,12 +189,15 @@ td {
           <li id="minutes">00</li>
         </ul>
       </td>
-      </tr>
+    </table>
+  </div>
+</div>
 
-
-      <tr>
+<div class="container"> 
+  <div class="clock"> 
+    <table width = 100%>
       <td width = 45% align = right>London
-        <div id="london" style="font:14pt Arial; color:var(--orange);"></div>
+        <div id="london" style="font:14pt Arial; color:#FF0000;"></div>
       </td>
       <td width = 5%></td>
       <td width = 50% align =left>
@@ -211,12 +207,15 @@ td {
           <li id="m">:::</li>
         </ul>
       </td>
-      </tr>
+    </table>
+  </div>
+</div>
 
-
-      <tr>
+<div class="container"> 
+  <div class="clock"> 
+    <table width = 100%>
       <td width = 45% align = right>Las Vegas
-        <div id="lasv" style="font:14pt Arial; color:var(--orange);"></div>
+        <div id="lasv" style="font:14pt Arial; color:#FF0000;"></div>
       </td>
       <td width = 5%></td>
       <td width = 50% align =left>
@@ -226,9 +225,7 @@ td {
           <li id="mv">00</li>
         </ul>
       </td>
-      </tr>
     </table>
-
   </div>
 </div>
 
@@ -290,23 +287,23 @@ window.onload = function() {
  var gap = 17;                        // Las Vegas
  var hours = current.getHours();
  var wkd = current.getDay(); 
- document.getElementById("current").innerHTML = current.getFullYear()  + "." + 
-                                             current.getMonth() + "." + (
+ document.getElementById("current").innerHTML = current.getFullYear()  + "-" + 
+                                             current.getMonth() + "-" + (
                                              current.getDate() < 10 ? '0' : '') + 
                                              current.getDate() + ", " +
                                              weekday[wkd]; 
  current.setHours(hours - gap); 
  wkd = current.getDay();  
- document.getElementById("lasv").innerHTML = current.getFullYear()  + "." + 
-                                             current.getMonth() + "." + (
+ document.getElementById("lasv").innerHTML = current.getFullYear()  + "-" + 
+                                             current.getMonth() + "-" + (
                                              current.getDate() < 10 ? '0' : '') + 
                                              current.getDate() + ", " +
                                              weekday[wkd];
  gap = -9;                        // London   
  current.setHours(hours - gap);                                         
  wkd = current.getDay();  
- document.getElementById("london").innerHTML = current.getFullYear()  + "." + 
-                                             current.getMonth() + "." + (
+ document.getElementById("london").innerHTML = current.getFullYear()  + "-" + 
+                                             current.getMonth() + "-" + (
                                              current.getDate() < 10 ? '0' : '') + 
                                              current.getDate() + ", " +
                                              weekday[wkd];
