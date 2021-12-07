@@ -51,6 +51,7 @@ body {
   background: var(--bg_main);
   color: var(--text_dark);
   padding: 70px;
+  
 }
 
 .container {
@@ -283,8 +284,25 @@ body {
   font-size: smaller;
   border-radius: 5px;
   margin-top: 5em;
+
+  /* Выравнивание по центру блока .back */
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  
 }
 .knopka:hover {
   background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
   border:2px solid var(--red);
 }    
+
+.back{ 
+  margin: 5px auto;
+  width: 100px;
+  height: 50px;
+  /* background-color: #ccc; */
+  position: relative;
+  
+} 
