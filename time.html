@@ -2,316 +2,58 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>World clock</title>  
-<style>
-:root {
-  --bg_main: #0a1f44;
-  --text_light: #fff;
-  --text_med: #53627c;
-  --text_dark: #1e2432;
-  --red: #ff1e42;
-  --darkred: #c3112d;
-  --orange: #ff8c00;
-}
-
-.container {
-  margin: 10px auto;
-  width: 50%;
-  height: 300px;
-  /* background-color: #ccc; */   /* for div tetst */
-  position: relative;
-  padding: 1em;  
-  color: var(--text_light);   
-  font-weight: 600;
-  font-size: smaller;
-  text-align: center;
-}
-
-.clock {
-  position: absolute;
-  top: 10%;                     /* %50 for middle possition */
-  width: 100%;
-  margin: 0 auto 0 auto;        /* -60px auto 0 auto; for middle position */
-  font-size: 40px;  
-  text-align: left;            /* center for middle position */
-  /* color: #fff;*/
-    
-  /* Выравнивание по центру блока .back */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-
-}
-.clock ul {
-  margin: 0 auto;
-  list-style: none;
-}
-.clock ul li {
-  display: inline;
-}
-.clock ul li#separator {
-  -moz-animation: myfade 1s ease infinite;
-  -webkit-animation: myfade 1s ease infinite;
-}
-
-
-.knopka {
-  border:0px solid var(--darkred);  /* #ccc;  рамка*/    
-  background: var(--red);           /*фон */   
-  padding: .4em .8em;               /*отступы внутри */   
-  text-decoration: none;            /*убрать подчеркивание ссылки */  
-  color: var(--text_light); 
-  font-weight: 600;
-  font-size: smaller;
-  border-radius: 5px;
-
-    /* Выравнивание по центру блока .back */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-  
-}
-.knopka:hover {
-  background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
-  border:2px solid var(--red);
-}    
-
-.back{ 
-    margin: 50px auto;
-    width: 100px;
-    height: 50px;
-    /* background-color: #ccc; */
-    position: relative;
-  } 
-
-/* Animation */
-@-webkit-keyframes myfade {
-  0% {
-    opacity: 1.0;
-  }
-  50% {
-    opacity: 0; 
-  } 
-  100% {
-    opacity: 1.0;
-  }   
-}
-
-@-moz-keyframes myfade {
-  0% {
-    opacity: 1.0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1.0;
-  };
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  /* background: #1f1f1f; */
-  font: 1rem/1.3 "Roboto", sans-serif; 
-  background: var(--bg_main);
-  color: var(--text_dark); 
-}
-
-table {
-   border-collapse: collapse;
-   /*убираем пустые промежутки между ячейками*/
-   border: 0px solid grey;
-   /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
-   align-self: center;
-   
-}
-th {
-   
-   border: 0px solid grey;
-}
-
-tr {
-   border: 0px solid grey;
-   height: 120px;
-   vertical-align: top;  
-}
-
-td {
-   border: 0px solid grey;
-   
-}
-
-</style>
+    <title>World clock</title> 
+    <link rel="stylesheet" type="text/css" href="time.css" media="screen" /> 
 </head>
-
 <body>
 <div class="back">
   <a class = "knopka" href="index.html">BACK</a></div>
 </div>
-<!--<div class="container"> 
-  <div class="clock">
-    <ul>
-      <li>Tokyo:</li>
-      <li id="hours">00</li>
-      <li id="separator">:</li>
-      <li id="minutes">00</li>
-      <li id="separator">:</li>
-      <li id="seconds">00</li>
-    </ul>
-  </div>
-</div>
-
-<div class="container"> 
-  <div class="clock">    
-        <ul>
-          <li>London:</li>          
-          <li id="h">00</li>
-          <li id="separator">:</li>
-          <li id="m">00</li>
-          <li id="separator">:</li>
-          <li id="seconds">00</li>
-        </ul>
-  </div>   
-</div>-->
-
 <div class="container"> 
   <div class="clock"> 
-
     <table width = 100%>
       <tr>
-      <td width = 45% align = right>Tokyo
-        <div id="current" style="font:14pt Arial; color:var(--orange)"></div>
-      </td>
-      <td width = 5%></td>
-      <td width = 50% align =left>
-        <ul>
-          <li id="hours">00</li>
-          <li id="separator">:</li>
-          <li id="minutes">00</li>
-        </ul>
-      </td>
+        <td width = 45% align = right>Tokyo
+          <div id="current" style="font:14pt Arial; color:var(--orange)"></div>
+        </td>
+        <td width = 5%></td>
+        <td width = 50% align =left>
+          <ul>
+            <li id="hours">00</li>
+            <li id="separator">:</li>
+            <li id="minutes">00</li>
+          </ul>
+        </td>
       </tr>
-
-
       <tr>
-      <td width = 45% align = right>London
-        <div id="london" style="font:14pt Arial; color:var(--orange);"></div>
-      </td>
-      <td width = 5%></td>
-      <td width = 50% align =left>
-        <ul>
-          <li id="London">:::</li>
-          <li id="separator">:</li>
-          <li id="m">:::</li>
-        </ul>
-      </td>
+        <td width = 45% align = right>London
+          <div id="london" style="font:14pt Arial; color:var(--orange);"></div>
+        </td>
+        <td width = 5%></td>
+        <td width = 50% align =left>
+          <ul>
+            <li id="London">00</li>
+            <li id="separator">:</li>
+            <li id="m">00</li>
+          </ul>
+        </td>
       </tr>
-
-
       <tr>
-      <td width = 45% align = right>Las Vegas
-        <div id="lasv" style="font:14pt Arial; color:var(--orange);"></div>
-      </td>
-      <td width = 5%></td>
-      <td width = 50% align =left>
-        <ul>
-          <li id="hv">00</li>
-          <li id="separator">:</li>
-          <li id="mv">00</li>
-        </ul>
-      </td>
+        <td width = 45% align = right>Las Vegas
+          <div id="lasv" style="font:14pt Arial; color:var(--orange);"></div>
+        </td>
+        <td width = 5%></td>
+        <td width = 50% align =left>
+          <ul>
+            <li id="hv">00</li>
+            <li id="separator">:</li>
+            <li id="mv">00</li>
+          </ul>
+        </td>
       </tr>
     </table>
-
   </div>
-</div>
-
-<div id=lasv style="width:60%; margin-left: 20%; font:14pt Arial; color:#FF0000;"></div>
-  
-<script>
-window.onload = function() {
-  setInterval(function() {    
-
-    // London
-    var current = new Date();
-    var gap = -9;
-    var mL = current.getMinutes();
-    document.getElementById("m").innerHTML = (mL < 10 ? '0' : '') + mL;         
-    var hL = current.getHours();
-    current.setHours(hL + gap);
-    document.getElementById("London").innerHTML = (current.getHours() < 10 ? '0' : '') + current.getHours();
-
-    // Las Vegas
-    current = new Date();
-    gap = -17;
-    var mv = current.getMinutes();
-    document.getElementById("mv").innerHTML = (mv < 10 ? '0' : '') + mv;          
-    var hv = current.getHours();
-    current.setHours(hv + gap);
-    document.getElementById("hv").innerHTML = (current.getHours() < 10 ? '0' : '') + current.getHours();
-
-    // Local Time 
-    // Seconds
-    // var seconds = new Date().getSeconds();
-    // document.getElementById("seconds").innerHTML = (seconds < 10 ? '0' : '') + seconds;    
-    var minutes = new Date().getMinutes();      // Minutes
-    document.getElementById("minutes").innerHTML = (minutes < 10 ? '0' : '') + minutes;    
-    var hours = new Date().getHours();          // Hours
-    document.getElementById("hours").innerHTML = (hours < 10 ? '0' : '') + hours;
-  }, 1000);
-}
-</script>
-
- 
-<script>
-  function formatDate(date) {
-    return 
-       (date.getMonth() + 1) + '/' +
-       date.getDate() + ' ' +
-       date.getHours() + ':' + 
-       date.getMinutes();
-    }
- var current = new Date();
- var ny = new Date() - (840 * 60 * 1000); 
-
- formatDate(current); 
- formatDate(ny);
-
- console.log(current);
- console.log(ny.toString()); 
-
- var weekday = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"); 
- var gap = 17;                        // Las Vegas
- var hours = current.getHours();
- var wkd = current.getDay(); 
- document.getElementById("current").innerHTML = current.getFullYear()  + "." + 
-                                             current.getMonth() + "." + (
-                                             current.getDate() < 10 ? '0' : '') + 
-                                             current.getDate() + ", " +
-                                             weekday[wkd]; 
- current.setHours(hours - gap); 
- wkd = current.getDay();  
- document.getElementById("lasv").innerHTML = current.getFullYear()  + "." + 
-                                             current.getMonth() + "." + (
-                                             current.getDate() < 10 ? '0' : '') + 
-                                             current.getDate() + ", " +
-                                             weekday[wkd];
- gap = -9;                        // London   
- current.setHours(hours - gap);                                         
- wkd = current.getDay();  
- document.getElementById("london").innerHTML = current.getFullYear()  + "." + 
-                                             current.getMonth() + "." + (
-                                             current.getDate() < 10 ? '0' : '') + 
-                                             current.getDate() + ", " +
-                                             weekday[wkd];
-</script>
-
+</div> 
+<script src="time.js"></script>
 </body>
 </html>
