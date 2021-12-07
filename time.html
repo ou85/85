@@ -195,9 +195,9 @@ td {
       <td width = 5%></td>
       <td width = 50% align =left>
         <ul>
-          <li id="h">00</li>
+          <li id="London">:::</li>
           <li id="separator">:</li>
-          <li id="m">00</li>
+          <li id="m">:::</li>
         </ul>
       </td>
     </table>
@@ -219,40 +219,75 @@ td {
     </table>
   </div>
 </div>
+
+<div id=lasv style="width:60%; margin-left: 20%; font:14pt Arial; color:#FF0000;"></div>
   
 <script>
 window.onload = function() {
   setInterval(function() {
 
-    // Second clock
-    var london = -9;
-    var m = new Date().getMinutes();
-    document.getElementById("m").innerHTML = (m < 10 ? '0' : '') + m;    
-        
-    var h = new Date().getHours();
-    document.getElementById("h").innerHTML = (`${h+london}` < 10 ? '0' : '') + `${h+london}`;
+    
 
-    var vegas = -17;
-    var mv = new Date().getMinutes();
-    document.getElementById("mv").innerHTML = (mv < 10 ? '0' : '') + mv;    
-        
-    var hv = new Date().getHours();
-    document.getElementById("hv").innerHTML = (`${hv+vegas}` < 10 ? '0' : '') + `${hv+vegas}`;
+    // London
+    var current = new Date();
+    var gap = -9;
+    var mL = current.getMinutes();
+    document.getElementById("m").innerHTML = (mL < 10 ? '0' : '') + mL;         
+    var hL = current.getHours();
+    current.setHours(hL + gap);
+    document.getElementById("London").innerHTML = (current.getHours() < 10 ? '0' : '') + current.getHours();
 
-    // First clock  
+    // Las Vegas
+    current = new Date();
+    gap = -17;
+    var mv = current.getMinutes();
+    document.getElementById("mv").innerHTML = (mv < 10 ? '0' : '') + mv;          
+    var hv = current.getHours();
+    current.setHours(hv + gap);
+    document.getElementById("hv").innerHTML = (current.getHours() < 10 ? '0' : '') + current.getHours();
+
+    // Local Time 
     // Seconds
     // var seconds = new Date().getSeconds();
-    // document.getElementById("seconds").innerHTML = (seconds < 10 ? '0' : '') + seconds;
-
-    // Minutes
-    var minutes = new Date().getMinutes();
-    document.getElementById("minutes").innerHTML = (minutes < 10 ? '0' : '') + minutes;
-
-    // Hours
-    var hours = new Date().getHours();
+    // document.getElementById("seconds").innerHTML = (seconds < 10 ? '0' : '') + seconds;    
+    var minutes = new Date().getMinutes();      // Minutes
+    document.getElementById("minutes").innerHTML = (minutes < 10 ? '0' : '') + minutes;    
+    var hours = new Date().getHours();          // Hours
     document.getElementById("hours").innerHTML = (hours < 10 ? '0' : '') + hours;
   }, 1000);
 }
 </script>
+<div style="width:50%; margin-left: 20%; font:14pt Arial; color:#FF0000;">
+<script>
+  function formatDate(date) {
+    return 
+       (date.getMonth() + 1) + '/' +
+       date.getDate() + ' ' +
+       date.getHours() + ':' + 
+       date.getMinutes();
+    }
+ var current = new Date();
+ var ny = new Date() - (840 * 60 * 1000); 
+
+ formatDate(current); 
+ formatDate(ny);
+
+ console.log(current);
+ console.log(ny.toString());
+
+ document.write("<br/>Local: " + current); 
+ 
+ var gap = 17;
+ var hours = current.getHours(); 
+ current.setHours(hours - gap);    
+ document.getElementById("lasv").innerHTML = "Las Vegas: " + current.getFullYear()  + "-" + 
+                                                             current.getMonth() + "-" + (
+                                                             current.getDate() < 10 ? '0' : '') + 
+                                                             current.getDate() + ", " +
+                                                             current.getDay();
+
+</script>
+</div>
+
 </body>
 </html>
