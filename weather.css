@@ -306,3 +306,9 @@ body {
   position: relative;
   
 } 
+
+.clock{
+  height: 1.2em;
+  width: 200px;
+  margin-top: 2.5em;  
+}
