@@ -11,7 +11,7 @@
   .container {
     margin: 10px auto;
     width: 50%;
-    height: 300px;
+    height: 500px;
     /* background-color: #ccc; */   /* for div tetst */
     position: relative;
     padding: 1em;  
@@ -23,7 +23,7 @@
   
   .clock {
     position: absolute;
-    top: 10%;                     /* %50 for middle possition */
+    top: 50%;                     /* %50 for middle possition */
     width: 100%;
     margin: 0 auto 0 auto;        /* -60px auto 0 auto; for middle position */
     font-size: 40px;  
