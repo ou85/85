@@ -50,13 +50,14 @@ window.onload = function() {
    const mnth = current.getMonth() + 1;
    var wkd = current.getDay(); 
    var weekday = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"); 
-                                      // Local. Tokyo
+   // Local. Tokyo
    document.getElementById("current").innerHTML = current.getFullYear()  + "." + 
                                                mnth + "." + (
                                                current.getDate() < 10 ? '0' : '') + 
                                                current.getDate() + ", " +
                                                weekday[wkd]; 
-   var gap = 17;                      // Las Vegas
+   // Las Vegas
+   var gap = 17;
    current = new Date();                                           
    current.setHours(hours - gap); 
    wkd = current.getDay();  
@@ -65,7 +66,8 @@ window.onload = function() {
                                                current.getDate() < 10 ? '0' : '') + 
                                                current.getDate() + ", " +
                                                weekday[wkd];
-   gap = -9;                        // London  
+   // London                                               
+   gap = -9; 
    current = new Date(); 
    current.setHours(hours - gap);                                         
    wkd = current.getDay();  
@@ -74,8 +76,8 @@ window.onload = function() {
                                                current.getDate() < 10 ? '0' : '') + 
                                                current.getDate() + ", " +
                                                weekday[wkd];
-
-   gap = 14;                        // New York 
+   // New York 
+   gap = 14;
    current = new Date();  
    current.setHours(hours - gap);                                         
    wkd = current.getDay();  
