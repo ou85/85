@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>85</title>
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Titillium+Web'>
     <header>
       <div class="header-logo">
         <a href="#JavaScript" id="top">jssection</a>
@@ -71,7 +72,7 @@
             document.write(`${sum}<br/>`)
 
             console.log("Результат операции");
-            console.log(sum)    // а это строка комментария 
+            console.log(sum)                      // а это строка комментария 
             console.log("username до изменения:", username);
             username = "Bob";        
             console.log("username после изменения:", username);
@@ -100,31 +101,33 @@
         </script>     
         <br></br>   
 
-        <script type="text/javascript">   // Time on Web page          
+        <script type="text/javascript">                 // Time on Web page          
           var tmonth = new Array("January","February",
-          "March","April","May",
-          "June","July","August",
-          "September","October","November",
-          "December");
+            "March","April","May",
+            "June","July","August",
+            "September","October","November",
+            "December");
           var monthNum = new Array("01","02",
-          "03","04","05",
-          "06","07","08",
-          "09","10","11",
-          "12");          
-          function GetClock(){
-          var d = new Date();
-          var nmonth = d.getMonth(), 
+            "03","04","05",
+            "06","07","08",
+            "09","10","11",
+            "12"); 
+
+          function GetClock()
+          {
+            var d = new Date();
+            var nmonth = d.getMonth(), 
               ndate = d.getDate(),
               nyear = d.getYear();
 
-          if(nyear < 1000) 
-            nyear += 1900;
+            if(nyear < 1000) 
+              nyear += 1900;
          
-          var nhour = d.getHours(),
+            var nhour = d.getHours(),
               nmin = d.getMinutes(),
               nsec = d.getSeconds()//,
              // ap;        
-           ;
+             ;
             // if(nhour == 0){
             // ap = " AM";
             // nhour = 12;
@@ -149,15 +152,30 @@
           document.getElementById('webpagedate').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+"";
           document.getElementById('webpagetime').innerHTML = ""+nhour+":"+nmin+":"+nsec+"";
           }
-         
-          window.onload=function(){
-          GetClock();
-          setInterval(GetClock,1000);
-          }
-        </script>
 
-        <script type="text/javascript">         // webpage lifespan
-          function lifeSite() {
+          function clockTimer()   // TIME
+          {
+            var date = new Date();  
+            // var time = [date.getHours(),date.getMinutes(),date.getSeconds()]; // |[0] = Hours| |[1] = Minutes| |[2] = Seconds|
+            var time = [date.getHours(),date.getMinutes()]; // |[0] = Hours| |[1] = Minutes|
+            var dayOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+            var days = date.getDay();
+  
+            if(time[0] < 10){time[0] = "0"+ time[0];}
+            if(time[1] < 10){time[1] = "0"+ time[1];}
+              
+            var current_time = [time[0],time[1]].join(':');
+            var clock = document.getElementById("clock");
+            var day = document.getElementById("dayOfWeek");
+  
+            clock.innerHTML = current_time;
+            day.innerHTML = dayOfWeek[days];
+
+            setTimeout("clockTimer()", 1000);
+          }
+
+          function lifeSite()           // Webpage lifespan
+          {
             // "January", "February", "March", "April", "May", "June",   "July", "August", "September", "October", "November", "December"
             var start = new Date('December 1, 2021'); // Дата создания сайта
             var end = new Date();
@@ -168,25 +186,73 @@
             var suffix_key = mod > 4 && mod < 20 ? 2 : keys[Math.min(mod%10, 5)];
              document.getElementById("life_site").innerHTML = life + " " + suffix[suffix_key];
           }
-
+         
           window.onload=function(){
+          GetClock();
+          setInterval(GetClock,1000);
+          clockTimer();          
           lifeSite();
           }
-        </script>
-       
+        </script>       
 
-        <div id="webpageclock" style="font:14pt Arial; color:#FF0000;"></div> 
+        <div id="webpageclock"    style="font:14pt Arial; color:#FF0000;"></div> 
         <div id="webpagedatetime" style="font:14pt Arial; color:#00ff;"></div>
-        <div id="webpagedate" style="font:14pt Arial; color:#00ff;"></div>
-        <div id="webpagetime" style="font:14pt Arial; color:rgb(7, 7, 150); font-weight: 600;"></div>
+        <div id="webpagedate"     style="font:14pt Arial; color:#00ff;"></div>
+        <div id="webpagetime"     style="font:14pt Arial; color:rgb(7, 7, 150); font-weight: 600;"></div>
       
+        <div class="clockpage">    
+          <span id="clock"></span>          
+          <span id="dayOfWeek"></span>          
+        </div>
+
         <li><a href="#top" class = "header-menus">top</a></li>              
     </div> 
+
+    
 
     <div style="font:10 pt Lato; color:rgb(3, 3, 10); text-align: right; margin-top: 2em;">  
       <p>На Гите: <span id="life_site"></span></p>
     </div>
+
+<!-- clock widget start -->
+<script type="text/javascript"> 
+  var css_file=document.createElement("link"); 
+  css_file.setAttribute("rel","stylesheet"); 
+  css_file.setAttribute("type","text/css"); 
+  css_file.setAttribute("href","https://s.bookcdn.com//css/cl/bw-cl-180x170r6.css?v=0.0.1"); 
+  document.getElementsByTagName("head")[0].appendChild(css_file); 
+</script> 
+<div id="tw_16_1888316009">
+  <div style="width:70px; height:90px; margin: 0 auto;">
+    <a href="https://www.booked.net/time/tokyo-18247">Tokyo</a><br/>
   </div>
+</div> 
+<script type="text/javascript"> 
+  function setWidgetData_1888316009(data){ 
+    if(typeof(data) != 'undefined' && data.results.length > 0) { 
+      for(var i = 0; i < data.results.length; ++i) { 
+        var objMainBlock = ''; 
+        var params = data.results[i]; 
+        objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id); 
+        if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code; 
+        } 
+      } 
+    } 
+  var clock_timer_1888316009 = -1; 
+  widgetSrc = "https://widgets.booked.net/time/info?ver=2;domid=;type=16;id=1888316009;scode=2;city_id=18247;wlangid=1;mode=2;details=0;background=ffffff;border_color=ffffff;color=3a4759;add_background=ffffff;add_color=333333;head_color=ffffff;border=0;transparent=0"; 
+  var widgetUrl = location.href; 
+  widgetSrc += '&ref=' + widgetUrl; 
+  var wstrackId = ""; 
+  if (wstrackId) { 
+    widgetSrc += ';wstrackId=' + wstrackId + ';' 
+  } 
+  var timeBookedScript = document.createElement("script"); 
+  timeBookedScript.setAttribute("type", "text/javascript"); 
+  timeBookedScript.src = widgetSrc; 
+  document.body.appendChild(timeBookedScript); 
+</script>
+<!-- clock widget end -->
+</div>
 </div>
 </body>
 </html>
