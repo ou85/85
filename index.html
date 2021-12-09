@@ -58,9 +58,8 @@
     </div>
 
     <div class="users-index-item" id="JavaScript"> 
-        <h3 class="users-heading">JavaScript section</h3>
+        <h3 class="users-heading">JavaScript section</h3>        
         <script src="scripts.js"></script>
-
         <script>
             /*  Пример арифметической операции
             и определения переменной
@@ -157,13 +156,35 @@
           }
         </script>
 
+        <script type="text/javascript">         // webpage lifespan
+          function lifeSite() {
+            // "January", "February", "March", "April", "May", "June",   "July", "August", "September", "October", "November", "December"
+            var start = new Date('December 1, 2021'); // Дата создания сайта
+            var end = new Date();
+            var life = Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+            var suffix = new Array("день", "дня", "дней");
+            var keys = [2, 0, 1, 1, 1, 2];
+            var mod = life % 100;
+            var suffix_key = mod > 4 && mod < 20 ? 2 : keys[Math.min(mod%10, 5)];
+             document.getElementById("life_site").innerHTML = life + " " + suffix[suffix_key];
+          }
+
+          window.onload=function(){
+          lifeSite();
+          }
+        </script>
+       
+
         <div id="webpageclock" style="font:14pt Arial; color:#FF0000;"></div> 
         <div id="webpagedatetime" style="font:14pt Arial; color:#00ff;"></div>
         <div id="webpagedate" style="font:14pt Arial; color:#00ff;"></div>
         <div id="webpagetime" style="font:14pt Arial; color:rgb(7, 7, 150); font-weight: 600;"></div>
       
-        <li><a href="#top" class = "header-menus">top</a></li>  
-            
+        <li><a href="#top" class = "header-menus">top</a></li>              
+    </div> 
+
+    <div style="font:10 pt Lato; color:rgb(3, 3, 10); text-align: right; margin-top: 2em;">  
+      <p>На Гите: <span id="life_site"></span></p>
     </div>
   </div>
 </div>
