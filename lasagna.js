@@ -26,7 +26,7 @@ function totalTimeInMinutes() {
 }
 var spendTime = totalTimeInMinutes();
 
-document.write("<h3>Making lasangna</h3>");
+document.write("<h3>Making lasagna</h3>");
 document.write("<strong>Prepare ingridients: </strong>", prepTime);
 document.write("<br/><strong>Time in oven: </strong>", actualMinutesInOven);
 document.write("<br/><strong>Spended cooking time: </strong>", spendTime);
