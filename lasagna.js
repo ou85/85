@@ -34,3 +34,4 @@ document.write("<br></br>");
 console.log("Time in oven:", actualMinutesInOven);
 console.log("Spended cooking time:", spendTime);
 console.log("Time still need to cook:", leftTime);
+
