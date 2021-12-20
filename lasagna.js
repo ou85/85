@@ -10,7 +10,7 @@ console.log(`Making lasagna`)
 function remainingMinutesInOven(actualMinutesInOven) {
   return EXPECTED_MINUTES_IN_OVEN - actualMinutesInOven;
 }
-var leftTime = remainingMinutesInOven(actualMinutesInOven);
+var remTime = remainingMinutesInOven(actualMinutesInOven);
 
 // Given a number of layers, determines the total preparation time.
 function preparationTimeInMinutes(numberOfLayers) {
@@ -33,5 +33,4 @@ document.write("<br/><strong>Spended cooking time: </strong>", spendTime);
 document.write("<br></br>");
 console.log("Time in oven:", actualMinutesInOven);
 console.log("Spended cooking time:", spendTime);
-console.log("Time still need to cook:", leftTime);
-
+console.log("Time still need to cook:", remTime);
