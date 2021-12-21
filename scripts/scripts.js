@@ -22,4 +22,3 @@ function dayRate(ratePerHour) {
     return 8 * ratePerHour;
   }
 
-alert( "JavaScript!" );
