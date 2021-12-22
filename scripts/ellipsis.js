@@ -35,5 +35,5 @@ let welcome = (age < 18) ?
   () => alert('Hi') :
   () => alert("Hello!");
 
-welcome(); // теперь всё в порядке
+welcome();
 
