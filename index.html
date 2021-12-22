@@ -14,6 +14,7 @@
         <a href="react.html">react</a>
         <a href="react_babel.html">JSX</a>
         <a href="indexmoz.html">mozilla</a>
+        <a href="ellipsis.html">ellipsis</a>
         <!-- 
         <a href="https://maps.googleapis.com/maps/api/timezone/json?location=49.283436,%20-123.130429&timestamp=1478880000&key=AIzaSyAr-BQIdMgSKXacJH4MAsI4NDtNSJiwiVg">time</a>
         -->
@@ -74,11 +75,11 @@
             var sum = 2 + 5;
             document.write(`${sum}<br/>`)
 
-            console.log("Результат операции");
+            console.log("Result");
             console.log(sum)                      // а это строка комментария 
-            console.log("username до изменения:", username);
+            console.log("username before:", username);
             username = "Bob";        
-            console.log("username после изменения:", username);
+            console.log("username after:", username);
             console.log("Number Pi is ", pi);
 
             document.write("Number Pi is ", pi);  
@@ -100,11 +101,9 @@
               console.log("Joe");
             };
             hello ();
+        </script>  
 
-        </script>     
         <br></br> 
-        
-        <script src="scripts/lasagna.js"></script>
 
         <script type="text/javascript">                 // Time on Web page          
           var tmonth = new Array("January","February",
@@ -179,13 +178,15 @@
             setTimeout("clockTimer()", 1000);
           }
 
-          function lifeSite()           // Webpage lifespan
+          // Webpage lifespan
+          function lifeSite()           
           {
             // "January", "February", "March", "April", "May", "June",   "July", "August", "September", "October", "November", "December"
             var start = new Date('December 1, 2021'); // Дата создания сайта
             var end = new Date();
             var life = Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
-            var suffix = new Array("день", "дня", "дней");
+            // var suffix = new Array("день", "дня", "дней");
+            var suffix = new Array("day", "days", "days");
             var keys = [2, 0, 1, 1, 1, 2];
             var mod = life % 100;
             var suffix_key = mod > 4 && mod < 20 ? 2 : keys[Math.min(mod%10, 5)];
@@ -198,7 +199,10 @@
           clockTimer();          
           lifeSite();
           }
-        </script>       
+        </script>   
+        
+        <script src="scripts/lasagna.js"></script>
+        <br></br>
 
         <div id="webpageclock"    style="font:14pt Arial; color:#FF0000;"></div> 
         <div id="webpagedatetime" style="font:14pt Arial; color:#00ff;"></div>
@@ -211,12 +215,10 @@
         </div>
 
         <li><a href="#top" class = "header-menus">top</a></li>              
-    </div> 
-
-    
+    </div>     
 
     <div style="font:10 pt Lato; color:rgb(3, 3, 10); text-align: right; margin-top: 2em;">  
-      <p>На Гите: <span id="life_site"></span></p>
+      <p>on GitHub: <span id="life_site"></span></p>
     </div>
 
 <!-- clock widget start -->
