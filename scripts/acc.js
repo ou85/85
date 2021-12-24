@@ -59,6 +59,7 @@ beta: round2(event.beta),
 gamma: round2(event.gamma),
 absolute: event.absolute,
 }, null, 2);
+console.log(el);
 }
 })
 })();
