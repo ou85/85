@@ -62,7 +62,7 @@ absolute: event.absolute,
 console.log(el);
 
 // Making HTML output
-let ell = document.getElementById('ell').innerHTML = JSON.stringify({
+let ell = JSON.stringify({
     event: 'deviceorientation',
     alpha: round2(event.alpha),
     beta: round2(event.beta),
