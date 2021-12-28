@@ -74,8 +74,9 @@ console.log(ell.length);
 
 let html = `
     <h2>Gravity sensor data</h2>
-    <p>${ell[0]}</p>
-    <p>${ell[1]}</p>  
+    <p>${ell.length}</p>
+    <p>${ell.indexOf('alpha')}</p>
+    <p>${ell[3]}</p>  
 `;
 
 document.getElementById('ell').innerHTML = html;
@@ -86,4 +87,5 @@ document.getElementById('ell').innerHTML = html;
 })
 })();
 console.log("acc is reading");
+
 
