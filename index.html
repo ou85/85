@@ -63,8 +63,14 @@
     </div>
 
     <div class="users-index-item" id="JavaScript"> 
-        <h3 class="users-heading">JavaScript section</h3>        
-        <script src="scripts/scripts.js"></script>        
+        <h3 class="users-heading">JavaScript section</h3> 
+        
+        <div id="blog" style="font: 10pt; font-family: 'Titillium Web', sans-serif; color: #2b8379"></div>
+
+        <script src="scripts/scripts.js"></script> 
+        <script src="scripts/lasagna.js"></script>
+        <br></br>
+
         <script>
             /*  Пример арифметической операции
             и определения переменной
@@ -92,15 +98,33 @@
             document.write("<br/>a =  ")
             document.write(a);
             document.write(`<br/>${a}<br/>${b}<br/>`);
-            document.write(a, b)
-            a = 33
-            document.write(a) 
+            document.write(a, b);
+            a = 33;
+            document.write(a) ;
+            document.write("<br/>")
 
-            const hello = function(){
-              console.log("Hello");
-              console.log("Joe");
+            const hello = function() {
+              let greet = "Hello";
+              let name = "Joe";
+              console.log(greet);
+              console.log(name);
+              document.write(greet + ' ' + name + '</br>');
+              document.write(`${greet}, ${name}.`);
             };
-            hello ();
+            hello();
+            
+            greet = (name) => {console.log(`Hello, ${name}`)};
+            greet("Boon");
+            greet("Muzzy");
+
+            greets = (name) => {document.write(`</br>Hello, ${name}`); console.log(name)};
+            greets("Olivera");
+            
+            summ = (n, p) => {return n + p};
+            add = summ(100,30);
+            console.log(add);
+            document.write("</br>", add);
+
         </script>  
 
         <br></br> 
@@ -117,8 +141,7 @@
             "09","10","11",
             "12"); 
 
-          function GetClock()
-          {
+          function GetClock() {          
             var d = new Date();
             var nmonth = d.getMonth(), 
               ndate = d.getDate(),
@@ -141,24 +164,23 @@
             // nhour-=12;
             // }
          
-          if(nmin <= 9) 
-             nmin = "0" + nmin;
-          
-          if(ndate <= 9) 
-             ndate = "0" + ndate;
+            if(nmin <= 9) 
+              nmin = "0" + nmin;
+            
+            if(ndate <= 9) 
+              ndate = "0" + ndate;
 
-          if(nsec <= 9) 
-             nsec = "0" + nsec;
-         
+            if(nsec <= 9) 
+              nsec = "0" + nsec;
+          
             // document.getElementById('webpageclock').innerHTML = ""+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+ap+"";
-          document.getElementById('webpageclock').innerHTML = ""+nyear+" "+tmonth[nmonth]+" "+ndate+",  "+nhour+":"+nmin+"";
-          document.getElementById('webpagedatetime').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+",  "+nhour+":"+nmin+"";
-          document.getElementById('webpagedate').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+"";
-          document.getElementById('webpagetime').innerHTML = ""+nhour+":"+nmin+":"+nsec+"";
+            document.getElementById('webpageclock').innerHTML = ""+nyear+" "+tmonth[nmonth]+" "+ndate+",  "+nhour+":"+nmin+"";
+            document.getElementById('webpagedatetime').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+",  "+nhour+":"+nmin+"";
+            document.getElementById('webpagedate').innerHTML = ""+nyear+"-"+monthNum[nmonth]+"-"+ndate+"";
+            document.getElementById('webpagetime').innerHTML = ""+nhour+":"+nmin+":"+nsec+"";
           }
 
-          function clockTimer()   // TIME
-          {
+          function clockTimer() {                  // TIME         
             var date = new Date();  
             // var time = [date.getHours(),date.getMinutes(),date.getSeconds()]; // |[0] = Hours| |[1] = Minutes| |[2] = Seconds|
             var time = [date.getHours(),date.getMinutes()]; // |[0] = Hours| |[1] = Minutes|
@@ -177,32 +199,14 @@
 
             setTimeout("clockTimer()", 1000);
           }
-
-          // Webpage lifespan
-          function lifeSite()           
-          {
-            // "January", "February", "March", "April", "May", "June",   "July", "August", "September", "October", "November", "December"
-            var start = new Date('December 1, 2021'); // Дата создания сайта
-            var end = new Date();
-            var life = Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
-            // var suffix = new Array("день", "дня", "дней");
-            var suffix = new Array("day", "days", "days");
-            var keys = [2, 0, 1, 1, 1, 2];
-            var mod = life % 100;
-            var suffix_key = mod > 4 && mod < 20 ? 2 : keys[Math.min(mod%10, 5)];
-             document.getElementById("life_site").innerHTML = life + " " + suffix[suffix_key];
-          }
          
-          window.onload=function(){
-          GetClock();
-          setInterval(GetClock,1000);
-          clockTimer();          
-          lifeSite();
+          window.onload=function() {
+            GetClock();
+            setInterval(GetClock,1000);
+            clockTimer();          
+            lifeSite()                           // Calling lifeSite function from scripts/scripts.js
           }
-        </script>   
-        
-        <script src="scripts/lasagna.js"></script>
-        <br></br>
+        </script>  
 
         <div id="webpageclock"    style="font:14pt Arial; color:#FF0000;"></div> 
         <div id="webpagedatetime" style="font:14pt Arial; color:#00ff;"></div>
@@ -221,45 +225,48 @@
       <p>on GitHub: <span id="life_site"></span></p>
     </div>
 
-<!-- clock widget start -->
-<script type="text/javascript"> 
-  var css_file=document.createElement("link"); 
-  css_file.setAttribute("rel","stylesheet"); 
-  css_file.setAttribute("type","text/css"); 
-  css_file.setAttribute("href","https://s.bookcdn.com//css/cl/bw-cl-180x170r6.css?v=0.0.1"); 
-  document.getElementsByTagName("head")[0].appendChild(css_file); 
-</script> 
-<div id="tw_16_1888316009">
-  <div style="width:70px; height:90px; margin: 0 auto;">
-    <a href="https://www.booked.net/time/tokyo-18247">Tokyo</a><br/>
-  </div>
-</div> 
-<script type="text/javascript"> 
-  function setWidgetData_1888316009(data){ 
-    if(typeof(data) != 'undefined' && data.results.length > 0) { 
-      for(var i = 0; i < data.results.length; ++i) { 
-        var objMainBlock = ''; 
-        var params = data.results[i]; 
-        objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id); 
-        if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code; 
+    <!-- clock widget start -->
+    <script type="text/javascript"> 
+      var css_file=document.createElement("link"); 
+      css_file.setAttribute("rel","stylesheet"); 
+      css_file.setAttribute("type","text/css"); 
+      css_file.setAttribute("href","https://s.bookcdn.com//css/cl/bw-cl-180x170r6.css?v=0.0.1"); 
+      document.getElementsByTagName("head")[0].appendChild(css_file); 
+    </script> 
+
+    <div id="tw_16_1888316009">
+      <div style="width:70px; height:90px; margin: 0 auto;">
+        <a href="https://www.booked.net/time/tokyo-18247">Tokyo</a><br/>
+      </div>
+    </div> 
+
+    <script type="text/javascript"> 
+      function setWidgetData_1888316009(data){ 
+        if(typeof(data) != 'undefined' && data.results.length > 0) { 
+          for(var i = 0; i < data.results.length; ++i) { 
+            var objMainBlock = ''; 
+            var params = data.results[i]; 
+            objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id); 
+            if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code; 
+            } 
+          } 
         } 
+      var clock_timer_1888316009 = -1; 
+      widgetSrc = "https://widgets.booked.net/time/info?ver=2;domid=;type=16;id=1888316009;scode=2;city_id=18247;wlangid=1;mode=2;details=0;background=ffffff;border_color=ffffff;color=3a4759;add_background=ffffff;add_color=333333;head_color=ffffff;border=0;transparent=0"; 
+      var widgetUrl = location.href; 
+      widgetSrc += '&ref=' + widgetUrl; 
+      var wstrackId = ""; 
+      if (wstrackId) { 
+        widgetSrc += ';wstrackId=' + wstrackId + ';' 
       } 
-    } 
-  var clock_timer_1888316009 = -1; 
-  widgetSrc = "https://widgets.booked.net/time/info?ver=2;domid=;type=16;id=1888316009;scode=2;city_id=18247;wlangid=1;mode=2;details=0;background=ffffff;border_color=ffffff;color=3a4759;add_background=ffffff;add_color=333333;head_color=ffffff;border=0;transparent=0"; 
-  var widgetUrl = location.href; 
-  widgetSrc += '&ref=' + widgetUrl; 
-  var wstrackId = ""; 
-  if (wstrackId) { 
-    widgetSrc += ';wstrackId=' + wstrackId + ';' 
-  } 
-  var timeBookedScript = document.createElement("script"); 
-  timeBookedScript.setAttribute("type", "text/javascript"); 
-  timeBookedScript.src = widgetSrc; 
-  document.body.appendChild(timeBookedScript); 
-</script>
-<!-- clock widget end -->
-</div>
+      var timeBookedScript = document.createElement("script"); 
+      timeBookedScript.setAttribute("type", "text/javascript"); 
+      timeBookedScript.src = widgetSrc; 
+      document.body.appendChild(timeBookedScript); 
+    </script>
+    <!-- clock widget end -->
+
+  </div>
 </div>
 </body>
 </html>
