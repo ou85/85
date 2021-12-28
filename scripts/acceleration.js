@@ -1,9 +1,9 @@
 (function() {
 var isAndroid = /(android)/i.test(navigator.userAgent);
-if (!isAndroid) {
+/*if (!isAndroid) {
 document.getElementById('example').innerHTML = '<strong>You\'re not visiting from an Android device</strong>';
 return;
-}
+}*/
 
 function round2(num) {
 return +(Math.round(num + "e+2") + "e-2");
@@ -62,9 +62,20 @@ absolute: event.absolute,
 console.log(el);
 
 // Making HTML output
+let ell = document.getElementById('ell').innerHTML = JSON.stringify({
+    event: 'deviceorientation',
+    alpha: round2(event.alpha),
+    beta: round2(event.beta),
+    gamma: round2(event.gamma),
+    absolute: event.absolute,
+}, null, 2);
+
+console.log(ell);
+
 let html = `
     <h2>Gravity sensor data</h2>
-    <p>${el}</p>  
+    <p>${ell[0]}</p>
+    <p>${ell[1]}</p>  
 `;
 document.write(html);
 // end
