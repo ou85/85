@@ -74,9 +74,9 @@ console.log(ell.length);
 
 let html = `
     <h2>Gravity sensor data</h2>
-    <p>${ell.length}</p>
-    <p>${ell.indexOf('alpha')}</p>
-    <p>${ell[3]}</p>  
+    <p>String length: ${ell.length}</p>
+    <p>Alpha: ${ell.indexOf('alpha')}</p>
+    <p>Third element: ${ell[3]}</p>  
 `;
 
 document.getElementById('ell').innerHTML = html;
