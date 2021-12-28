@@ -60,6 +60,16 @@ gamma: round2(event.gamma),
 absolute: event.absolute,
 }, null, 2);
 console.log(el);
+
+// Making HTML output
+let html = `
+    <h2>Gravity sensor data</h2>
+    <p>${el}</p>  
+`;
+document.write(html);
+// end
+
+
 }
 })
 })();
