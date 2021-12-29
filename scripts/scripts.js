@@ -50,7 +50,10 @@ console.log(age);
 console.log(birthYear); */
 
 
+/********************************************/
+
 // STRINGS
+
 console.log(' ');
 console.log("STRINGS");
 
@@ -97,6 +100,7 @@ console.log('replace a to b: ', result)
 
 
 // NUMBERS
+
 console.log(' ');
 console.log("NUMBERS");
 
@@ -114,13 +118,13 @@ console.log(result);
 result = p * radius**2;
 console.log(result);
 
-// order of operation B I D M A S
-// Brackets ()        4 + (2*5) = 14
-// Indices **         2**3 = 8
-// Division /         20/4 = 5
-// Multiplication *   2*3 = 6
-// Addidion           2*2 + 4 = 8
-// Substraction       (3 + 2) - 1 = 4
+                        // order of operation B I D M A S
+                        // Brackets ()        4 + (2*5) = 14
+                        // Indices **         2**3 = 8
+                        // Division /         20/4 = 5
+                        // Multiplication *   2*3 = 6
+                        // Addidion           2*2 + 4 = 8
+                        // Substraction       (3 + 2) - 1 = 4
 
 let likes = 10;
 console.log(likes);
@@ -174,6 +178,7 @@ document.getElementById("blog").innerHTML = html;
 
 
 // ARRAYS
+
 console.log(' ');
 console.log('ARRAYS');
 
@@ -184,18 +189,98 @@ console.log(ninjas[0]);     // => shaun
 ninjas[1] = 'ken';
 console.log("Ninjas: ", ninjas);        // => shaun ken chun-li
 
+
+      
+
+// .random
 let random = ['shaun', 'crystal', 20, 30];
 console.log('Random: ',random);                       // => shaun crystal 20 30
 
 console.log('Length of random: ', random.length);     // => 4
 
+// .join
 result = ninjas.join('+');
 console.log("Join method: ", result);                 // => shaun+ken+chun-li
 
+// .index
+console.log(ninjas);
 result = ninjas.indexOf('chun-li');
 console.log('The index of chun-li is: ', result);     // => 2
+console.log("Ken is #", ninjas.indexOf('ken') + 1);   // => 2
 
-// array concatenation (adding one aray to another)
+//  .concat - array concatenation (adding one aray to another)
 result = ninjas.concat(['ryu', 'boo']);
 console.log(result);
 
+//  .filter
+const numbers = [1, 2, 3, 4];
+const evenNumbers = numbers.filter((number) => { return number % 2 === 0 });
+console.log(evenNumbers);
+
+const characters = [
+  {id: 1, name:"Ken the Ninja", age: 14},
+  {id: 2, name:"Ben the Baby Ninja", age: 5},
+  {id: 3, name:"Master Wooly", age: 100}
+];
+
+// get characters younger than 20, and assign them to the underTwenty constant
+const underTwenty = characters.filter((character) => { return character.age < 20 });
+console.log(underTwenty);
+
+//  .each
+underTwenty.forEach((arg) => {console.log(arg.id)});
+underTwenty.forEach((arg) => {console.log(arg.name)});
+
+// Print each element of the characters array
+document.write("<span>..</span>");
+characters.forEach((char) => document.write( `<p>${char.name} is ${char.age} years old </p>` ));
+
+// Print each element yunger than 20, which stored in the underTwenty constant
+document.write("<span>..</span>");
+document.write("<p>Yonger than 20:</p>")
+underTwenty.forEach((arg) => {document.write(`<p>- ${arg.name}</p>`)});
+
+// .map - apply code to each element of an array
+const numbs = [1, 2, 3, 4];
+const doubledNumbers = numbs.map((number) => { return number * 2; });
+console.log(doubledNumbers);
+
+const names = [
+  {firstName: "Kate", lastName: "Jones"},
+	{firstName: "John", lastName: "Smith"},
+	{firstName: "Dennis", lastName: "Williams"},
+	{firstName: "David", lastName: "Black"}
+];
+
+const fullNames = names.map((name) => {
+  return name.firstName + " " + name.lastName;
+});
+
+console.log(fullNames);
+
+
+// for loop
+const animals = ["dog", "cat", "sheep", "rabbit", "monkey", "tiger", "bear", "elephant"];
+
+// Use the length property to replace the condition
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i]);
+}
+
+// ARRAYS in OBJECTS
+const charactrs = [
+  {name: "Ken the Ninja", age: 14},
+  {name: "Master Wooly", age: 100},
+  {name: "Ben the Baby Ninja", age: 5},
+];
+
+for (let i = 0; i < charactrs.length; i++) {
+  console.log("--------------------");  
+  const character = charactrs[i];  
+  console.log(`My name is ${character.name}`);  
+  console.log(`I am ${character.age} years old`);  
+  document.write("<span>...</span>")
+  document.write(`<p>My name is ${character.name}</p>`);  
+  document.write(`<p>I am ${character.age} years old</p>`);  
+
+}

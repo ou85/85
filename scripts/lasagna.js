@@ -3,7 +3,9 @@ const EXPECTED_MINUTES_IN_OVEN = 40;        // The number of minutes it takes to
 var numberOfLayers = 5;
 var actualMinutesInOven = 22;
 
-console.log(`Making lasagna`)
+console.log("----------------")
+console.log(" Making lasagna ")
+console.log("----------------")
 
 // Determines the number of minutes the lasagna still needs to remain in the
 // oven to be properly prepared.
