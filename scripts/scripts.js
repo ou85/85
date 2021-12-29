@@ -183,11 +183,11 @@ console.log(' ');
 console.log('ARRAYS');
 
 let ninjas = ['shaun', 'ryu', 'chun-li'];
-console.log(ninjas);        // => shaun ryu chun-li
-console.log(ninjas[0]);     // => shaun
+console.log(ninjas);                                  // => shaun ryu chun-li
+console.log(ninjas[0]);                               // => shaun
 
 ninjas[1] = 'ken';
-console.log("Ninjas: ", ninjas);        // => shaun ken chun-li
+console.log("Ninjas: ", ninjas);                      // => shaun ken chun-li
 
 
       
@@ -218,9 +218,9 @@ const evenNumbers = numbers.filter((number) => { return number % 2 === 0 });
 console.log(evenNumbers);
 
 const characters = [
-  {id: 1, name:"Ken the Ninja", age: 14},
-  {id: 2, name:"Ben the Baby Ninja", age: 5},
-  {id: 3, name:"Master Wooly", age: 100}
+  {id: 1, name:"Ken the Ninja",       age: 14},
+  {id: 2, name:"Ben the Baby Ninja",  age: 5},
+  {id: 3, name:"Master Wooly",        age: 100}
 ];
 
 // get characters younger than 20, and assign them to the underTwenty constant
@@ -246,10 +246,10 @@ const doubledNumbers = numbs.map((number) => { return number * 2; });
 console.log(doubledNumbers);
 
 const names = [
-  {firstName: "Kate", lastName: "Jones"},
-	{firstName: "John", lastName: "Smith"},
+  {firstName: "Kate",   lastName: "Jones"},
+	{firstName: "John",   lastName: "Smith"},
 	{firstName: "Dennis", lastName: "Williams"},
-	{firstName: "David", lastName: "Black"}
+	{firstName: "David",  lastName: "Black"}
 ];
 
 const fullNames = names.map((name) => {
@@ -272,15 +272,22 @@ const charactrs = [
   {name: "Ken the Ninja", age: 14},
   {name: "Master Wooly", age: 100},
   {name: "Ben the Baby Ninja", age: 5},
+  {name: "Birdie"}
 ];
 
 for (let i = 0; i < charactrs.length; i++) {
   console.log("--------------------");  
   const character = charactrs[i];  
   console.log(`My name is ${character.name}`);  
-  console.log(`I am ${character.age} years old`);  
+ 
   document.write("<span>...</span>")
   document.write(`<p>My name is ${character.name}</p>`);  
-  document.write(`<p>I am ${character.age} years old</p>`);  
-
+    
+  if (character.age === undefined) {
+    console.log("My age is a secret!");
+    document.write("My age is a secret!");
+  } else {
+    console.log(`I am ${character.age} years old`);
+    document.write(`<p>I am ${character.age} years old</p>`); 
+  }
 }
