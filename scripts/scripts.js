@@ -334,6 +334,12 @@ class Mammal {
   greet() {
     console.log("Hello");
   }
+
+  // Adding the info method
+  info() {
+    console.log(`My name is ${this.name}`);   // Using values within methods this.propertyName
+    console.log(`I'm ${this.age} years old`);
+  }
   
 }
 
@@ -344,5 +350,6 @@ console.log(`Age: ${mammal.age}`);
 
 // Call the animal instance's greet method
 mammal.greet();
+mammal.info();
 
 
