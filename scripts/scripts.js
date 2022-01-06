@@ -370,6 +370,12 @@ class Dog extends Mammal {                  // Inherit from the Mammal class
       return this.age * 7;
     }
 }
-const dog = new Dog("Leo", 4, "Chihuahua");
+let dog = new Dog("Leo", 4, "Chihuahua");
 dog.info();                                 // Can use any Mammal class methods but overrides by child class method
-
+const humanAge = dog.getHumanAge();
+document.write(`<h3>Hello!</h3>
+                <p>My name is ${dog.name}</p>
+                <p>I am a ${dog.breed}</p>
+                <p>I am ${dog.age} years old</p>
+                <p>I am ${humanAge} years old in human years</p>`
+);
