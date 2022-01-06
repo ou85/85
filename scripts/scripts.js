@@ -305,15 +305,14 @@ const user11 = {
 user11.greet();
 
 // CONSTRUCTOR
-class Animal {
-  // Add the arguments 「name」and「age」
-  constructor(name, age) {    
+class Animal {  
+  constructor(name, age) {                // Add the arguments 「name」and「age」
     this.name = name;
     this.age = age;
   }
 }
-// Pass the arguments 「"Mocha"」 「8」
-const animal = new Animal("Mocha", 8);
+
+const animal = new Animal("Mocha", 8);     // Pass the arguments 「"Mocha"」 「8」
 
 console.log(`Name: ${animal.name}`);
 console.log(`Age: ${animal.age}`);
@@ -322,23 +321,22 @@ document.write(`<p>Name: ${animal.name}</p>`);
 document.write(`<p>Age: ${animal.age}</p>`);
 document.write(`<p>...</p>`);
 
-// METHOD
+// METHODS
 console.log("METHODS");
 class Mammal {
   constructor(name, age) {
     this.name = name;
     this.age = age;
+  }  
+  
+  greet() {                                    // Adding the greet method
+    console.log("Hello!");
   }
   
-  // Adding the greet method
-  greet() {
-    console.log("Hello");
-  }
-
-  // Adding the info method
-  info() {
+  info() {                                    // Adding the info method
     console.log(`My name is ${this.name}`);   // Using values within methods this.propertyName
-    console.log(`I'm ${this.age} years old`);
+    console.log(`I'm ${this.age} years old`);    
+    this.greet();                             // Calling greet() method within info() method
   }
   
 }
@@ -348,8 +346,6 @@ const mammal = new Mammal("Leo", 3);
 console.log(`Name: ${mammal.name}`);
 console.log(`Age: ${mammal.age}`);
 
-// Call the animal instance's greet method
-mammal.greet();
 mammal.info();
 
 
