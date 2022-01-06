@@ -348,4 +348,8 @@ console.log(`Age: ${mammal.age}`);
 
 mammal.info();
 
-
+// CLASS INHERITANCE
+class Dog extends Mammal {                  // Inherit from the Mammal class
+}
+const dog = new Dog("Leo", 4);
+dog.info();                                 // Can use any Mammal class methods
