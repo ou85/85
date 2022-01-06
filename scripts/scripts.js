@@ -336,7 +336,7 @@ class Mammal {
   info() {                                    // Adding the info method
     console.log(`My name is ${this.name}`);   // Using values within methods this.propertyName
     console.log(`I'm ${this.age} years old`);    
-    this.greet();                             // Calling greet() method within info() method
+    //this.greet();                             // Calling greet() method within info() method
   }
   
 }
@@ -349,7 +349,27 @@ console.log(`Age: ${mammal.age}`);
 mammal.info();
 
 // CLASS INHERITANCE
-class Dog extends Mammal {                  // Inherit from the Mammal class
+class Dog extends Mammal {                  // Inherit from the Mammal class    
+  
+  constructor(name, age, breed) {           // Adding the constructor
+    super(name, age);
+    this.breed = breed;
+  }
+
+  info() {                                  // Overrides parent info() method
+    this.greet();            
+      console.log(`My name is ${this.name}`);           
+      console.log(`I am ${this.breed}`);  
+      console.log(`I'm ${this.age} years old`);            
+                  
+      const humanAge = this.getHumanAge();  // Call the dog instance's getHumanAge method        
+      console.log(`I am ${humanAge} years old in human years`);            
+    }            
+
+    getHumanAge() {                         // Add the getHumanAge method
+      return this.age * 7;
+    }
 }
-const dog = new Dog("Leo", 4);
-dog.info();                                 // Can use any Mammal class methods
+const dog = new Dog("Leo", 4, "Chihuahua");
+dog.info();                                 // Can use any Mammal class methods but overrides by child class method
+
