@@ -462,3 +462,4 @@ const printName = (callback) => {
 printName(() => {
   console.log("His name is Banana.");
 });
+
