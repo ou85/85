@@ -267,6 +267,7 @@ for (let i = 0; i < animals.length; i++) {
   console.log(animals[i]);
 }
 
+
 // ARRAYS in OBJECTS
 document.write(`<h2>## Arrays in Objects</h2>`);
 const charactrs = [
@@ -293,7 +294,9 @@ for (let i = 0; i < charactrs.length; i++) {
   }
 }
 
+
 // OBJECTS and FUNCTIONS
+
 document.write(`<h2>## Objects and Functions</h2>`);
 const user11 = {
   name: "Bob",
@@ -304,7 +307,9 @@ const user11 = {
 
 user11.greet();
 
+
 // CONSTRUCTOR
+
 class Animal {  
   constructor(name, age) {                // Add the arguments 「name」and「age」
     this.name = name;
@@ -321,7 +326,9 @@ document.write(`<p>Name: ${animal.name}</p>`);
 document.write(`<p>Age: ${animal.age}</p>`);
 document.write(`<p>...</p>`);
 
+
 // METHODS
+
 console.log("METHODS");
 class Mammal {
   constructor(name, age) {
@@ -348,7 +355,9 @@ console.log(`Age: ${mammal.age}`);
 
 mammal.info();
 
+
 // CLASS INHERITANCE
+
 class Dog extends Mammal {                  // Inherit from the Mammal class    
   
   constructor(name, age, breed) {           // Adding the constructor
@@ -379,3 +388,77 @@ document.write(`<h3>Hello!</h3>
                 <p>I am ${dog.age} years old</p>
                 <p>I am ${humanAge} years old in human years</p>`
 );
+
+
+// ACCESSING OBJECTS
+
+const cafe = {
+  name: "Windy Cafe",
+  businessHours: {                   // Objects can be used instead of strings and integers as values in an object.
+    opening: "10:00(AM)",
+    closing: "8:00(PM)"
+  },  
+  menus: [
+    "Coffee",
+    "Tea",
+    "Chocolate Cake"
+    ]  
+};
+
+console.log(`----------------------------`);
+console.log(`Name: ${cafe.name}`);
+console.log(`Hours: From ${cafe.businessHours.opening} to ${cafe.businessHours.closing}`);
+console.log(`----------------------------`);
+console.log("Menu Recommendations");
+
+document.write(`<h2>${cafe.name}</h2>                
+                <p>Hours: From ${cafe.businessHours.opening} to ${cafe.businessHours.closing}</p>
+                <p>Menu Recommendations:</p>
+                <p> </p>`
+);
+
+for (let i = 0; i < cafe.menus.length; i++) {
+  console.log(cafe.menus[i]);
+  document.write(`<p>-${cafe.menus[i]}</p>`);
+}
+
+
+// FUNCTIONS CALLBACK
+
+const printKen = () => {
+  console.log("Ken the Ninja");
+};
+
+const printMaster = () => {
+  console.log("Master Wooly");
+};
+
+const call = (callback) => {
+  console.log("Calling the callback function.");
+  callback();
+};
+
+call(printKen);               // Functions that are passed as arguments are called callback functions.
+call(printMaster);
+
+
+// PASSING ARGUMENTS TO CALLBACK FUNCTION
+
+const call2 = (callback) => {
+  callback("Joe", 88);
+};
+call2((name, age) => {
+  console.log(`${name} is ${age} years old.`);
+});
+
+
+// DECLARING THE FUNCTION WITHIN THE ARGUMENT
+
+const printName = (callback) => {
+  console.log("Who is that?");
+  callback();
+};
+
+printName(() => {
+  console.log("His name is Banana.");
+});
