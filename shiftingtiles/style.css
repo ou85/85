@@ -1,0 +1,90 @@
+:root {
+  --bg_main: #091921;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+}
+
+body {
+  font: 1rem/1.3 "Roboto", sans-serif;
+  background: var(--bg_main);
+  color: var(--text_dark);
+}
+
+.container {
+  margin: 10px auto;
+  height: 5%;
+  position: relative;
+  padding: 1em;
+  color: var(--text_light);
+  font-weight: 600;
+  font-size: smaller;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  position: absolute;
+  top: 50%; /* %50 for middle possition */
+  width: 100%;
+  margin: 0 auto 0 auto; /* -60px auto 0 auto; for middle position */
+  font-size: 40px;
+  text-align: left; /* center for middle position */
+  /* color: #fff;*/
+
+  /* Выравнивание по центру блока .back */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.clock ul {
+  margin: 0 auto;
+  list-style: none;
+}
+.clock ul li {
+  display: inline;
+}
+.clock ul li#separator {
+  -moz-animation: myfade 1s ease infinite;
+  -webkit-animation: myfade 1s ease infinite;
+}
+
+.knopka {
+  border: 0px solid var(--darkred); /* #ccc;  рамка*/
+  background: var(--red); /*фон */
+  padding: 0.4em 0.8em; /*отступы внутри */
+  text-decoration: none; /*убрать подчеркивание ссылки */
+  color: var(--text_light);
+  font-weight: 600;
+  font-size: smaller;
+  border-radius: 5px;
+
+  /* Выравнивание по центру блока .back */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.knopka:hover {
+  background: var(
+    --darkred
+  ); /* Цвет ссылки при наведении на нее курсора мыши */
+  border: 2px solid var(--red);
+}
+
+.back {
+  margin: 50px auto;
+  width: 100px;
+  height: 50px;
+  /* background-color: #ccc; */
+  position: relative;
+}
