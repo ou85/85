@@ -1,21 +1,27 @@
-<link rel="stylesheet" type="text/css" href="styles/weather.css" media="screen" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="styles/weather.css"
+  media="screen"
+/>
 
 <div class="back">
-  <a class ="knopka" href="index.html">BACK</a> 
+  <a class="knopka" href="/">BACK</a>
 </div>
 
 <section class="top-banner">
-    <div class="container">
-      <h1 class="heading">Weather</h1>
-      <form>
-        <input type="text" placeholder="Search for a city" autofocus>
-        <button type="submit">SUBMIT</button>
-        <span class="msg"></span>
-      </form>      
-      <div class="clock"> 
-        <div id="webpageclock"></div> <!-- clock output-->
-      </div> 
+  <div class="container">
+    <h1 class="heading">Weather</h1>
+    <form>
+      <input type="text" placeholder="Search for a city" autofocus />
+      <button type="submit">SUBMIT</button>
+      <span class="msg"></span>
+    </form>
+    <div class="clock">
+      <div id="webpageclock"></div>
+      <!-- clock output-->
     </div>
+  </div>
 </section>
 
 <section class="ajax-section">
@@ -24,58 +30,80 @@
   </div>
 </section>
 
-<script src="scripts/weather.js"></script> 
+<script src="scripts/weather.js"></script>
 
+<script type="text/javascript">
+  // Time on Web page
+  var tmonth = new Array(
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  );
 
-<script type="text/javascript">   // Time on Web page          
-  var tmonth = new Array("January","February",
-  "March","April","May",
-  "June","July","August",
-  "September","October","November",
-  "December");
-
-  function GetClock(){
-  var d = new Date();
-  var nmonth = d.getMonth(), 
+  function GetClock() {
+    var d = new Date();
+    var nmonth = d.getMonth(),
       ndate = d.getDate(),
       nyear = d.getYear();
 
-  if(nyear < 1000) 
-    nyear += 1900;
- 
-  var nhour = d.getHours(),
+    if (nyear < 1000) nyear += 1900;
+
+    var nhour = d.getHours(),
       nmin = d.getMinutes(),
       nsec = d.getSeconds();
- 
-  if(nmin <= 9) 
-     nmin = "0" + nmin;
-  
-  if(ndate <= 9) 
-     ndate = "0" + ndate;
 
-  document.getElementById('webpageclock').innerHTML = ""+nhour+":"+nmin+" "+tmonth[nmonth]+" "+ndate+", "+nyear+" ";
-  } 
-  window.onload=function(){
-  GetClock();
-  // setInterval(GetClock,1000);
+    if (nmin <= 9) nmin = "0" + nmin;
+
+    if (ndate <= 9) ndate = "0" + ndate;
+
+    document.getElementById("webpageclock").innerHTML =
+      "" +
+      nhour +
+      ":" +
+      nmin +
+      " " +
+      tmonth[nmonth] +
+      " " +
+      ndate +
+      ", " +
+      nyear +
+      " ";
   }
+  window.onload = function () {
+    GetClock();
+    // setInterval(GetClock,1000);
+  };
 </script>
 
 <footer class="page-footer">
-  <div style="width: 20px; height: 20px; 
-              color: #0000; background: #ff1e42; 
-              border: 3px #c3112d solid; 
-              -moz-border-radius: 10px; 
-              -webkit-border-radius: 10px; 
-              -khtml-border-radius: 10px; 
-              border-radius: 10px; 
-              padding: 5px;">              
-  </div>
+  <div
+    style="
+      width: 20px;
+      height: 20px;
+      color: #0000;
+      background: #ff1e42;
+      border: 3px #c3112d solid;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -khtml-border-radius: 10px;
+      border-radius: 10px;
+      padding: 5px;
+    "
+  ></div>
 
   <div class="container">
-    <small>Made with <span>❤</span> by <a href="http://github.com/" target="_blank">08590</a>
+    <small
+      >Made with <span>❤</span> by
+      <a href="http://github.com/" target="_blank">08590</a>
     </small>
   </div>
 </footer>
- 
-      
