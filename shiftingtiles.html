@@ -17,25 +17,26 @@
 	<div class="container"> 
 		<div class="gallery"></div>
 		<script>
-		$(".gallery").shiftingtiles(
-			(function get_photos() {		
+			let path = "shiftingtiles/gallery/";
+			$(".gallery").shiftingtiles(
+			(function get_photos() {					
 			return [				
-				"shiftingtiles/gallery/0001.jpg",
-				"shiftingtiles/gallery/0002.jpg",
-				"shiftingtiles/gallery/0003.jpg",
-				"shiftingtiles/gallery/0004.jpg",
-				"shiftingtiles/gallery/0005.jpg",
-				"shiftingtiles/gallery/0006.jpg",
-				"shiftingtiles/gallery/0007.jpg",
-				"shiftingtiles/gallery/0008.jpg",
-				"shiftingtiles/gallery/0009.jpg",
-				"shiftingtiles/gallery/0010.jpg",
-				"shiftingtiles/gallery/0011.jpg",
-				"shiftingtiles/gallery/0012.jpg",
-				"shiftingtiles/gallery/0013.jpg",
-				"shiftingtiles/gallery/0014.jpg",
-				"shiftingtiles/gallery/0015.jpg",
-				"shiftingtiles/gallery/0016.jpg",
+				`${path}/0001.jpg`,
+				`${path}/0002.jpg`,
+				`${path}/0003.jpg`,
+				`${path}/0004.jpg`,
+				`${path}/0005.jpg`,
+				`${path}/0006.jpg`,
+				`${path}/0007.jpg`,
+				`${path}/0008.jpg`,
+				`${path}/0009.jpg`,
+				`${path}/0010.jpg`,				
+				`${path}/0011.jpg`,				
+				`${path}/0012.jpg`,				
+				`${path}/0013.jpg`,				
+				`${path}/0014.jpg`,				
+				`${path}/0016.jpg`,				
+				`${path}/0016.jpg`,				
 			];
 			})()
 		);
@@ -45,14 +46,14 @@
  
 	<script type="text/javascript">                 
 
-		var tmonth = new Array(
+		let tmonth = new Array(
 		"January","February",
 		"March","April","May",
 		"June","July","August",
 		"September","October","November",
 		"December");
 
-		var monthNum = new Array(
+		let monthNum = new Array(
 		"01","02",
 		"03","04","05",
 		"06","07","08",
@@ -60,57 +61,56 @@
 		"12"); 
 
 		function GetClock() {          
-		var d = new Date();
-		var nmonth = d.getMonth(), 
+		let d = new Date();
+		let nmonth = d.getMonth(), 
 			ndate = d.getDate(),
 			nyear = d.getYear();
 
-		if(nyear < 1000) 
+		if ( nyear < 1000 ) 
 			nyear += 1900;
 	
-		var nhour = d.getHours(),
+		let nhour = d.getHours(),
 			nmin = d.getMinutes(),
 			nsec = d.getSeconds();
 		
 	
-		if(nmin <= 9) 
+		if ( nmin <= 9 )  
 			nmin = "0" + nmin;
 		
-		if(ndate <= 9) 
+		if ( ndate <= 9 ) 
 			ndate = "0" + ndate;
 
-		if(nsec <= 9) 
+		if ( nsec <= 9 ) 
 			nsec = "0" + nsec;
 		
 		}
 
-
 		// TIME  
 
 		function clockTimer() {                         
-		var date = new Date();  	 
-		var time = [date.getHours(),date.getMinutes()]; 
-		var dayOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-		var days = date.getDay();
+			let date = new Date();  	 
+			let time = [date.getHours(),date.getMinutes()]; 
+			let dayOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+			let days = date.getDay();
 
-		if(time[0] < 10){time[0] = "0"+ time[0];}
-		if(time[1] < 10){time[1] = "0"+ time[1];}
-			
-		var current_time = [time[0],time[1]].join(':');
-		var clock = document.getElementById("clock");
-		var day = document.getElementById("dayOfWeek");
+			if ( time[0] < 10 ) { time[0] = "0"+ time[0]; } 
+			if ( time[1] < 10 ) { time[1] = "0"+ time[1]; }
+				
+			let current_time = [time[0],time[1]].join(':');
+			let clock = document.getElementById("clock");
+			let day = document.getElementById("dayOfWeek");
 
-		clock.innerHTML = current_time;
-		day.innerHTML = dayOfWeek[days];
+			clock.innerHTML = current_time;
+			day.innerHTML = dayOfWeek[days];
 
-		setTimeout("clockTimer()", 1000);
+			setTimeout("clockTimer()", 1000);
 		}
 	
 		window.onload=function() {
-		GetClock();
-		setInterval(GetClock,1000);
-		clockTimer();          
-		lifeSite()                           // Calling lifeSite function from scripts/scripts.js
+			GetClock();
+			setInterval(GetClock,1000);
+			clockTimer();          
+			lifeSite()                           // Calling lifeSite function from scripts/scripts.js
 		}
 
 	</script>    
