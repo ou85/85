@@ -88,3 +88,24 @@ body {
   /* background-color: #ccc; */
   position: relative;
 }
+
+/* clock ================================ */
+.clockpage {
+  margin: auto;
+  max-width: 500px;
+  min-width: 100px;
+  /* background: white; */
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 32px;
+  padding: 10px;
+  font-weight: bold;
+  border-top: 0.2rem solid #55c49f;
+  margin-top: 3rem;
+}
+
+#dayOfWeek {
+  display: block;
+  font-weight: normal;
+  font-size: 18px;
+}
