@@ -15,7 +15,6 @@ input.addEventListener("input", (event) => {
 });
 */
 
-
 // Same as above but use arrow
 // getDescription = (text) => {console.log(text); return text.substring(0, 10);}
 
@@ -23,17 +22,16 @@ input.addEventListener("input", (event) => {
 // getDescription = (text) => text.substring(0, 10);
 
 // or even more simplified
-getDescription = text => text.substring(0, 10);
+getDescription = (text) => text.substring(0, 10);
 
 input.addEventListener("input", (event) => {
-    output.textContent = getDescription(event.currentTarget.value);
+  output.textContent = getDescription(event.currentTarget.value);
 });
 
-let age = prompt("How old are you", 18);
+// let age = prompt("How old are you", 18);
 
-let welcome = (age < 18) ?
-  () => alert('Hi') :
-  () => alert("Hello!");
+// let welcome = (age < 18) ?
+//   () => alert('Hi') :
+//   () => alert("Hello!");
 
-welcome();
-
+// welcome();

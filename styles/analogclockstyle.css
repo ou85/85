@@ -1,144 +1,133 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 :root {
-    --bg_main: #0a1f44;
-    --text_light: #fff;
-    --text_med: #53627c;
-    --text_dark: #1e2432;
-    --red: #ff1e42;
-    --darkred: #c3112d;
-    --orange: #ff8c00;
-  }
+  --bg_main: #0a1f44;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+}
 
-body
-{
-/* display: flex; */   
-    justify-content: center;
-    align-items: center;    
-    min-height: 100vh;
-    background: #091921;
+body {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #091921;
 }
 .container {
-    margin: 50px auto;
-    width: 100%;
-    height: 500px;
-    /* background-color: #ccc; */   /* другой цвет для проверки блока */
-    position: relative;
+  margin: 50px auto;
+  width: 100%;
+  height: 500px;
+  /* background-color: #ccc; */ /* другой цвет для проверки блока */
+  position: relative;
 }
 
-.clock
-{
-    width:350px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(https://user-images.githubusercontent.com/42720361/80282419-a293a400-8711-11ea-81c7-1c44e2980db2.png);
-    background-size: cover;
-    border: 16px solid #91921;
-    border-radius: 50%;
-    box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
-                inset 0 -15px 15px rgba(255,255,255,0.05),
-                0 15px 15px rgba(0,0,0,0.3),
-                inset 0 15px 15px rgba(0,0,0,0.3);
+.clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://user-images.githubusercontent.com/42720361/80282419-a293a400-8711-11ea-81c7-1c44e2980db2.png);
+  background-size: cover;
+  border: 16px solid #91921;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
+    inset 0 15px 15px rgba(0, 0, 0, 0.3);
 
-/* Выравнивание по центру блока .container */
-    position: absolute;
-         top: 50%;
-        left: 50%;
-     z-index: 1;
-   transform: translate(-50%, -50%);
-
+  /* Выравнивание по центру блока .container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
 }
-.clock:before
-{
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: #fff;
-    border-radius: 50%;
-    z-index: 10000;
+.clock:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10000;
 }
 .clock .hour,
 .clock .min,
-.clock .sec
-{
-    position: absolute;
+.clock .sec {
+  position: absolute;
 }
-.clock .hour, .hr
-{
- width: 160px;
- height: 160px;
+.clock .hour,
+.hr {
+  width: 160px;
+  height: 160px;
 }
-.clock .min, .mn
-{
- width: 190px;
- height: 190px;
+.clock .min,
+.mn {
+  width: 190px;
+  height: 190px;
 }
-.clock .sec, .sc
-{
- width: 230px;
- height: 230px;
+.clock .sec,
+.sc {
+  width: 230px;
+  height: 230px;
 }
-.hr, .mn, .sc
-{
-    display: flex;
-    justify-content: center;
-    /*align-items: center;*/
-    position: absolute;
-    border-radius: 50%;
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  position: absolute;
+  border-radius: 50%;
 }
-.hr:before
-{
-  content: '';
-    position: absolute;
-    width: 8px;
-    height: 80px;
-    background: #ff105e;
-    z-index: 10;
-    border-radius: 6px 6px 0 0;
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #ff105e;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
 }
-.mn:before
-{
-  content: '';
-    position: absolute;
-    width: 4px;
-    height: 90px;
-    background: #fff;
-    z-index: 11;
-    border-radius: 6px 6px 0 0;
+.mn:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background: #fff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
 }
-.sc:before
-{
-  content: '';
-    position: absolute;
-    width: 2px;
-    height: 150px;
-    background: #ff105e;
-    z-index: 12;
-    border-radius: 6px 6px 0 0;
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #ff105e;
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
 }
-span
-{
-  content: '';
+span {
+  content: "";
   display: block;
   position: absolute;
   left: 50%;
   width: 9%;
   height: 4px;
   z-index: 25px;
-  background: transparent;  
+  background: transparent;
   transform-origin: left;
   animation: animate 3s linear infinite;
 }
-span:after
-{
-  content:'';
+span:after {
+  content: "";
   position: absolute;
   width: 8px;
   height: 25px;
@@ -148,46 +137,44 @@ span:after
   right: -8px;
   box-shadow: 0 0 20px blue;
 }
-@keyframes animate
-{
-  0%
-  {
+@keyframes animate {
+  0% {
     transform: rotate(0deg);
   }
-  100%
-  {
-    transform: rotate(360deg);  
+  100% {
+    transform: rotate(360deg);
   }
 }
 
 .knopka {
-    border:0px solid var(--darkred);  /* #ccc;  рамка*/    
-    background: var(--red);           /*фон */   
-    padding: .4em .8em;               /*отступы внутри */   
-    text-decoration: none;            /*убрать подчеркивание ссылки */  
-    color: var(--text_light);
-    font: 1rem/1.3 "Roboto", sans-serif; 
-    font-weight: 600;
-    font-size: smaller;
-    border-radius: 5px;
+  border: 0px solid var(--darkred); /* #ccc;  рамка*/
+  background: var(--red); /*фон */
+  padding: 0.4em 0.8em; /*отступы внутри */
+  text-decoration: none; /*убрать подчеркивание ссылки */
+  color: var(--text_light);
+  font: 1rem/1.3 "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: smaller;
+  border-radius: 5px;
 
-    /* Выравнивание по центру блока .back */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
+  /* Выравнивание по центру блока .back */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.knopka:hover {
+  background: var(
+    --darkred
+  ); /* Цвет ссылки при наведении на нее курсора мыши */
+  border: 2px solid var(--red);
+}
 
-  }
-  .knopka:hover {
-    background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
-    border:2px solid var(--red);
-  }  
-  
-  .back{ 
-    margin: 50px auto;
-    width: 100px;
-    height: 50px;
-    /* background-color: #ccc; */
-    position: relative;
-  } 
+.back {
+  margin: 50px auto;
+  width: 100px;
+  height: 50px;
+  /* background-color: #ccc; */
+  position: relative;
+}
