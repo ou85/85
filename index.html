@@ -15,7 +15,7 @@
         <a href="react_babel.html">JSX</a>
         <a href="indexmoz.html">mozilla</a>
         <a href="ellipsis.html">ellipsis</a>
-        <a href="shiftingtiles/index.html">shiftingtiles</a>
+        <a href="shiftingtiles/shiftingtiles.html">shiftingtiles</a>
         <!-- 
         <a href="https://maps.googleapis.com/maps/api/timezone/json?location=49.283436,%20-123.130429&timestamp=1478880000&key=AIzaSyAr-BQIdMgSKXacJH4MAsI4NDtNSJiwiVg">time</a>
         -->
@@ -130,7 +130,10 @@
 
         <br></br> 
 
-        <script type="text/javascript">                 // Time on Web page          
+        <!-- Time on Web page   -->
+
+        <script type="text/javascript">                 
+
           var tmonth = new Array("January","February",
             "March","April","May",
             "June","July","August",
@@ -181,7 +184,9 @@
             document.getElementById('webpagetime').innerHTML = ""+nhour+":"+nmin+":"+nsec+"";
           }
 
-          function clockTimer() {                  // TIME         
+          // TIME  
+
+          function clockTimer() {                         
             var date = new Date();  
             // var time = [date.getHours(),date.getMinutes(),date.getSeconds()]; // |[0] = Hours| |[1] = Minutes| |[2] = Seconds|
             var time = [date.getHours(),date.getMinutes()]; // |[0] = Hours| |[1] = Minutes|
@@ -207,6 +212,7 @@
             clockTimer();          
             lifeSite()                           // Calling lifeSite function from scripts/scripts.js
           }
+          
         </script>  
 
         <div id="webpageclock"    style="font:14pt Arial; color:#FF0000;"></div> 
@@ -226,7 +232,8 @@
       <p>on GitHub: <span id="life_site"></span></p>
     </div>
 
-    <!-- clock widget start -->
+    <!-- Analog clock widget start -->
+
     <script type="text/javascript"> 
       var css_file=document.createElement("link"); 
       css_file.setAttribute("rel","stylesheet"); 
