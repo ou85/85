@@ -11,9 +11,18 @@
 }
 
 body {
-  font: 1.1rem/1.3 "Roboto", sans-serif;
   background: var(--bg_main);
-  color: var(--text_dark);
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  border-top: 0.2rem solid #55c49f;
+}
+
+a:visited {
+  color: var(--text_light); /* Цвет текста */
 }
 
 .container {
@@ -23,43 +32,11 @@ body {
   padding: 1em;
   color: var(--text_light);
   font-weight: 600;
-  /* font-size: smaller; */
   text-align: center;
   position: absolute;
   left: 50%;
   z-index: 1;
   transform: translate(-50%, -50%);
-}
-
-.knopka {
-  border: 0px solid var(--clock); /* #ccc;  рамка*/
-  /*background: var(--red); /*фон */
-  background: var(--clock-darker); /*фон */
-  padding: 0.4em 0.8em; /*отступы внутри */
-  text-decoration: none; /*убрать подчеркивание ссылки */
-  color: var(--text_light);
-  font-weight: 600;
-  font-size: smaller;
-  border-radius: 5px;
-
-  /* Выравнивание по центру блока .back */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-}
-.knopka:hover {
-  background: var(--clock); /* Цвет ссылки при наведении на нее курсора мыши */
-  border: 0.2rem solid var(--clock-darker);
-}
-
-.back {
-  margin: 50px auto;
-  width: 100px;
-  height: 50px;
-  /* background-color: #ccc; */
-  position: relative;
 }
 
 /* clock ================================ */
@@ -67,17 +44,15 @@ body {
   margin: auto;
   max-width: 500px;
   min-width: 100px;
-  /* background: white; */
   text-align: center;
   font-family: "Titillium Web", sans-serif;
   font-size: 3rem;
   padding: 2rem;
   padding-top: 5rem;
   font-weight: bold;
-  /* border-top: 0.2rem solid #55c49f; */
-  /* margin-top: 3rem; */
   border-bottom: 0.2rem solid #55c49f;
   margin-bottom: 2rem;
+  /* background: white; */
 }
 
 #dayOfWeek {
