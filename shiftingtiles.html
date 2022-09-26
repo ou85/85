@@ -49,6 +49,16 @@
         for (let step = 0; step < 5; step++) {
           console.log("Walking east one step. Or may be Random...");
         }
+
+        function pic() {
+          let out = "";
+          for (let i = 1; i <= 9; i++) {
+            out += `000${i}.jpg `;
+          }
+          return out;
+        }
+        console.log(`Pics are: ${pic()}`);
+
         $(".gallery").shiftingtiles(
           (function get_photos() {
             return [
