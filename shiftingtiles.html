@@ -35,9 +35,7 @@
 
   <body>
     <div class="container">
-      <!-- clock.js calling -->
       <div class="clockpage">
-        <!-- <span id="clock"></span> -->
         <a id="clock" href="index.html"></a>
         <span id="dayOfWeek"></span>
       </div>
@@ -47,8 +45,8 @@
       <script>
         let path = "shiftingtiles/gallery";
         let photos = [];
-
-        for (let i = 1; i <= 54; i++) {
+        // 54 is an amount of photos in folder
+        for (let i = 1; i <= 65; i++) {
           photos.push(`${path}/${i}.jpg`);
         }
         console.log(photos);
