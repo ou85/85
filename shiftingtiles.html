@@ -46,10 +46,10 @@
         let path = "shiftingtiles/gallery";
         let webPath = "https://picsum.photos/900";
         let photos = [];
-        // 54 is an amount of photos in folder
-        for (let i = 600; i <= 699; i++) {
-          // photos.push(`${path}/${i}.jpg`);
-          photos.push(`${webPath}/${i}`);
+        for (let i = 600; i <= 700; i++) {
+          webPath != undefined
+            ? photos.push(`${webPath}/${i}`)
+            : photos.push(`${path}/${i}.jpg`);
         }
         console.log(photos);
 
