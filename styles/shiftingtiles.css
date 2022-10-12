@@ -48,18 +48,18 @@ a:visited {
   min-width: 100px;
   text-align: center;
   font-family: "Titillium Web", sans-serif;
-  font-size: 3rem;
-  padding: 1rem;
+  font-size: 2rem; /* 3rem */
+  padding: 0.2rem; /*1rem; */
   font-weight: bold;
   border-bottom: 0.2rem solid #55c49f;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* 2rem */
   /* background-color: #2f6d58; */
 }
 
 #dayOfWeek {
   display: block;
   font-weight: normal;
-  font-size: 1.6rem;
+  font-size: 1.1rem; /* 1.6rem */
 }
 
 .footer {
