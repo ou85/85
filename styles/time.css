@@ -1,143 +1,140 @@
 :root {
-    --bg_main: #0a1f44;
-    --text_light: #fff;
-    --text_med: #53627c;
-    --text_dark: #1e2432;
-    --red: #ff1e42;
-    --darkred: #c3112d;
-    --orange: #ff8c00;
-  }
-  
-  .container {
-    margin: 10px auto;
-    width: 50%;
-    height: 500px;
-    /* background-color: #ccc; */   /* for div tetst */
-    position: relative;
-    padding: 1em;  
-    color: var(--text_light);   
-    font-weight: 600;
-    font-size: smaller;
-    text-align: center;
-  }
-  
-  .clock {
-    position: absolute;
-    top: 50%;                     /* %50 for middle possition */
-    width: 100%;
-    margin: 0 auto 0 auto;        /* -60px auto 0 auto; for middle position */
-    font-size: 40px;  
-    text-align: left;            /* center for middle position */
-    /* color: #fff;*/
-      
-    /* Выравнивание по центру блока .back */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-  
-  }
-  .clock ul {
-    margin: 0 auto;
-    list-style: none;
-  }
-  .clock ul li {
-    display: inline;
-  }
-  .clock ul li#separator {
-    -moz-animation: myfade 1s ease infinite;
-    -webkit-animation: myfade 1s ease infinite;
-  }
-  
-  
-  .knopka {
-    border:0px solid var(--darkred);  /* #ccc;  рамка*/    
-    background: var(--red);           /*фон */   
-    padding: .4em .8em;               /*отступы внутри */   
-    text-decoration: none;            /*убрать подчеркивание ссылки */  
-    color: var(--text_light); 
-    font-weight: 600;
-    font-size: smaller;
-    border-radius: 5px;
-  
-    /* Выравнивание по центру блока .back */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    
-  }
-  .knopka:hover {
-    background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
-    border:2px solid var(--red);
-  }    
-  
-  .back{ 
-    margin: 50px auto;
-    width: 100px;
-    height: 50px;
-    /* background-color: #ccc; */
-    position: relative;
-  } 
-  
-  /* Animation */
-  @-webkit-keyframes myfade {
-    0% {
-      opacity: 1.0;
-    }
-    50% {
-      opacity: 0; 
-    } 
-    100% {
-      opacity: 1.0;
-    }   
-  }
-  
-  @-moz-keyframes myfade {
-    0% {
-      opacity: 1.0;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1.0;
-    };
-  }
-  
-  html {
-    height: 100%;
-  }
-  
-  body {
-    /* background: #1f1f1f; */
-    font: 1rem/1.3 "Roboto", sans-serif; 
-    background: var(--bg_main);
-    color: var(--text_dark); 
-  }
-  
-  table {
-    border-collapse: collapse;
-    /*убираем пустые промежутки между ячейками*/
-    border: 0px solid grey;
-    /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
-    align-self: center;     
-  }
+  --bg_main: #0a1f44;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+}
 
-  th {     
-    border: 0px solid grey;
-  }
-  
-  tr {
-    border: 0px solid grey;
-    height: 120px;
-    vertical-align: top;  
-  }
-  
-  td {
-    border: 0px solid grey;     
-  }
+.container {
+  margin: 10px auto;
+  width: 50%;
+  height: 500px;
+  /* background-color: #ccc; */ /* for div tetst */
+  position: relative;
+  padding: 1em;
+  color: var(--text_light);
+  font-weight: 600;
+  font-size: smaller;
+  text-align: center;
+}
 
-  
+.clock {
+  position: absolute;
+  top: 50%; /* %50 for middle possition */
+  width: 100%;
+  margin: 0 auto 0 auto; /* -60px auto 0 auto; for middle position */
+  font-size: 40px;
+  text-align: left; /* center for middle position */
+  /* color: #fff;*/
+
+  /* Выравнивание по центру блока .back */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.clock ul {
+  margin: 0 auto;
+  list-style: none;
+}
+.clock ul li {
+  display: inline;
+}
+.clock ul li#separator {
+  -moz-animation: myfade 1s ease infinite;
+  -webkit-animation: myfade 1s ease infinite;
+}
+
+.knopka {
+  border: 0px solid var(--darkred); /* #ccc;  рамка*/
+  border-radius: 5px;
+  background: var(--red); /*фон */
+  padding: 0.4em 0.8em; /*отступы внутри */
+  text-decoration: none; /*убрать подчеркивание ссылки */
+  color: var(--text_light);
+  font-weight: 600;
+  font-size: smaller;
+
+  /* Выравнивание по центру блока .back */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.knopka:hover {
+  background: var(
+    --darkred
+  ); /* Цвет ссылки при наведении на нее курсора мыши */
+  border: 2px solid var(--red);
+}
+
+.back {
+  margin: 50px auto;
+  width: 100px;
+  height: 50px;
+  /* background-color: #ccc; */
+  position: relative;
+}
+
+/* Animation */
+@-webkit-keyframes myfade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes myfade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  /* background: #1f1f1f; */
+  font: 1rem/1.3 "Roboto", sans-serif;
+  background: var(--bg_main);
+  color: var(--text_dark);
+}
+
+table {
+  border-collapse: collapse;
+  /*убираем пустые промежутки между ячейками*/
+  border: 0px solid grey;
+  /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+  align-self: center;
+}
+
+th {
+  border: 0px solid grey;
+}
+
+tr {
+  border: 0px solid grey;
+  height: 120px;
+  vertical-align: top;
+}
+
+td {
+  border: 0px solid grey;
+}
