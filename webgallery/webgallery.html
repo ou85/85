@@ -1,0 +1,29 @@
+<!-- I want you to write code for a web page. On the main screen there is a grid of
+12 photos. each cell has size 300*200 px. Each cell must change randomly in
+period from 5 to 30 sec. There are 1000 Pictures in a folder "Pictures" in the
+main app root. All must be written only using JavaScript, HTML, CSS and MUI.
+Grid do not change the size when browser width changes. Add clock with local
+time on the top middle of the page. Comments must be in English. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tiles</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.muicss.com/mui-0.11.0/css/mui.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="clockpage">
+        <a id="clock" href="../index.html"></a>
+        <!-- <span id="dayOfWeek"></span> -->
+        <a id="dayOfWeek" href="https://picsum.photos/900/600"></a>
+      </div>
+      <div id="photo-grid"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
