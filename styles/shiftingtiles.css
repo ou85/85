@@ -19,11 +19,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-<<<<<<< HEAD
   border-top: 0.2rem solid #55c49f;
-=======
-  border-up: 0.2rem solid #55c49f;
->>>>>>> 58d7a9de61b82cf0bd8c2d2a7320bd9552070132
 }
 
 a:visited {
