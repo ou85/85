@@ -19,7 +19,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  border-up: 0.2rem solid #55c49f;
+  border-top: 0.2rem solid #55c49f;
 }
 
 a:visited {
