@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Refreshing Div with Image</title>
+    <style>
+      .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+        position: relative;
+        animation-name: move;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    </style>
+    <script>
+      function refreshDiv() {
+        var img = document.getElementById("img");
+        var src = img.src;
+        var date = new Date();
+        var time = date.getTime();
+        var random = Math.floor(Math.random() * 6) + 5;
+        var interval = random * 1000;
+        setTimeout(function () {
+          img.src = src + "?time=" + time;
+          refreshDiv();
+        }, interval);
+      }
+    </script>
+  </head>
+  <body onload="refreshDiv()">
+    <div class="center">
+      <img id="img" src="https://source.unsplash.com/300x200/?nature,landscape"
+      alt="Nature Landscape" width="300" height="200"
+    </div>
+  </body>
+</html>

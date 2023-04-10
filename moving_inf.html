@@ -1,0 +1,133 @@
+<!-- To create an infinite picture flow from left to right, you can use CSS
+animations and the animation-iteration-count property set to infinite. Here is
+an example of how to create an HTML page with an infinite picture flow from left
+to right: -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Infinite Picture Flow</title>
+    <script>
+      function refreshDiv() {
+        var img = document.getElementById("img");
+        var src = img.src;
+        var date = new Date();
+        var time = date.getTime();
+        var random = Math.floor(Math.random() * 6) + 5;
+        // var interval = random * 1000;
+        var interval = 30 * 1000;
+        setTimeout(function () {
+          img.src = src + "?time=" + time;
+          refreshDiv();
+        }, interval);
+      }
+    </script>
+    <style>
+      :root {
+        --bg_main: #091921;
+        --text_light: #fff;
+        --text_med: #53627c;
+        --text_dark: #1e2432;
+        --red: #ff1e42;
+        --darkred: #c3112d;
+        --orange: #ff8c00;
+        --clock: #55c49f;
+        --clock-darker: #2f6d58;
+      }
+      body {
+        background: var(--bg_main);
+        font: 1rem/1.3 "Roboto", sans-serif;
+      }
+      .container {
+        border: 3px solid var(--bg_main);
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: flow 160s linear infinite;
+        animation-direction: reverse;
+      }
+      .image2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: flow 122s linear infinite;
+        animation-direction: reverse;
+      }
+      .image3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: flow 142s linear infinite;
+        animation-direction: reverse;
+      }
+
+      @keyframes flow {
+        from {
+          left: -100%;
+        }
+        to {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body onload="refreshDiv()">
+    <div style="height: 100vh; margin: auto">
+      <div class="container">
+        <img
+          id="img"
+          class="image"
+          src="https://source.unsplash.com/300x201/?nature,landscape"
+          alt="Nature Landscape"
+          width="400"
+          height="200"
+        />
+      </div>
+      <div class="container">
+        <img
+          id="img"
+          class="image2"
+          src="https://source.unsplash.com/300x200/?nature,landscape"
+          alt="Nature Landscape"
+          width="400"
+          height="200"
+        />
+      </div>
+      <div class="container">
+        <img
+          id="img"
+          class="image3"
+          src="https://source.unsplash.com/300x202/?nature,landscape"
+          alt="Nature Landscape"
+          width="400"
+          height="200"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- The .container rule is used to define the CSS for the container div. The width:
+100%; property is used to set the width of the container to 100% of the parent
+element. The height: 200px; property is used to set the height of the container
+to 200 pixels. The overflow: hidden; property is used to hide the overflow of
+the container. The position: relative; property is used to set the position of
+the container to relative. The .image rule is used to define the CSS for the
+image. The position: absolute; property is used to set the position of the image
+to absolute. The top: 0; and left: 0; properties are used to set the position of
+the image to the top left corner of the container. The animation: flow 10s
+linear infinite; property is used to set the animation of the image. The flow is
+the name of the animation. The 10s is the duration of the animation. The linear
+is the timing function of the animation. The infinite is the number of times the
+animation should repeat. The @keyframes rule is used to define the animation.
+The from is the starting point of the animation. The left: -100%; is the
+position of the image at the starting point. The to is the ending point of the
+animation. The left: 100%; is the position of the image at the ending point. I
+hope this helps! -->

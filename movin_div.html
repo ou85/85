@@ -1,0 +1,100 @@
+<!-- To move a div from left to right in HTML, you can use CSS animations. Here is an
+example of how to create an HTML page with a div that moves from left to right
+in 10 seconds: -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moving Div with Image</title>
+    <script>
+      function refreshDiv() {
+        var img = document.getElementById("img");
+        var src = img.src;
+        var date = new Date();
+        var time = date.getTime();
+        var random = Math.floor(Math.random() * 6) + 5;
+        var interval = random * 1000;
+        setTimeout(function () {
+          img.src = src + "?time=" + time;
+          refreshDiv();
+        }, interval);
+      }
+    </script>
+    <style>
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: auto;
+        width: 80%;
+        border: 3px solid green;
+        padding: 10px;
+        position: relative;
+        animation-name: move;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+        /* animation: 3s linear 1s infinite running slidein; */
+        /* animation-direction: alternate; */
+      }
+
+      @keyframes move {
+        from {
+          left: 0;
+        }
+        to {
+          left: calc(100% + 10px);
+        }
+      }
+    </style>
+  </head>
+  <body onload="refreshDiv()">
+    <div style="width: 80%">
+      <div class="center">
+        <img
+          id="img"
+          src="https://source.unsplash.com/300x205/?nature,landscape"
+          alt="Nature Landscape"
+          width="300"
+          height="200"
+        />
+
+        <img
+          id="img"
+          src="https://source.unsplash.com/300x220/?nature,landscape"
+          alt="Nature Landscape"
+          width="300"
+          height="200"
+        />
+        <img
+          id="img"
+          src="https://source.unsplash.com/300x206/?nature,landscape"
+          alt="Nature Landscape"
+          width="300"
+          height="200"
+        />
+        <img
+          id="img"
+          src="https://source.unsplash.com/300x240/?nature,landscape"
+          alt="Nature Landscape"
+          width="300"
+          height="200"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- The position: relative; property is used to set the position of the div to
+relative so that it can be moved. The animation-name: move; property is used to
+set the name of the animation to move. The animation-duration: 10s; property is
+used to set the duration of the animation to 10 seconds. The
+animation-iteration-count: infinite; property is used to set the number of times
+the animation should repeat to infinite. The animation-direction: alternate;
+property is used to set the direction of the animation to alternate. The
+@keyframes move rule is used to define the animation. The from {left: 0;} rule
+is used to set the starting position of the div to the left edge of the screen.
+The to {left: calc(100% - 300px);} rule is used to set the ending position of
+the div to the right edge of the screen minus the width of the div. I hope this
+helps! -->
