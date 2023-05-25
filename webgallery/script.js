@@ -54,9 +54,22 @@ function getNumberOfFiles() {
     .catch((error) => console.error(error));
 }
 
+function fadeIn(element) {
+  let opacity = 0;
+  element.style.display = "block";
+  const fadeEffect = setInterval(() => {
+    if (opacity < 1) {
+      opacity += 0.1;
+      element.style.opacity = opacity;
+    } else {
+      clearInterval(fadeEffect);
+    }
+  }, 1000 / 100);
+}
+
 getNumberOfFiles();
 
-let amountOfPicures = 135; // <========================= Amount of pictures in folder "Pictures"
+let amountOfPicures = 140; // <========================= Amount of pictures in folder "Pictures"
 
 const photoGrid = document.getElementById("photo-grid");
 
@@ -69,6 +82,8 @@ function changeRandomImage() {
   const randomIndex = getRandomInt(0, cells.length - 1);
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
+  // Fade out current image
+  fadeIn(image);
   const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
@@ -89,4 +104,3 @@ for (let i = 0; i < 9; i++) {
   cell.appendChild(image);
   photoGrid.appendChild(cell);
 }
-
