@@ -83,12 +83,11 @@ function changeRandomImage() {
   const randomIndex = getRandomInt(0, cells.length - 1);
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
-  
   const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
   // Fade out current image
-  fadeIn(image);
+  // fadeIn(image);
 }
 
 setInterval(changeRandomImage, getRandomInt(5000, 10000));
