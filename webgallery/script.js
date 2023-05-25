@@ -58,39 +58,40 @@ function getNumberOfFiles() {
 getNumberOfFiles()
   .then((pics) => {
     console.log("Amount of pics: " + pics);
-
     let amountOfPicures = pics;
-    const photoGrid = document.getElementById("photo-grid");
+  });
 
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+let amountOfPicures = 135;
 
-    function changeRandomImage() {
-      const cells = photoGrid.querySelectorAll(".cell");
-      const randomIndex = getRandomInt(0, cells.length - 1);
-      const cell = cells[randomIndex];
-      const image = cell.querySelector("img");
-      const randomImageIndex = getRandomInt(1, amountOfPicures);
-      // const randomImageIndex = getRandomInt(1, 135);
-      const imageUrl = `Pictures/${randomImageIndex}.jpg`;
-      image.setAttribute("src", imageUrl);
-    }
+const photoGrid = document.getElementById("photo-grid");
 
-    setInterval(changeRandomImage, getRandomInt(5000, 10000));
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-    // Load initial images
-    for (let i = 0; i < 9; i++) {
-      const cell = document.createElement("div");
-      cell.classList.add("cell");
+function changeRandomImage() {
+  const cells = photoGrid.querySelectorAll(".cell");
+  const randomIndex = getRandomInt(0, cells.length - 1);
+  const cell = cells[randomIndex];
+  const image = cell.querySelector("img");
+  const randomImageIndex = getRandomInt(1, amountOfPicures);
+  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+  image.setAttribute("src", imageUrl);
+}
 
-      const image = document.createElement("img");
-      const randomImageIndex = getRandomInt(1, amountOfPicures);
-      // const randomImageIndex = getRandomInt(1, 135);
-      const imageUrl = `Pictures/${randomImageIndex}.jpg`;
-      image.setAttribute("src", imageUrl);
+setInterval(changeRandomImage, getRandomInt(5000, 10000));
 
-      cell.appendChild(image);
-      photoGrid.appendChild(cell);
-    }
-});
+// Load initial images
+for (let i = 0; i < 9; i++) {
+  const cell = document.createElement("div");
+  cell.classList.add("cell");
+
+  const image = document.createElement("img");
+  const randomImageIndex = getRandomInt(1, amountOfPicures);
+  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+  image.setAttribute("src", imageUrl);
+
+  cell.appendChild(image);
+  photoGrid.appendChild(cell);
+}
+
