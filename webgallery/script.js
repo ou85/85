@@ -1,9 +1,6 @@
-// Note: This assumes that all of your images are named "imgX.jpg" where X is a number from 0 to 999,
-// and that they are all located in the "Pictures" folder in the same directory as your HTML file.
-// If your file names or folder structure is different,
-// you will need to modify the JavaScript code accordingly.
 
-// Set up clock
+// Set up the clock
+
 function updateClock() {
   const clockElement = document.getElementById("clock");
   const day = document.getElementById("dayOfWeek");
@@ -20,7 +17,6 @@ function updateClock() {
   const timeString = now.toLocaleTimeString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
-    // weekday: "short",
   });
   let days = now.getDay();
   clockElement.innerText = timeString;
@@ -29,11 +25,7 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-// Set up photo grid
-
-// Note that this function assumes that you have already authenticated the user and loaded the Google Drive API client library.
-// The function uses the gapi.client.drive.files.list() method to list all JPEG image files in the "Pictures" folder and returns the number of files.
-// The number is then printed to the console using console.log().
+// Set up the photo grid
 
 function getNumberOfFiles() {
   const folderPath = "/webgallery/Pictures";
@@ -101,5 +93,4 @@ getNumberOfFiles()
       cell.appendChild(image);
       photoGrid.appendChild(cell);
     }
-
 });
