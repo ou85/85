@@ -64,8 +64,8 @@ function getNumberOfFiles() {
 
 let pics = getNumberOfFiles();
 console.log(pics); // Output should be: 130
-let amountOfPicures = 130; // <========================= Amount of pictures in folder "Pictures"
-pics != undefined || null ? (amountOfPicures = pics) : (amountOfPicures = 130);
+let amountOfPicures = 131; // <========================= Amount of pictures in folder "Pictures"
+pics != undefined || null ? (amountOfPicures = pics) : (amountOfPicures = 131);
 // const amountOfPicures = 130; // <========================= Amount of pictures in folder "Pictures"
 const photoGrid = document.getElementById("photo-grid");
 
@@ -81,6 +81,22 @@ function changeRandomImage() {
   const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
+}
+
+function handleDivUpdate() {
+  // Start the fade-out effect
+  div.style.opacity = 1;
+  let fadeEffect = setInterval(function () {
+    if (!div.style.opacity) {
+      div.style.opacity = 1;
+    }
+    if (div.style.opacity < 0.1) {
+      clearInterval(fadeEffect);
+      div.style.display = "none";
+    } else {
+      div.style.opacity -= 0.1;
+    }
+  }, 1000 / 10);
 }
 
 setInterval(changeRandomImage, getRandomInt(5000, 10000));
