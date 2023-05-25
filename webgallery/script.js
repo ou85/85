@@ -63,10 +63,10 @@ function getNumberOfFiles() {
 }
 
 let pics = getNumberOfFiles();
-console.log(pics); // Output should be: 130
-let amountOfPicures = 131; // <========================= Amount of pictures in folder "Pictures"
-pics != undefined || null ? (amountOfPicures = pics) : (amountOfPicures = 131);
-// const amountOfPicures = 130; // <========================= Amount of pictures in folder "Pictures"
+console.log("Amount of pics should be: " + pics); // Output should be: 135
+let amountOfPicures = 135; // <========================= Amount of pictures in folder "Pictures"
+pics != undefined || null || 0 ? (amountOfPicures = pics) : amountOfPicures;
+console.log("Amount of pics in rotation: " + amountOfPicures);
 const photoGrid = document.getElementById("photo-grid");
 
 function getRandomInt(min, max) {

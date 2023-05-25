@@ -27,7 +27,7 @@ a:hover {
 a:visited {
   color: var(--text_light); /* Цвет текста */
 }
-.container {
+.container1 {
   margin: 1px auto;
   height: 1%;
   position: relative;
@@ -41,6 +41,13 @@ a:visited {
   z-index: 1;
   transform: translate(-50%, -50%);
   /* background-color: #53627c; */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh; /* Set the height of the container to full viewport height */
 }
 
 /* clock ================================ */
