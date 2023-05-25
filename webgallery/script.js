@@ -57,14 +57,15 @@ function getNumberOfFiles() {
 function fadeIn(element) {
   let opacity = 0;
   element.style.display = "block";
+  element.style.opacity = opacity;
   const fadeEffect = setInterval(() => {
     if (opacity < 1) {
-      opacity += 0.1;
+      opacity += 0.2;
       element.style.opacity = opacity;
     } else {
       clearInterval(fadeEffect);
     }
-  }, 1000 / 100);
+  }, 1000 / 10);
 }
 
 getNumberOfFiles();
@@ -83,7 +84,7 @@ function changeRandomImage() {
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
   // Fade out current image
-  // fadeIn(image);
+  fadeIn(image);
   const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
@@ -96,11 +97,17 @@ for (let i = 0; i < 9; i++) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
 
+  const link = document.createElement("a");
   const image = document.createElement("img");
   const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl); 
+  link.setAttribute("href", imageUrl);
+  // Random picture link
+  // link.setAttribute("href", "https://picsum.photos/2560/1600");
 
-  cell.appendChild(image);
+  link.appendChild(image);
+  cell.appendChild(link);
   photoGrid.appendChild(cell);
+  
 }
