@@ -1,6 +1,5 @@
 
-// Set up the clock
-
+// Set up clock
 function updateClock() {
   const clockElement = document.getElementById("clock");
   const day = document.getElementById("dayOfWeek");
@@ -17,6 +16,7 @@ function updateClock() {
   const timeString = now.toLocaleTimeString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
+    // weekday: "short",
   });
   let days = now.getDay();
   clockElement.innerText = timeString;
@@ -25,13 +25,14 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-// Set up the photo grid
+// Set up photo grid
 
 function getNumberOfFiles() {
+  console.log("Counter for pictures is loaded");
   const folderPath = "/webgallery/Pictures";
   let fileCount = 0;
 
-  return fetch(folderPath)
+  fetch(folderPath)
     .then((response) => response.text())
     .then((html) => {
       const parser = new DOMParser();
@@ -47,22 +48,13 @@ function getNumberOfFiles() {
           fileCount++;
         }
       });
+      console.log(`Number of files in "Pictures" folder is: ${fileCount}`);
       return fileCount;
     })
-    .catch((error) => {
-      console.error(error);
-      throw error;
-    });
+    .catch((error) => console.error(error));
 }
 
-getNumberOfFiles()
-  .then((pics) => {
-    console.log("Amount of pics: " + pics);
-    let amountOfPicures = pics;
-  });
-
-let amountOfPicures = 135;
-
+let amountOfPicures = 135; // <========================= Amount of pictures in folder "Pictures"
 const photoGrid = document.getElementById("photo-grid");
 
 function getRandomInt(min, max) {
@@ -77,6 +69,22 @@ function changeRandomImage() {
   const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
+}
+
+function handleDivUpdate() {
+  // Start the fade-out effect
+  div.style.opacity = 1;
+  let fadeEffect = setInterval(function () {
+    if (!div.style.opacity) {
+      div.style.opacity = 1;
+    }
+    if (div.style.opacity < 0.1) {
+      clearInterval(fadeEffect);
+      div.style.display = "none";
+    } else {
+      div.style.opacity -= 0.1;
+    }
+  }, 1000 / 10);
 }
 
 setInterval(changeRandomImage, getRandomInt(5000, 10000));
@@ -94,4 +102,3 @@ for (let i = 0; i < 9; i++) {
   cell.appendChild(image);
   photoGrid.appendChild(cell);
 }
-
