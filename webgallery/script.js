@@ -36,11 +36,10 @@ setInterval(updateClock, 1000);
 // The number is then printed to the console using console.log().
 
 function getNumberOfFiles() {
-  console.log("Counter for pictures is loaded");
   const folderPath = "/webgallery/Pictures";
   let fileCount = 0;
 
-  fetch(folderPath)
+  return fetch(folderPath)
     .then((response) => response.text())
     .then((html) => {
       const parser = new DOMParser();
@@ -56,61 +55,51 @@ function getNumberOfFiles() {
           fileCount++;
         }
       });
-      console.log(`Number of files in "Pictures" folder is: ${fileCount}`);
       return fileCount;
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error);
+      throw error;
+    });
 }
 
-let pics = getNumberOfFiles();
-console.log("Amount of pics should be: " + pics); // Output should be: 135
-let amountOfPicures = 135; // <========================= Amount of pictures in folder "Pictures"
-pics != undefined || null || 0 ? (amountOfPicures = pics) : amountOfPicures;
-console.log("Amount of pics in rotation: " + amountOfPicures);
-const photoGrid = document.getElementById("photo-grid");
+getNumberOfFiles()
+  .then((pics) => {
+    console.log("Amount of pics: " + pics);
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+    let amountOfPicures = pics;
+    const photoGrid = document.getElementById("photo-grid");
 
-function changeRandomImage() {
-  const cells = photoGrid.querySelectorAll(".cell");
-  const randomIndex = getRandomInt(0, cells.length - 1);
-  const cell = cells[randomIndex];
-  const image = cell.querySelector("img");
-  const randomImageIndex = getRandomInt(1, amountOfPicures);
-  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
-  image.setAttribute("src", imageUrl);
-}
-
-function handleDivUpdate() {
-  // Start the fade-out effect
-  div.style.opacity = 1;
-  let fadeEffect = setInterval(function () {
-    if (!div.style.opacity) {
-      div.style.opacity = 1;
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    if (div.style.opacity < 0.1) {
-      clearInterval(fadeEffect);
-      div.style.display = "none";
-    } else {
-      div.style.opacity -= 0.1;
+
+    function changeRandomImage() {
+      const cells = photoGrid.querySelectorAll(".cell");
+      const randomIndex = getRandomInt(0, cells.length - 1);
+      const cell = cells[randomIndex];
+      const image = cell.querySelector("img");
+      const randomImageIndex = getRandomInt(1, amountOfPicures);
+      // const randomImageIndex = getRandomInt(1, 135);
+      const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+      image.setAttribute("src", imageUrl);
     }
-  }, 1000 / 10);
-}
 
-setInterval(changeRandomImage, getRandomInt(5000, 10000));
+    setInterval(changeRandomImage, getRandomInt(5000, 10000));
 
-// Load initial images
-for (let i = 0; i < 9; i++) {
-  const cell = document.createElement("div");
-  cell.classList.add("cell");
+    // Load initial images
+    for (let i = 0; i < 9; i++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
 
-  const image = document.createElement("img");
-  const randomImageIndex = getRandomInt(1, amountOfPicures);
-  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
-  image.setAttribute("src", imageUrl);
+      const image = document.createElement("img");
+      const randomImageIndex = getRandomInt(1, amountOfPicures);
+      // const randomImageIndex = getRandomInt(1, 135);
+      const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+      image.setAttribute("src", imageUrl);
 
-  cell.appendChild(image);
-  photoGrid.appendChild(cell);
-}
+      cell.appendChild(image);
+      photoGrid.appendChild(cell);
+    }
+
+});
