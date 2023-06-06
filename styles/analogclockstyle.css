@@ -11,20 +11,28 @@
   --red: #ff1e42;
   --darkred: #c3112d;
   --orange: #ff8c00;
+  --border: #091921;
 }
 
 body {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #091921;
 }
+
 .container {
-  margin: 50px auto;
+  /* Remove the margin property */
+  /* margin: 50px auto; */
+  /* Add flexbox properties to center the container horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 500px;
-  /* background-color: #ccc; */ /* другой цвет для проверки блока */
+  /* другой цвет для проверки блока */
+  /* background-color: #ccc; */
   position: relative;
 }
 
@@ -34,9 +42,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(https://user-images.githubusercontent.com/42720361/80282419-a293a400-8711-11ea-81c7-1c44e2980db2.png);
+  /* background: url(https://user-images.githubusercontent.com/42720361/80282419-a293a400-8711-11ea-81c7-1c44e2980db2.png); */
+  background: url(../images/analog-clock-background.png);
   background-size: cover;
-  border: 16px solid #91921;
+  border: 16px solid #091921;
   border-radius: 50%;
   box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
     inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
@@ -49,6 +58,7 @@ body {
   z-index: 1;
   transform: translate(-50%, -50%);
 }
+
 .clock:before {
   content: "";
   position: absolute;
@@ -165,16 +175,24 @@ span:after {
   transform: translate(-50%, -50%);
 }
 .knopka:hover {
-  background: var(
-    --darkred
-  ); /* Цвет ссылки при наведении на нее курсора мыши */
+  /* Цвет ссылки при наведении на нее курсора мыши */
+  background: var(--darkred);
   border: 2px solid var(--red);
 }
 
-.back {
+/* .back {
   margin: 50px auto;
   width: 100px;
   height: 50px;
-  /* background-color: #ccc; */
   position: relative;
+} */
+
+.back {
+  margin: 1rem auto;
+  width: 100px;
+  height: 50px;
+  /* background-color: #ccc; */
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }

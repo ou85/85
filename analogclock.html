@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Javascript Clock UI Dark</title>
-    <link rel="stylesheet" href="styles/analogclockstyle.css">    
-</head>    
+    <link rel="stylesheet" href="styles/analogclockstyle.css" />
+  </head>
 
-<body>  
-  
-  <div class="back">
-    <a class = "knopka" href="index.html" style="background-color: black; color: darkgray;">BACK</a></div>
-  </div>
-
-  <div class="container">
-  <!-- Глюкало 
-  <div class="light">
-     <span></span>
-  </div> -->
-
-   <div class="clock">
-     <div class="hour">
-      <div class="hr" id="hr"></div>
-    </div>
-    <div class="min">
-      <div class="mn" id="mn">
-      </div>    
+  <body>
+    <div class="back">
+      <a
+        class="knopka"
+        href="index.html"
+        style="background-color: black; color: darkgray"
+      >
+        BACK
+      </a>
     </div>
 
-    <div class="sec">
-      <div class="sc" id="sc">
+    <div class="container">
+      <!-- Глюкало 
+        <div class="light">
+          <span></span>
+        </div> -->
+
+      <div class="clock">
+        <div class="hour">
+          <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+          <div class="mn" id="mn"></div>
+        </div>
+
+        <div class="sec">
+          <div class="sc" id="sc"></div>
+
+          <script type="text/javascript">
+            const deg = 6;
+            const hr = document.querySelector("#hr");
+            const mn = document.querySelector("#mn");
+            const sc = document.querySelector("#sc");
+            setInterval(() => {
+              let day = new Date();
+              let hh = day.getHours() * 30;
+              let mm = day.getMinutes() * deg;
+              let ss = day.getSeconds() * deg;
+
+              hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+              mn.style.transform = `rotateZ(${mm}deg)`;
+              sc.style.transform = `rotateZ(${ss}deg)`;
+            });
+            // Alert OnClick
+            // document.querySelector("html").onclick = function () {
+            //   alert("BACK button on the right bottom corner");
+            // };
+          </script>
+        </div>
       </div>
-      
-       <script type="text/javascript">
-       const deg=6;
-           const hr = document.querySelector('#hr');
-           const mn = document.querySelector('#mn');
-           const sc = document.querySelector('#sc');
-           setInterval(() => {
-               
-           let day = new Date();
-           let hh = day.getHours() * 30;
-           let mm = day.getMinutes() * deg;
-           let ss = day.getSeconds() * deg;
-           
-           hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
-           mn.style.transform = `rotateZ(${mm}deg)`;
-           sc.style.transform = `rotateZ(${ss}deg)`;
-           })    
-       // Alert OnClick
-        //  document.querySelector('html').onclick = function() {
-        //  alert('Ouch! Stop poking me!');
-        //  }        
-       </script> 
-  </div>
-</body>
+    </div>
+  </body>
 </html>
-
