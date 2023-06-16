@@ -1,7 +1,7 @@
 :root {
   --bg_main: rgba(255, 255, 255, 1);
   --bg_header: #f5f5f5;
-  --side_header: #fe9b04;
+  --side_header: #475d68;
   --bg_side: #37474f;
   --text_side_menu: #f5f5f5;
   --text_med: #cbd4db;
@@ -19,57 +19,8 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   font-family: "Roboto", sans-serif;
-  font-size: 0.875rem /*14px*/; /*16px;*/
+  /* font-size: 0.875rem /*14px*/ /*16px;*/
   overflow: auto;
-}
-
-/* Header */
-.parent {
-  display: flex;
-  height: 72px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-}
-
-.child {
-  height: 72px;
-  display: flex;
-  align-items: center;
-}
-
-/* Side menu header */
-.childA {
-  width: 250px;
-  min-width: 250px;
-  float: left;
-  font-size: 20px;
-  color: #fff;
-  text-align: left;
-  position: relative;
-  background-color: var(--side_header);
-}
-
-/* Page Title */
-.childB {
-  flex: 1;
-  position: relative;
-  padding-left: 35px;
-  background-color: var(--bg_header);
-}
-
-/* Account Name */
-.childC {
-  flex-basis: 250px;
-  padding: 5px 0 0 0;
-  justify-content: right;
-  background-color: var(--bg_header);
-}
-
-/* Log out */
-.childD {
-  flex-basis: 100px;
-  justify-content: center;
-  background-color: var(--bg_header);
 }
 
 /* Toggle Styles */
@@ -100,12 +51,13 @@ body {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   border-radius: 0.7rem;
-  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
-    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  /* box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #sidebar header {
-  background-color: #475d68;
+  background-color: var(--side_header);
   font-size: 20px;
   line-height: 52px;
   text-align: center;
@@ -122,7 +74,7 @@ body {
 }
 
 #sidebar footer {
-  background-color: #475d68;
+  background-color: var(--side_header);
   font-size: 1rem;
   line-height: 32px;
   text-align: left;
@@ -146,8 +98,8 @@ body {
 #sidebar .nav a {
   background: none;
   color: var(--text_side_menu);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 400;
   padding: 5px 20px 0px;
 }
 
@@ -190,24 +142,6 @@ body {
   padding-left: 20px;
 }
 
-.contentHeader {
-  margin: -10px -10px 10px -10px;
-  padding: 10px 10px 0px 10px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 900;
-  /*min-width: 50rem;*/
-  background: var(--bg_main);
-}
-
-.fixedSubMenu {
-  height: 53px;
-  padding-top: 10px;
-  position: fixed;
-  z-index: 900;
-}
-
 .menuWrapper {
   position: relative;
   overflow: hidden;
@@ -223,9 +157,13 @@ body {
 
 .menuWrapper:hover {
   cursor: pointer;
-  border-color: var(--side_header);
-  /* background-color: #ffffe6; */
+  border-color: var(--orange);
+  background-color: var(--side_header);
   transition: none;
   width: 240px;
   height: 50px;
+}
+
+.pagenavbar {
+  background-color: var(--bg_main);
 }
