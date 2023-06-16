@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Side Menu</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles_sm.css" />
+    <!-- bootsrap 5 -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="col-lg-12 col-xl-8">
+        <!-- SideMenu -->
+        <div id="sideMenu">
+          <div id="sidebar" class="d-flex flex-column">
+            <header>
+              <a
+                href="#"
+                onclick="return confirm('We are the Brass Co. Ltd. The best ever company!')"
+                >Brass Co. Ltd</a
+              >
+            </header>
+            <div>
+              <ul class="nav">
+                <li class="nav-link menuWrapper">
+                  <a href="analogclock.html" class="nav-link">analog clock</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="ellipsis.html" class="nav-link">elipsis</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="gallery.html" class="nav-link">gallery</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="indexmoz.html" class="nav-link">indexmoz</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="jsarray-in-table.html" class="nav-link"
+                    >jsarray | table</a
+                  >
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="movin_div.html" class="nav-link">movin div</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="moving_inf.html" class="nav-link">moving inf</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="moving_refreshing_div.html" class="nav-link"
+                    >moving ref</a
+                  >
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="react_babel.html" class="nav-link">react babel</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="react.html" class="nav-link">react</a>
+                </li>
+                <li class="nav-link menuWrapper">
+                  <a href="rolling_gallery.html" class="nav-link"
+                    >rolling gallery</a
+                  >
+                </li>
+              </ul>
+              <div style="height: 90px"></div>
+            </div>
+
+            <!-- User area -->
+            <footer>
+              <div class="dropdown py-2 border-top">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDarkDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="/images/user.png"
+                    alt="^..^"
+                    width="32"
+                    height="32"
+                    class="rounded-circle me-2"
+                  />
+
+                  <span style="padding-left: 10px">Simply The Best User</span>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+                  aria-labelledby="navbarDarkDropdownMenuLink"
+                >
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div id="content">
+          <!-- Content navbar-->
+          <nav class="navbar navbar-light">
+            <div class="container-fluid">
+              <span class="navbar-text">
+                <a href="index.html" class="navbar-text"> home/ </a>
+                <a href="#" class="navbar-text"> side menu </a>
+              </span>
+            </div>
+          </nav>
+
+          <div class="container-fluid">
+            <h1>Books. OOP, Java</h1>
+            <p>
+              Make sure to keep all page content within the
+              <code>#content</code>.
+            </p>
+            <ol>
+              <li>
+                Object Primer, 3rd edition: Agile Model-Driven Development With
+                UML 2.0. Scott W. Amber
+              </li>
+              <li>
+                Head First. Паттерны проектирования. Эрик Фримен, Элизабет
+                Робсон, Кэти Сьерра, Берт Бейтс (2/5)
+              </li>
+              <li>Mastering Java 9. Dr. Edward Lavieri</li>
+              <li>
+                Паттерны объектно-ориентированного проектирования. Эрих Гамма,
+                Ричард Хелм, Ральф Джонсон, Джон Влиссидес (5/5)
+              </li>
+              <li>
+                Идеальный программист. Как стать профессионалом разработки ПО.
+                Роберт Мартин (1/5)
+              </li>
+              <li>
+                Предметно-ориентированное поектирование. Структуризация сложных
+                программных систем. Эванс, Эрик
+                <span
+                  >(Читатели с различной профессиональной подготовкой могут
+                  выбрать свой порядок чтения, но я бы рекомендовал всем начать
+                  с введения к части 1, а также с главы 1. Помимо этого,
+                  основными можно считать главы 2, 3, 9 и 14.)</span
+                >
+              </li>
+            </ol>
+            <!-- <a class="back-button" href="index.html">back</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
