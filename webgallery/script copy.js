@@ -1,7 +1,3 @@
-// Note: This assumes that all of your images are named "imgX.jpg" where X is a number from 0 to 999,
-// and that they are all located in the "Pictures" folder in the same directory as your HTML file.
-// If your file names or folder structure is different,
-// you will need to modify the JavaScript code accordingly.
 
 // Set up clock
 function updateClock() {
@@ -30,9 +26,53 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 // Set up photo grid
+
+function getNumberOfFiles() {
+  console.log("Counter for pictures is loaded");
+  const folderPath = "/webgallery/Pictures";
+  let fileCount = 0;
+
+  fetch(folderPath)
+    .then((response) => response.text())
+    .then((html) => {
+      const parser = new DOMParser();
+      const htmlDoc = parser.parseFromString(html, "text/html");
+      const fileList = htmlDoc.querySelectorAll("a[href]");
+      fileList.forEach((fileLink) => {
+        const fileName = fileLink.getAttribute("href").split("/").pop();
+        if (
+          fileName.endsWith(".jpg") ||
+          fileName.endsWith(".jpeg") ||
+          fileName.endsWith(".png")
+        ) {
+          fileCount++;
+        }
+      });
+      console.log(`Number of files in "Pictures" folder is: ${fileCount}`);
+      return fileCount;
+    })
+    .catch((error) => console.error(error));
+}
+
+function fadeIn(element) {
+  let opacity = 0;
+  element.style.display = "block";
+  element.style.opacity = opacity;
+  const fadeEffect = setInterval(() => {
+    if (opacity < 1) {
+      opacity += 0.2;
+      element.style.opacity = opacity;
+    } else {
+      clearInterval(fadeEffect);
+    }
+  }, 1000 / 10);
+}
+
+getNumberOfFiles();
+
+let amountOfPicures = 140; // <========================= Amount of pictures in folder "Pictures"
+
 const photoGrid = document.getElementById("photo-grid");
-let imageIndexes = [];
-let amountOfPicures = 131; // <============== Amount of pictures in folder "Pictures"
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -43,25 +83,11 @@ function changeRandomImage() {
   const randomIndex = getRandomInt(0, cells.length - 1);
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
-  const randomImageIndex = checkDouble(); //getRandomInt(1, amountOfPicures);
+  const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
-}
-
-// Check if random picture exists
-function checkDouble() {
-  const randomImageIndex = getRandomInt(1, amountOfPicures);
-
-  imageIndexes.includes(randomImageIndex)
-    ? console.log("Image already in use: " + randomImageIndex)
-    : imageIndexes.push(randomImageIndex);
-
-  imageIndexes.length == 50 ? (imageIndexes = []) : null;
-
-  console.log("Array: " + imageIndexes);
-  console.log("Image: " + imageIndexes[imageIndexes.length - 1]);
-
-  return randomImageIndex;
+  // Fade out current image
+  // fadeIn(image);
 }
 
 setInterval(changeRandomImage, getRandomInt(5000, 10000));
@@ -73,9 +99,9 @@ for (let i = 0; i < 9; i++) {
 
   const link = document.createElement("a");
   const image = document.createElement("img");
-  const randomImageIndex = checkDouble(); //getRandomInt(1, amountOfPicures);
+  const randomImageIndex = getRandomInt(1, amountOfPicures);
   const imageUrl = `Pictures/${randomImageIndex}.jpg`;
-  image.setAttribute("src", imageUrl);
+  image.setAttribute("src", imageUrl); 
   link.setAttribute("href", imageUrl);
   // Random picture link
   // link.setAttribute("href", "https://picsum.photos/2560/1600");
@@ -83,4 +109,5 @@ for (let i = 0; i < 9; i++) {
   link.appendChild(image);
   cell.appendChild(link);
   photoGrid.appendChild(cell);
+  
 }
