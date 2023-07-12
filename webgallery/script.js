@@ -32,7 +32,7 @@ setInterval(updateClock, 1000);
 // Set up photo grid
 const photoGrid = document.getElementById("photo-grid");
 let imageIndexes = [];
-let amountOfPicures = 131; // <============== Amount of pictures in folder "Pictures"
+let amountOfPicures = 140; // <============== Amount of pictures in folder "Pictures"
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
