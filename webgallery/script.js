@@ -31,8 +31,9 @@ setInterval(updateClock, 1000);
 
 // Set up photo grid
 const photoGrid = document.getElementById("photo-grid");
-let imageIndexes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let imageIndexes = [];
 let amountOfPicures = 131; // <============== Amount of pictures in folder "Pictures"
+let refreshRate = 30000; // <============== Page Refresh rate
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -48,40 +49,30 @@ function changeRandomImage() {
   image.setAttribute("src", imageUrl);
 }
 
-// Check if random picture exists
 function checkDouble() {
-  const randomImageIndex = getRandomInt(1, amountOfPicures);
+  let randomImageIndex = getRandomInt(1, amountOfPicures);
 
-  if (!imageIndexes.includes(randomImageIndex)) {
-    imageIndexes.push(randomImageIndex);
-    imageIndexes.length > 9 ? imageIndexes.shift() : null;
-    // imageIndexes.length == 40 ? (imageIndexes = []) : null;
-  } else {
-    console.log(
-      "Image already in use: " +
-        randomImageIndex +
-        "\n" +
-        "Use image: " +
-        imageIndexes[0] +
-        " or " +
-        imageIndexes[1] +
-        " instead"
-    );
-
-    return randomImageIndex == imageIndexes[0]
-      ? imageIndexes[1]
-      : imageIndexes[0];
+  while (imageIndexes.includes(randomImageIndex)) {
+    randomImageIndex = getRandomInt(1, amountOfPicures);
   }
 
-  console.log("Image: " + imageIndexes[imageIndexes.length - 1]);
-  console.log("Array lenght: " + imageIndexes.length);
-  console.log("Array: " + imageIndexes);
+  // imageIndexes.includes(randomImageIndex)
+  //   ? console.log("Image is not Unigue: " + randomImageIndex)
+  //   : console.log("Image is Unigue: " + randomImageIndex);
 
-  // return randomImageIndex;
+  imageIndexes.push(randomImageIndex);
+  if (imageIndexes.length > 37) {
+    imageIndexes.shift();
+  }
+
+  // console.log("Array length: " + imageIndexes.length);
+  // console.log("Array: " + imageIndexes);
+
   return imageIndexes[imageIndexes.length - 1];
 }
 
-setInterval(changeRandomImage, getRandomInt(9000, 50000));
+setInterval(changeRandomImage, getRandomInt(5000, refreshRate));
+// setInterval(changeRandomImage, refreshRate);
 
 // Load initial images
 for (let i = 1; i < 10; i++) {
@@ -90,8 +81,8 @@ for (let i = 1; i < 10; i++) {
 
   const link = document.createElement("a");
   const image = document.createElement("img");
-  //const randomImageIndex = checkDouble(); // getRandomInt(1, amountOfPicures);
-  const imageUrl = `Pictures/${i}.jpg`; // `Pictures/${randomImageIndex}.jpg`;
+  const randomImageIndex = checkDouble();
+  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
   link.setAttribute("href", imageUrl);
   // Random picture link
