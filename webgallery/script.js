@@ -39,6 +39,8 @@ let imageIndexes = [];
 let amountOfPicures = 146; // <============== Amount of pictures in folder "Pictures"
 let refreshRate = 30000; // <============== Page Refresh rate
 
+console.log("Images in rotation: " + amountOfPicures);
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
