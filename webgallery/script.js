@@ -1,9 +1,11 @@
-// Note: This assumes that all of your images are named "imgX.jpg" where X is a number from 0 to 999,
+// Note: This assumes that all of your images are named "X.jpg" where X is a number from 0 to 999,
 // and that they are all located in the "Pictures" folder in the same directory as your HTML file.
 // If your file names or folder structure is different,
 // you will need to modify the JavaScript code accordingly.
 
-// Set up clock
+//
+// ======  Set up clock ========
+//
 function updateClock() {
   const clockElement = document.getElementById("clock");
   const day = document.getElementById("dayOfWeek");
@@ -29,10 +31,12 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-// Set up photo grid
+//
+// ======  Set up photo grid ========
+//
 const photoGrid = document.getElementById("photo-grid");
 let imageIndexes = [];
-let amountOfPicures = 131; // <============== Amount of pictures in folder "Pictures"
+let amountOfPicures = 146; // <============== Amount of pictures in folder "Pictures"
 let refreshRate = 30000; // <============== Page Refresh rate
 
 function getRandomInt(min, max) {
