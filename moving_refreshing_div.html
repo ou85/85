@@ -3,37 +3,171 @@
   <head>
     <title>85 | refreshing div</title>
     <style>
+      html {
+        height: 100%;
+      }
+      body {
+        background: linear-gradient(#141e30, #243b55);
+      }
       .center {
         margin: auto;
-        width: 50%;
-        border: 3px solid green;
+        margin-top: 15%;
+        width: 912px;
+        border: 1px solid #05dfeb;
         padding: 10px;
         position: relative;
         animation-name: move;
         animation-duration: 10s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
+        border-radius: 3px;
+        box-shadow: 0 0 1px #03e9f4, 0 0 3px #03e9f4, 0 0 5px #03e9f4,
+          0 0 10px #03e9f4;
       }
     </style>
     <script>
-      function refreshDiv() {
-        var img = document.getElementById("img");
+      var randomInterval;
+
+      function refresh(div) {
+        var img = document.getElementById(div);
         var src = img.src;
         var date = new Date();
         var time = date.getTime();
-        var random = Math.floor(Math.random() * 6) + 5;
-        var interval = random * 1000;
+        if (randomInterval === undefined) {
+          randomInterval = Math.floor(Math.random() * 26) + 30;
+        }
+
+        var interval = randomInterval * 1000;
+
         setTimeout(function () {
           img.src = src + "?time=" + time;
-          refreshDiv();
+          refresh(div);
         }, interval);
       }
+      // function refreshDiv() {
+      //   var img = document.getElementById("img");
+      //   var src = img.src;
+      //   var date = new Date();
+      //   var time = date.getTime();
+      //   var random = Math.floor(Math.random() * 6) + 5;
+      //   var interval = random * 1000;
+      //   setTimeout(function () {
+      //     img.src = src + "?time=" + time;
+      //     refreshDiv();
+      //   }, interval);
+      // }
+      // function refreshDiv2() {
+      //   var img = document.getElementById("img2");
+      //   var src = img.src;
+      //   var date = new Date();
+      //   var time = date.getTime();
+      //   var random = Math.floor(Math.random() * 6) + 10;
+      //   var interval = random * 1000;
+      //   setTimeout(function () {
+      //     img.src = src + "?time=" + time;
+      //     refreshDiv2();
+      //   }, interval);
+      // }
+      // function refreshDiv3() {
+      //   var img = document.getElementById("img3");
+      //   var src = img.src;
+      //   var date = new Date();
+      //   var time = date.getTime();
+      //   var random = Math.floor(Math.random() * 6) + 10;
+      //   var interval = random * 1000;
+      //   setTimeout(function () {
+      //     img.src = src + "?time=" + time;
+      //     refreshDiv3();
+      //   }, interval);
+      // }
+
+      window.onload = function () {
+        // refreshDiv();
+        // refreshDiv2();
+        // refreshDiv3();
+        refresh("img");
+        refresh("img2");
+        refresh("img3");
+      };
     </script>
   </head>
-  <body onload="refreshDiv()">
-    <div class="center">
-      <img id="img" src="https://source.unsplash.com/300x200/?nature,landscape"
-      alt="Nature Landscape" width="300" height="200"
+  <body>
+    <div class="center" id="photo-grid">
+      <img
+        id="img"
+        src="https://source.unsplash.com/300x200/?nature,landscape,bird"
+        alt="Nature Landscape"
+        width="300"
+        height="200"
+      />
+      <img
+        id="img2"
+        src="https://source.unsplash.com/300x200/?nature,landscape,space"
+        alt="Nature Landscape"
+        width="300"
+        height="200"
+      />
+      <img
+        id="img3"
+        src="https://source.unsplash.com/300x200/?nature,landscape"
+        alt="Nature Landscape"
+        width="300"
+        height="200"
+      />
+      <img
+        id="img4"
+        src="https://source.unsplash.com/300x200/?nature,landscape"
+        alt="Nature Landscape"
+        width="300"
+        height="200"
+      />
+      <a
+        href="https://www.flickr.com/photos/199296953@N03/53247803484/in/shares-54PM5sZ98g/"
+        title="boat-on-green-water"
+      >
+        <img
+          src="https://live.staticflickr.com/65535/53247803484_ba9d96fb57_n.jpg"
+          width="300"
+          height="200"
+          alt="boat"
+        />
+      </a>
+      <a
+        data-flickr-embed="true"
+        href="https://www.flickr.com/photos/199296953@N03/albums/72177720311813625"
+        title="SPACE"
+      >
+        <img
+          src="https://live.staticflickr.com/65535/53247445171_e79103480d_n.jpg"
+          width="300"
+          height="200"
+          alt="SPACE"
+        />
+      </a>
+      <script
+        async
+        src="//embedr.flickr.com/assets/client-code.js"
+        charset="utf-8"
+      ></script>
     </div>
+    <script>
+      const photoGrid = document.getElementById("photo-grid");
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function changeRandomImage() {
+        const child = photoGrid.querySelectorAll(".img");
+        const randomIndex = getRandomInt(0, cells.length - 1);
+        const cell = cells[randomIndex];
+        const image = cell.querySelector("img");
+        const imageUrl =
+          "https://source.unsplash.com/300x200/?nature,landscape,bird";
+        image.setAttribute("src", imageUrl);
+        console.log(randomIndex);
+      }
+      console.log(photoGrid);
+    </script>
   </body>
 </html>

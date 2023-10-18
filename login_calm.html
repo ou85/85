@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="https://www.thymeleaf.org"
+>
+  <head>
+    <link rel="stylesheet" href="/styles/calm.css" />
+    <script>
+      $("#login-button").click(function (event) {
+        event.preventDefault();
+
+        $("form").fadeOut(500);
+        $(".wrapper").addClass("form-success");
+      });
+    </script>
+    <title>Calm Log In</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Welcome</h1>
+        <form class="form" action="/sidemenu_gradient.html">
+          <input type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <button type="submit" id="login-button">Login</button>
+        </form>
+      </div>
+      <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>
