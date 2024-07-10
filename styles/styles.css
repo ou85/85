@@ -261,7 +261,7 @@
   }
   
   .container {
-    max-width: 700px;
+    max-width: 800px;
     margin: 60px auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -529,3 +529,13 @@ aside {
     font-size: 18px;
   }
 
+  .flex-container {
+    display: flex;
+    align-items: flex-start; 
+  }
+
+  .side-menu {
+    margin-top:2em;
+    margin-right: 0.2em; 
+    margin-left: 0.2em; 
+  }
