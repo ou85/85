@@ -22,11 +22,6 @@ function initializeSideMenu() {
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="gallery.html" class="nav-link">
-            gallery
-          </a>
-        </li>
-        <li class="nav-link menuWrapper">
           <a href="indexmoz.html" class="nav-link">
             indexmoz
           </a>
@@ -44,11 +39,6 @@ function initializeSideMenu() {
         <li class="nav-link menuWrapper">
           <a href="react.html" class="nav-link">
             react
-          </a>
-        </li>
-        <li class="nav-link menuWrapper">
-          <a href="rolling_gallery.html" class="nav-link">
-            rolling gallery
           </a>
         </li>
         <li class="nav-link menuWrapper">
