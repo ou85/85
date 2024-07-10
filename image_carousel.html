@@ -4,18 +4,24 @@
     <meta charset="utf-8" />
     <title>Carousel</title>
     <link rel="icon" type="image/png" sizes="114x114" href="images/CPT.png" />
-    <link rel="stylesheet" href="image_carousel/style.css"/>
     <link rel="stylesheet" href="styles/fontcss.css" />
     <link rel="stylesheet" href="styles/styles_sm.css" />
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
     <script src="scripts/jquery-3.7.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="image_carousel/style.css"/>
 
 </head>
 <body>
     <div class="content">
-        <div class="col-12">
-          <div id="sideMenu"></div>
+      <div class="col-12">
+        <!-- Side menu-->
+        <div id="sideMenu">
+          <div id="sidebar" class="d-flex flex-column">
+            <div id="menu-body" class="flex-grow-1"></div>
+            <div id="menu-footer"></div>
+          </div>
+        </div>
           <!-- Content -->
           <div>
             <!-- Content navbar-->

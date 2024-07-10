@@ -3,144 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <title>85 | books</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles_sm.css" />
-    <!-- bootsrap 5 -->
+    <link rel="icon" type="image/png" sizes="114x114" href="images/CPT.png" />
+    <link rel="stylesheet" href="styles/fontcss.css" />
+    <link rel="stylesheet" href="styles/styles_sm.css" />
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <!-- JavaScript -->
+    <script src="scripts/jquery-3.7.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <div class="content">
       <div class="col-12">
-        <!-- SideMenu -->
+        <!-- Side menu-->
         <div id="sideMenu">
           <div id="sidebar" class="d-flex flex-column">
-            <header>
-              <a
-                href="#"
-                onclick="return confirm('We are the Brass Co. Ltd. The best ever company!')"
-              >
-                Brass Co. Ltd
-              </a>
-            </header>
-            <div>
-              <ul class="nav">
-                <li class="nav-link menuWrapper">
-                  <a href="analogclock.html" class="nav-link">analog clock</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="ellipsis.html" class="nav-link">elipsis</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="gallery.html" class="nav-link">gallery</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="indexmoz.html" class="nav-link">indexmoz</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="jsarray-in-table.html" class="nav-link">
-                    jsarray | table
-                  </a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="movin_div.html" class="nav-link">movin div</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="moving_inf.html" class="nav-link">moving inf</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="moving_refreshing_div.html" class="nav-link">
-                    refreshing divs
-                  </a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="react_babel.html" class="nav-link">react babel</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="react.html" class="nav-link">react</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="rolling_gallery.html" class="nav-link">
-                    rolling gallery
-                  </a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="shiftingtiles.html" class="nav-link">
-                    shifting tiles
-                  </a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="webgallery/webgallery.html" class="nav-link">
-                    tiles
-                  </a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="time.html" class="nav-link">time</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="weather.html" class="nav-link">weather</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="sidemenu_gradient.html" class="nav-link">
-                    side menu with gradient
-                  </a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="login.html" class="nav-link">login</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="login_fire.html" class="nav-link">fire login</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="login_calm.html" class="nav-link">calm login</a>
-                </li>
-                <li class="nav-link menuWrapper">
-                  <a href="image_carousel.html" class="nav-link">image carousel</a>
-                </li>
-              </ul>
-              <div style="height: 10px"></div>
-            </div>
-
-            <!-- User area -->
-            <footer>
-              <div class="dropdown py-2 border-top">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDarkDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    alt="^..^"
-                    src="/images/user.png"
-                    width="32"
-                    height="32"
-                    class="rounded-circle me-2"
-                  />
-
-                  <span style="padding-left: 10px">The Best User Ever</span>
-                </a>
-                <ul
-                  class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
-                  aria-labelledby="navbarDarkDropdownMenuLink"
-                >
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
-                  <li><a class="dropdown-item" href="#">Help</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
-                </ul>
-              </div>
-            </footer>
+            <div id="menu-body" class="flex-grow-1"></div>
+            <div id="menu-footer"></div>
           </div>
         </div>
-
         <!-- Content -->
         <div>
-          <!-- Content navbar-->
+          <!-- Content navbar -->
           <nav
             class="navbar sticky-top navbar-light"
             style="background-color: #fff"
@@ -188,10 +70,10 @@
                 >
               </li>
             </ol>
-            <!-- <a class="back-button" href="index.html">back</a> -->
           </div>
         </div>
       </div>
     </div>
+    <script src="scripts/_SideMenu.js"></script>
   </body>
 </html>
