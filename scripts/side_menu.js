@@ -104,7 +104,7 @@ const menuFooterContent = `
         >
           <img
             alt="^..^"
-            src="/images/firefox-icon.png"
+            src="images/firefox-icon.png"
             width="32"
             height="32"
             class="rounded-circle me-2"
