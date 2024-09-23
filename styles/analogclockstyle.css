@@ -187,12 +187,19 @@ span:after {
   position: relative;
 } */
 
-.back {
+/* .back {
   margin: 1rem auto;
   width: 100px;
   height: 50px;
-  /* background-color: #ccc; */
   position: fixed;
   bottom: 0;
   right: 0;
+} */
+
+.back {
+  margin: 1rem auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem 3rem; 
 }
