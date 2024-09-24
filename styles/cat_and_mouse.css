@@ -1,0 +1,66 @@
+body {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #fbf7ef;
+    margin: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+header {
+    height: 3rem;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+canvas {
+    background-color: #ffffff;
+    display: block;
+    margin: 0 auto;
+    border-radius: .6875rem; 
+    border: .0625rem solid #000;
+    transition: transform 0.2s;
+}
+
+canvas:hover {
+    transform: scale(1.01);
+    box-shadow: rgba(0, 0, 0) 1px 2px 3px;
+}
+
+#score, #best-score {
+    font-size: 20px;
+    color: #ff4500;
+    transition: color 0.3s;
+}
+
+#score:hover, #best-score:hover {
+    color: #ff1493;
+}
+
+.score-container {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 10px auto;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none; 
+    text-shadow: rgba(0, 0, 0) 1px 2px 3px;
+    font-size: 2.1rem;
+}
+a:visited {
+    color: inherit; 
+}
