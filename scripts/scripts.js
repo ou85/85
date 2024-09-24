@@ -416,7 +416,11 @@ const cafe = {
     opening: "10:00(AM)",
     closing: "8:00(PM)",
   },
-  menus: ["Coffee", "Tea", "Chocolate Cake"],
+  menus: [
+    "Herb Tea", 
+    "Brazilian Coffee", 
+    "Chocolate Cake",
+  ],
 };
 
 console.log(`----------------------------`);
@@ -429,12 +433,12 @@ console.log("Menu Recommendations");
 
 document.write(`<h2>${cafe.name}</h2>                
                 <p>Hours: From ${cafe.businessHours.opening} to ${cafe.businessHours.closing}</p>
-                <p>Menu Recommendations:</p>
+                <p>Today's Recommendations:</p>
                 <p> </p>`);
 
 for (let i = 0; i < cafe.menus.length; i++) {
   console.log(cafe.menus[i]);
-  document.write(`<p>-${cafe.menus[i]}</p>`);
+  document.write(`<p><span>• </span>${cafe.menus[i]}</p>`);
 }
 
 // FUNCTIONS CALLBACK
