@@ -176,7 +176,7 @@ function checkCheeseCollision() {
     let dy = mouse.y - cheese.y;
     let distance = Math.hypot(dx, dy);
 
-    if (distance < 20) { // Проверка столкновения с сыром
+    if (distance < 20) { // Cheese collision check
         score++;
         scoreElement.textContent = 'Score: ' + score;
         cheese.x = Math.random() * (canvas.width - 40) + 20;
