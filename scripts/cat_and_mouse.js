@@ -171,44 +171,30 @@ function circleAroundHouse() {
     cat.y = house.y + Math.sin(cat.angle) * (radius + 20);
 }
 
-// function checkCheeseCollision() {
-//     let dx = mouse.x - cheese.x;
-//     let dy = mouse.y - cheese.y;
-//     let distance = Math.hypot(dx, dy);
-
-//     if (distance < 20) { // Cheese collision check
-//         score++;
-//         scoreElement.textContent = 'Score: ' + score;
-//         cheese.x = Math.random() * (canvas.width - 40) + 20;
-//         cheese.y = Math.random() * (canvas.height - 40) + 20;
-//     }
-// }
-
 function checkCheeseCollision() {
     let dx = mouse.x - cheese.x;
     let dy = mouse.y - cheese.y;
     let distance = Math.hypot(dx, dy);
 
-    if (distance < 20) { // Проверка столкновения с сыром
+    if (distance < 20) { // Cheese collision check
         score++;
         scoreElement.textContent = 'Score: ' + score;
         cheese.x = Math.random() * (canvas.width - 40) + 20;
         cheese.y = Math.random() * (canvas.height - 40) + 20;
 
-        // Проверяем, превысил ли текущий счёт лучший счёт
+        // Check if the score is the best score
         if (score > bestScore) {
             bestScore = score;
             localStorage.setItem('bestScore', bestScore);
             bestScoreElement.textContent = 'Best Score: ' + bestScore;
 
-            // Воспроизводим анимацию только если она ещё не была воспроизведена в этой игре
+            // Play animation for the best score
             if (!bestScoreAnimated) {
-                bestScoreAnimated = true; // Устанавливаем флаг, чтобы анимация больше не воспроизводилась в этой игре
-
-                // Добавляем класс для анимации
+                bestScoreAnimated = true; 
+                // Add class for animation
                 bestScoreElement.classList.add('new-best-score');
 
-                // Удаляем класс после завершения анимации
+                // Remove class after animation ends
                 bestScoreElement.addEventListener('animationend', function() {
                     bestScoreElement.classList.remove('new-best-score');
                 }, { once: true });
