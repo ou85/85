@@ -222,8 +222,6 @@ function drawGameOver() {
         text = 'To restart, press R';
         textWidth = ctx.measureText(text).width;
         ctx.fillText(text, (canvas.width - textWidth) / 2, canvas.height / 2 + 130);
-
-
     }
 }
 
