@@ -439,14 +439,39 @@ aside {
     font-size: 18px;
   }
 
-  .flex-container {
+  /* .flex-container {
     display: flex;
     align-items: flex-start; 
-    
+  } */
+
+  .flex-container {
+    margin: 0;
+    padding: 0;
   }
+
   .side-menu {
-    width: 250px;
-    margin-top: 60px;
-    margin-right: 0.2em; 
-    margin-left: 0.2em; 
+    margin-top: 60px; 
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+  }
+
+  @media (max-width: 1300px) {
+    .side-menu {
+      position: relative;
+      top: 1rem;
+      left: 2rem;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .side-menu ul {
+      display: flex;
+      flex-direction: column; 
+      justify-content: start;
+    }
+    .side-menu li {
+      display: block; 
+      padding-left: 0.5rem;
+      padding-right: 0.5rem; 
+    }
   }
