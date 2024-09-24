@@ -154,19 +154,19 @@ function avoidHouse() {
         cat.x += cat.direction.x * cat.speed;
         cat.y += cat.direction.y * cat.speed;
     } else {
-        // Если кошка точно в центре домика, перемещаем ее случайно
+        // If the cat is inside the house, move cat randomly
         cat.x += (Math.random() - 0.5) * cat.speed * 2;
         cat.y += (Math.random() - 0.5) * cat.speed * 2;
     }
 }
 
 function circleAroundHouse() {
-    // Радиус кружения кошки вокруг домика
+    // Cat's orbit radius
     const radius = house.size;
-    // Увеличиваем угол для движения по окружности
-    cat.angle += 0.01; // Скорость кружения (можно настроить)
-    // Обновляем позицию кошки по окружности вокруг домика
-    cat.x = house.x + Math.cos(cat.angle) * (radius + 20); // +20 чтобы кошка не заходила на территорию домика
+    // Increment angle for cat rotation
+    cat.angle += 0.01; // Rotation speed (adjustable)
+    // Refresh cat position around the house
+    cat.x = house.x + Math.cos(cat.angle) * (radius + 20); // +20 cat avoids house
     cat.y = house.y + Math.sin(cat.angle) * (radius + 20);
 }
 
@@ -175,7 +175,7 @@ function checkCheeseCollision() {
     let dy = mouse.y - cheese.y;
     let distance = Math.hypot(dx, dy);
 
-    if (distance < 20) { // Проверка столкновения с сыром
+    if (distance < 20) { // Cheese collision check
         score++;
         scoreElement.textContent = 'Score: ' + score;
         cheese.x = Math.random() * (canvas.width - 40) + 20;
@@ -203,29 +203,31 @@ function drawHouse() {
 
 function drawGameOver() {
     if (gameOver) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'white';
-        ctx.font = '48px Arial';
-        ctx.fillText('GAME OVER', canvas.width / 2 - 150, canvas.height / 2);
+        const xPosition = canvas.width / 2 - 150;
 
-        ctx.font = '36px Arial';
+        ctx.font = 'bold 48px cursive';
+        ctx.fillText('GAME OVER', xPosition, canvas.height / 2.7);
+
+        ctx.font = '36px "Azeret Mono"';
         let text = 'Your Score: ' + score;
         let textWidth = ctx.measureText(text).width;
-        ctx.fillText(text, (canvas.width - textWidth) / 2, canvas.height / 2 + 50);
+        ctx.fillText(text, xPosition, canvas.height / 2.5 + 70);
         
         text = 'Best Score: ' + bestScore;
         textWidth = ctx.measureText(text).width;
-        ctx.fillText(text, (canvas.width - textWidth) / 2, canvas.height / 2 + 90);
+        ctx.fillText(text, xPosition, canvas.height / 2.5 + 130);
         
-        ctx.font = '24px Arial';
+        ctx.font = '22px "Azeret Mono"';
         text = 'To restart, press R';
         textWidth = ctx.measureText(text).width;
-        ctx.fillText(text, (canvas.width - textWidth) / 2, canvas.height / 2 + 130);
+        ctx.fillText(text, (canvas.width - textWidth) / 2, canvas.height / 2.5 + 190);
     }
 }
 
-// Добавляем возможность перезапуска игры
+// Game restart on 'R' key press
 document.addEventListener('keydown', function(e) {
     if (gameOver && e.key.toLowerCase() === 'r') {
         restartGame();
@@ -233,12 +235,12 @@ document.addEventListener('keydown', function(e) {
 });
 
 function restartGame() {
-    // Сброс переменных игры
+    // Score reset
     score = 0;
     scoreElement.textContent = 'Score: ' + score;
     gameOver = false;
 
-    // Сброс позиций объектов
+    // Reset mouse position
     mouse.x = canvas.width / 2;
     mouse.y = canvas.height / 2;
     mousePosition.x = mouse.x;
