@@ -2,6 +2,7 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const scoreElement = document.getElementById('score');
 const bestScoreElement = document.getElementById('best-score'); 
+let bestScoreAnimated = false;
 
 // Emoji font size
 ctx.font = '30px Arial';
@@ -170,18 +171,53 @@ function circleAroundHouse() {
     cat.y = house.y + Math.sin(cat.angle) * (radius + 20);
 }
 
+// function checkCheeseCollision() {
+//     let dx = mouse.x - cheese.x;
+//     let dy = mouse.y - cheese.y;
+//     let distance = Math.hypot(dx, dy);
+
+//     if (distance < 20) { // Cheese collision check
+//         score++;
+//         scoreElement.textContent = 'Score: ' + score;
+//         cheese.x = Math.random() * (canvas.width - 40) + 20;
+//         cheese.y = Math.random() * (canvas.height - 40) + 20;
+//     }
+// }
+
 function checkCheeseCollision() {
     let dx = mouse.x - cheese.x;
     let dy = mouse.y - cheese.y;
     let distance = Math.hypot(dx, dy);
 
-    if (distance < 20) { // Cheese collision check
+    if (distance < 20) { // Проверка столкновения с сыром
         score++;
         scoreElement.textContent = 'Score: ' + score;
         cheese.x = Math.random() * (canvas.width - 40) + 20;
         cheese.y = Math.random() * (canvas.height - 40) + 20;
+
+        // Проверяем, превысил ли текущий счёт лучший счёт
+        if (score > bestScore) {
+            bestScore = score;
+            localStorage.setItem('bestScore', bestScore);
+            bestScoreElement.textContent = 'Best Score: ' + bestScore;
+
+            // Воспроизводим анимацию только если она ещё не была воспроизведена в этой игре
+            if (!bestScoreAnimated) {
+                bestScoreAnimated = true; // Устанавливаем флаг, чтобы анимация больше не воспроизводилась в этой игре
+
+                // Добавляем класс для анимации
+                bestScoreElement.classList.add('new-best-score');
+
+                // Удаляем класс после завершения анимации
+                bestScoreElement.addEventListener('animationend', function() {
+                    bestScoreElement.classList.remove('new-best-score');
+                }, { once: true });
+            }
+        }
     }
 }
+
+
 
 function drawMouse() {
     ctx.fillText(mouse.emoji, mouse.x - 15, mouse.y + 15);
@@ -239,6 +275,7 @@ function restartGame() {
     score = 0;
     scoreElement.textContent = 'Score: ' + score;
     gameOver = false;
+    bestScoreAnimated = false;
 
     // Reset mouse position
     mouse.x = canvas.width / 2;
