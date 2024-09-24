@@ -447,7 +447,7 @@ aside {
   left: 2rem;
 }
 
-@media (max-width: 1320px) {
+@media (max-width: 1350px) {
   .flex-container {
     margin-right: 2rem;
   }
