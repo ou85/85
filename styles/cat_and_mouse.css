@@ -9,11 +9,11 @@ body {
     background-position: center;
 }
 header {
-    height: 3rem;
-    padding: 3rem 0;
-    margin-bottom: 2rem;
+    height: 10rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
-
 canvas {
     background-color: #ffffff;
     display: block;
