@@ -9,7 +9,3 @@ This project hosts various web pages and features, including a picture fetcher f
 LiveServer
 
 <http://localhost:5500/>  
-
-### Old main branch
-
-Picture fetcher for webgallery has changed
