@@ -11,7 +11,7 @@ ul, li {
 }
 
 h1, h2, h3, h4, h5, h6{
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 p {
@@ -234,62 +234,62 @@ header {
 }
 
 a {
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1.1em;
-    padding: 6px; 
-    text-decoration: none; 
-    color: rgb(10, 12, 77); 
-    height: 100%; 
-    text-align: center; 
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 6px; 
+  text-decoration: none; 
+  color: rgb(10, 12, 77); 
+  height: 100%; 
+  text-align: center; 
 }
 a:hover {
-    color: #ffe; 
-    background-color: #5488af;
+  color: #ffe; 
+  background-color: #5488af;
 }
 a:visited {
-    color: rgb(10, 12, 77); 
+  color: rgb(10, 12, 77); 
 }
 .new { 
-    width: 300px; 
-    background: rgb(243, 242, 238);
-    padding: 20px; 
-    font-size: 1.1em;
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box; 
+  width: 300px; 
+  background: rgb(243, 242, 238);
+  padding: 20px; 
+  font-size: 1.1rem;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
 }
 aside {
-    padding-left: 15px;
-    margin-left: 15px;
-    float: left;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: left;
 }
 .wrapper {
-    width: 900px;
+  width: 900px;
 
 }
 .left_block {
-    float:left;
-    width: 600px;
-    margin-top: 15px;
+  float:left;
+  width: 600px;
+  margin-top: 15px;
 }
 .right_block {
-    float:right;
-    width: 280px;  
-    margin-top: 30px;  
-    background: rgb(243, 242, 238);
-    padding: 20px; 
-    font-size: 1.1em;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  float:right;
+  width: 280px;  
+  margin-top: 30px;  
+  background: rgb(243, 242, 238);
+  padding: 20px; 
+  font-size: 1.1rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .colh {
-    height: 20px;
-    text-align: right;    
-    color: #000; 
-    background: rgb(243, 242, 238);
-    border: 0px solid grey
+  height: 20px;
+  text-align: right;    
+  color: #000; 
+  background: rgb(243, 242, 238);
+  border: 0px solid grey
 }
 
 /* users/index ================================ */
@@ -307,6 +307,8 @@ aside {
   box-shadow: 0 2px 6px #c1ced7;
   display: table;
   width: 100%;
+  position: relative;
+  z-index: 2000;
 }
 
 .user-left img {
@@ -447,22 +449,26 @@ aside {
   left: 2rem;
 }
 
-@media (max-width: 1350px) {
-  .flex-container {
-    margin-right: 2rem;
+@media (max-width: 1250px) {
+  .container {
+    margin-top: 1px !important; 
   }
 
   .side-menu {
-    position: relative;
-    top: 1rem;
-    left: 2rem;
+    margin-top: 1px !important; 
+    position: relative; 
     width: 100%;
-    margin: 0 auto;
+    top: 0.5rem;
+    left: 0;
+    padding-bottom: 1rem;
+  }
+  .flex-container {
+    margin-right: 2rem;
   }
   .side-menu ul {
     display: flex;
     flex-direction: column; 
-    justify-content: start;
+    justify-content: flex-start;
   }
   .side-menu li {
     display: block; 
@@ -470,3 +476,4 @@ aside {
     padding-right: 0.5rem; 
   }
 }
+
