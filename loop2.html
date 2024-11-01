@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lines Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #000;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      width: 10rem;
+      height: 10rem;
+      background-color: #000;
+    }
+
+    .cell {
+      position: relative;
+      background-color: #000;
+    }
+
+    .cell::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      width: 0.2rem;
+      height: 140%;
+      background-color: var(--line-color);
+      transform: translateX(-50%) rotate(var(--rotation));
+      transform-origin: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container" id="grid"></div>
+
+  <script>
+    const colors = ['#78dce8', '#ffd866', '#a9dc76', '#ab9df2', '#ff6188', '#fc9867'];
+    const grid = document.getElementById('grid');
+    const cells = [];
+
+    // Create the grid and store cell references
+    for (let i = 0; i < 100; i++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      cell.style.setProperty('--line-color', randomColor);
+      cell.style.setProperty('--rotation', '0deg'); // Initial rotation
+      grid.appendChild(cell);
+      cells.push(cell); // Store cell for later
+    }
+
+    // Function to mirror each line randomly, one by one
+    function mirrorLines(index) {
+      if (index >= cells.length) return;
+
+      const cell = cells[index];
+      const randomRotation = Math.random() < 0.5 ? '45deg' : '-45deg'; // Randomly choose rotation
+      cell.style.setProperty('--rotation', randomRotation);
+
+      // Proceed to next cell after a delay
+      setTimeout(() => {
+        mirrorLines(index + 1);
+      }, 50); // Adjust delay as needed
+    }
+
+    // Start mirroring lines from the first cell
+    mirrorLines(0);
+  </script>
+</body>
+</html>

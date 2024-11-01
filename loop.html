@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Maze Effect</title>
+    <style>
+        body {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: rgb(210, 242, 210);
+            font-family: monospace;
+            overflow: hidden;
+            /* line-height: 1; */
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            /* line-height: 1; */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const container = document.createElement('pre');
+        document.body.appendChild(container);
+
+        const screenWidth = 15;                                         // width in characters
+        let line = '';
+
+        const colors = [
+            '#78dce8',
+            '#ffd866',
+            '#a9dc76',
+            '#ab9df2',
+            '#ff6188',
+            '#fc9867',
+        ]; 
+
+        setInterval(() => {
+            const randomChar = Math.random() < 0.5 ? '&#9585' : '&#9586';
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            line += `<span style="color: ${randomColor}">${randomChar}</span>`;
+
+            if (line.length / 38 >= screenWidth) {                      // adjusted for HTML length
+                container.innerHTML += line + '<br>';                   // add line to container
+                line = ''; 
+
+                // Scroll up
+                if (container.innerHTML.split('<br>').length > 10) {    // 10 lines
+                    container.innerHTML = container.innerHTML.split('<br>').slice(1).join('<br>');
+                }
+            }
+        }, 100);                                                        // speed
+    </script> 
+</body>
+</html>

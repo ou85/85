@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Mirrored Lines Grid</title>
+  <style>
+    /* Reset Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Center the Grid */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #000;
+    }
+
+    /* Grid Container */
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+      /* width: 80vmin;
+      height: 80vmin;      */
+      width: 10rem;
+      height: 10rem;
+      background-color: #000;
+    }
+
+    /* Grid Rows */
+    .row {
+      display: flex;
+      flex: 1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Show Rows */
+    .row.visible {
+      opacity: 1;
+    }
+
+    /* Grid Cells */
+    .cell {
+      position: relative;
+      flex: 1;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    /* Diagonal Lines */
+    .cell::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      width: 0.2rem;
+      height: 180%;
+      background-color: var(--line-color);
+      transform: translateX(-50%) rotate(var(--rotation));
+      transform-origin: center;
+      transition: transform .2s ease; /* Smooth rotation */
+    }
+
+    /* Rotation Animation Class */
+    .rotate::before {
+      transform: translateX(-50%) rotate(var(--new-rotation));
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container" id="grid"></div>
+
+  <script>
+    const colors = ['#78dce8', '#ffd866', '#a9dc76', '#ab9df2', '#ff6188', '#fc9867'];
+    const grid = document.getElementById('grid');
+    const rows = [];
+
+    // Number of rows and columns
+    const numRows = 10;
+    const numCols = 10;
+
+    // Create the grid rows and cells
+    for (let r = 0; r < numRows; r++) {
+      const row = document.createElement('div');
+      row.classList.add('row'); // Initially hidden with opacity 0
+      grid.appendChild(row);
+      rows.push(row);
+
+      for (let c = 0; c < numCols; c++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        cell.style.setProperty('--line-color', randomColor);
+        cell.style.setProperty('--rotation', '90deg'); // Initial rotation
+        row.appendChild(cell);
+      }
+    }
+
+    // Function to reveal rows one by one and rotate previous rows
+    function revealAndRotateRows(index) {
+      if (index >= rows.length) {
+        // After all rows are revealed, ensure the last row is rotated
+        if (rows.length > 0) {
+          rotateRow(rows.length - 1);
+        }
+        return;
+      }
+
+      const currentRow = rows[index];
+      currentRow.classList.add('visible');
+
+      // After a short delay, rotate the previous row
+      if (index > 0) {
+        rotateRow(index - 1);
+      }
+
+      // Proceed to reveal the next row after a delay
+      setTimeout(() => {
+        revealAndRotateRows(index + 1);
+      }, 200); // Adjust delay as needed (milliseconds)
+    }
+
+    // Function to rotate a specific row
+    function rotateRow(rowIndex) {
+      const row = rows[rowIndex];
+      const cells = row.querySelectorAll('.cell');
+
+      cells.forEach(cell => {
+        // Determine new rotation angle
+        const newRotation = Math.random() < 0.5 ? '45deg' : '-45deg';
+        cell.style.setProperty('--new-rotation', newRotation);
+        cell.classList.add('rotate');
+
+        // Remove the rotate class after animation completes to allow re-animation
+        setTimeout(() => {
+          cell.classList.remove('rotate');
+          cell.style.setProperty('--rotation', newRotation); // Update the rotation
+        }, 1000); // Duration matches the CSS transition
+      });
+    }
+
+    // Start the row reveal and rotation process
+    revealAndRotateRows(0);
+  </script>
+</body>
+</html>
