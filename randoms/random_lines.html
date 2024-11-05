@@ -2,12 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lines Grid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css" media="screen" />
+  <title>Random Lines</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    header{
+      top: 0;
+      width: 100%;
+      height: 1.5rem;
+      background-color: #000;
+      padding: 1rem;
+      text-align: center;
     }
 
     body {
@@ -42,13 +53,25 @@
       transform: translateX(-50%) rotate(var(--rotation));
       transform-origin: center;
     }
+    a, a:visited{
+      color: rgb(210, 242, 210);
+    }
   </style>
 </head>
+<header>
+  <a href="random_spins.html">next</a>
+</header>
 <body>
   <div class="grid-container" id="grid"></div>
-
   <script>
-    const colors = ['#78dce8', '#ffd866', '#a9dc76', '#ab9df2', '#ff6188', '#fc9867'];
+    const colors = [
+        '#78dce8', 
+        '#ffd866', 
+        '#a9dc76', 
+        '#ab9df2', 
+        '#ff6188', 
+        '#fc9867',
+    ];
     const grid = document.getElementById('grid');
     const cells = [];
 
@@ -60,7 +83,7 @@
       cell.style.setProperty('--line-color', randomColor);
       cell.style.setProperty('--rotation', '0deg'); // Initial rotation
       grid.appendChild(cell);
-      cells.push(cell); // Store cell for later
+      cells.push(cell);                             // Store cell for later
     }
 
     // Function to mirror each line randomly, one by one
@@ -74,7 +97,7 @@
       // Proceed to next cell after a delay
       setTimeout(() => {
         mirrorLines(index + 1);
-      }, 50); // Adjust delay as needed
+      }, 50);                                       // Adjust delay as needed
     }
 
     // Start mirroring lines from the first cell
