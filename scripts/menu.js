@@ -7,6 +7,7 @@ const menuItems = [
     { label: 'jsarray | table', link: 'jsarray-in-table.html' },
     { label: 'react babel',     link: 'react_babel.html' },
     { label: 'randoms',         link: 'randoms/random_chars.html' },
+    { label: 'colours',         link: 'colours/colours.html' },
     { label: 'react',           link: 'react.html' },
     { label: 'tiles',           link: 'webgallery/webgallery.html' },
     { label: 'shifting tiles',  link: 'shiftingtiles.html' },
