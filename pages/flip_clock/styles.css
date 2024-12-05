@@ -1,212 +1,9 @@
-/* body {
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: monospace, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .clock-container {
-    width: 61.8vh;
-    height: 38.2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
- 
-  .top-info {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .weather {
-    flex: 1;
-    text-align: left;
-    font-size: 1.2rem;
-  }
-  
-  .date-day {
-    flex: 1;
-    text-align: right;
-    font-size: 1.2rem;
-  }
-  
-  .date, .day {
-    margin: 0;
-  }
-
-  .flip-clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; 
-    aspect-ratio: 1.618; 
-    background-color: #0F0F08; 
-    border-radius: 1rem; 
-  }
-
-  .flip-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin: 0 0.5rem;
-    width: 10rem; 
-    height: 20rem;
-    overflow: hidden;
-  }
-  
-  .flip-number {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-    font-family: monospace, sans-serif;
-    font-weight: bold;
-    color: #fff;
-    background: #333;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 1rem; 
-  }
-
-  .flip-section.flip .top {
-    animation: flip-top 0.6s forwards;
-  }
-  
-  .flip-section.flip .bottom {
-    animation: flip-bottom 0.6s forwards;
-  }
-
-  @keyframes flip-top {
-    0% {
-      transform: rotateX(0deg);
-    }
-    100% {
-      transform: rotateX(-180deg);
-    }
-  }
-  
-  @keyframes flip-bottom {
-    0% {
-      transform: rotateX(180deg);
-    }
-    100% {
-      transform: rotateX(0deg);
-    }
-  }
-  
-  @media (max-width: 900px) {
-    .clock-container {
-      width: calc(100% - 10rem);
-      height: auto; 
-    }
-
-    .flip-section {
-        width: 8rem; 
-        height: 16rem;
-      }
-  
-    .flip-number {
-        font-size: 5rem; 
-      }
-  
-    .weather, .date-day {
-      font-size: 1rem; 
-    }
-  }
-   */
-
-   /* =================== FIRST FIX ===================== */
-
-   /* body {
-    margin: 0;
-    background-color: #333;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.clock-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #222;
-    padding: 2rem;
-    border-radius: 1rem;
-}
-
-.top-info {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #555;
-    padding-bottom: 1rem;
-}
-
-.weather, .date-day {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 1rem;
-}
-
-.weather {
-    align-items: flex-start;
-}
-
-.date-day {
-    align-items: flex-end;
-    text-align: right;
-}
-
-.city, .temp, .date, .day {
-    margin: 0.2rem 0;
-}
-
-.flip-clock {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.flip-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    height: 10rem;
-    background-color: #777;
-    border-radius: 1rem;
-    font-size: 4rem;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-} */
-
-/* =================== SECOND FIX ===================== */
-
 body {
     margin: 0;
     /* background-color: #333; */
     background-color: #222;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: "Titillium Web", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -278,7 +75,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 7rem;
-    font-family: monospace, sans-serif;
+    font-family: monospace, Helvetica, sans-serif;
     font-weight: bold;
     color: #fff;
     text-align: center;
@@ -304,6 +101,37 @@ body {
 .flip-section.flip .bottom {
     animation: flip-bottom 0.6s forwards;
 }
+
+.back {
+    margin: 1rem auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2rem 3rem; 
+  }
+
+  .knopka {
+    background-color: #222; 
+    border: 1px solid #333;  
+    padding: 0.4em 0.8em; 
+    color: darkgray;
+    text-decoration: none; 
+    font: 1rem/1.3;
+    font-weight: 600;
+    font-size: smaller;
+    border-radius: 5px;
+  
+    /* Выравнивание по центру блока .back */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+  .knopka:hover {
+    background: #333;
+    border: 2px solid #ff1e42;
+  }
 
 @keyframes flip-top {
     0% {

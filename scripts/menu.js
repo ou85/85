@@ -3,6 +3,7 @@ const menuItems = [
     { label: 'weather',         link: 'weather.html' },
     { label: 'elipsis',         link: 'ellipsis.html' },
     { label: 'time',            link: 'time.html' },
+    { label: 'flip',            link: './pages/flip_clock/flip_clock.html' },
     { label: 'indexmoz',        link: 'indexmoz.html' },
     { label: 'jsarray | table', link: 'jsarray-in-table.html' },
     { label: 'react babel',     link: 'react_babel.html' },
