@@ -1,6 +1,6 @@
 console.clear();
 
-function CountdownTracker(label, value) {
+function CountdownTracker(value) {
   var el = document.createElement('span');
 
   el.className = 'flip-clock__piece';
@@ -51,18 +51,15 @@ function getTime() {
   };
 }
 
-function Clock(countdown,callback) {
-  
-  countdown = countdown ? new Date(Date.parse(countdown)) : false;
-  callback = callback || function(){};
-  
-  var updateFn = countdown ? getTimeRemaining : getTime;
+function Clock(callback) {
+  new Date(Date.parse());
+  var updateFn = getTime;
 
   this.el = document.createElement('div');
   this.el.className = 'flip-clock';
 
   var trackers = {},
-      t = updateFn(countdown),
+      t = updateFn(),
       key, timeinterval;
 
   for ( key in t ){
@@ -78,7 +75,7 @@ function Clock(countdown,callback) {
     // throttle so it's not constantly updating the time.
     if ( i++ % 10 ) { return; }
     
-    var t = updateFn(countdown);
+    var t = updateFn();
     if ( t.Total < 0 ) {
       cancelAnimationFrame(timeinterval);
       for ( key in trackers ){
@@ -97,8 +94,13 @@ function Clock(countdown,callback) {
 }
 
 var deadline = new Date(Date.parse(new Date()) + 12 * 24 * 60 * 60 * 1000);
-var c = new Clock(deadline, function(){ alert('countdown complete') });
+var c = new Clock();
 document.body.appendChild(c.el);
 
-var clock = new Clock();
-document.body.appendChild(clock.el);
+// Toggle seconds visibility
+document.getElementById('toggle-seconds').addEventListener('click', function() {
+  var seconds = document.querySelector('.flip-clock__piece:nth-child(3)');
+  if (seconds) {
+    seconds.style.display = seconds.style.display === 'none' ? 'inline-block' : 'none';
+  }
+});
