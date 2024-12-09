@@ -46,8 +46,6 @@ a {
 .card__back::after {
   display: block;
   height: 0.72em;
-  /* color: #ccc;
-  background: #222; */
   color: #FFF;
   background: #393939;
   padding: 0.25em 0.25em;
