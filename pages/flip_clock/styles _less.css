@@ -7,13 +7,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  font-family: "Titillium Web", sans-serif;
+  background-color: #222;
+  font-family: 'Eurostile', sans-serif;
 }
+
 a {
   text-decoration: none;
   color: #fff;
 }
+
 .flip-clock {
   text-align: center;
   perspective: 400px;
@@ -44,10 +46,12 @@ a {
 .card__back::after {
   display: block;
   height: 0.72em;
-  color: #ccc;
-  background: #222;
+  /* color: #ccc;
+  background: #222; */
+  color: #FFF;
+  background: #393939;
   padding: 0.25em 0.25em;
-  border-radius: 0.15em 0.15em 0 0;
+  border-radius: 0.12em 0.12em 0 0;
   transform-style: preserve-3d;
   width: 1.8em;
   transform: translateZ(0);
@@ -59,7 +63,7 @@ a {
   left: 0;
   border-top: solid 1px #000;
   background: #393939;
-  border-radius: 0 0 0.15em 0.15em;
+  border-radius: 0 0 0.12em 0.12em;
   pointer-events: none;
   overflow: hidden;
 }

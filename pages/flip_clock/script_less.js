@@ -97,6 +97,14 @@ var deadline = new Date(Date.parse(new Date()) + 12 * 24 * 60 * 60 * 1000);
 var c = new Clock();
 document.body.appendChild(c.el);
 
+// Hide seconds on page load
+document.addEventListener('DOMContentLoaded', function() {
+  var seconds = document.querySelector('.flip-clock__piece:nth-child(3)');
+  if (seconds) {
+    seconds.style.display = 'none';
+  }
+});
+
 // Toggle seconds visibility
 document.getElementById('toggle-seconds').addEventListener('click', function() {
   var seconds = document.querySelector('.flip-clock__piece:nth-child(3)');
