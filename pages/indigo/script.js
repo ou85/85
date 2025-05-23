@@ -17,15 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const randomDiv = document.getElementById('random');
     randomDiv.innerHTML = '';
     randomDiv.style.display = 'grid';
-    randomDiv.style.gridTemplateColumns = 'repeat(60, 1rem)';
-    randomDiv.style.gridTemplateRows = 'repeat(1, 1rem)';
-    randomDiv.style.width = '60rem';
+    randomDiv.style.gridTemplateColumns = 'repeat(120, 0.5rem)';
+    randomDiv.style.gridTemplateRows = 'repeat(1, 0.5rem)';
+    randomDiv.style.width = '120rem';
     randomDiv.style.height = '1rem';
     randomDiv.style.overflow = 'hidden';
     randomDiv.style.gap = '0';
 
-    const boxSize = 1; // rem
-    const cols = 60;
+    const boxSize = 0.5; // rem
+    const cols = 120;
     const rows = 1;
     const boxes = [];
 
