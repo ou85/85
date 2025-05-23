@@ -38,38 +38,38 @@ footer{
     border-bottom: 2px solid #4E4E4E;
  }
 .dark-grey-orange {
-       padding: 1rem;
+    padding: 1rem;
     color: #FFA500;  /* Оранжевый цвет */
-     background-color: #333;
+    background-color: #333;
     border-bottom: 2px solid #4E4E4E;
 }
 .dark-grey-light-orange {
-       padding: 1rem;
+    padding: 1rem;
     color: #FFDB99;  /* Светло-оранжевый цвет */
-     background-color: #333;
+    background-color: #333;
     border-bottom: 2px solid #4E4E4E;
 }
 .black-grey {
-       padding: 1rem;
+    padding: 1rem;
     color: #E5E5E5;
-     background-color: #000000;
+    background-color: #000000;
     border-bottom: 2px solid #4E4E4E;
 }
 .black-dark-grey {
-       padding: 1rem;
+    padding: 1rem;
     color: #CECECE;
-     background-color: #000000;
+    background-color: #000000;
     border-bottom: 2px solid #4E4E4E;
 }
 .black-ivory {
-       padding: 1rem;
+    padding: 1rem;
     color: #FFFFF0;
-     background-color: #000000;
+    background-color: #000000;
     border-bottom: 2px solid #4E4E4E;
 }
 .david-io {
-       padding: 1rem;
+    padding: 1rem;
     color: #F8F8F2;
-     background-color: #282A36;
+    background-color: #282A36;
     border-bottom: 2px solid #4E4E4E;
 }
