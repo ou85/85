@@ -91,7 +91,7 @@ Nightshade Indigo 	        #4f4352
 Ocean Indigo 	            #485479 	
 Orchid 	                #da70d6 	
 Pale Indigo 	            #9892B1 	
-//Persian Indigo 	        #32127A 	
+Persian Indigo 	        #32127A 	
 Slate Indigo 	            #4E6172 	
 Smoky Indigo 	            #38417E 	
 Happy Indigo 	            #726EFF 	
@@ -111,41 +111,5 @@ Indigo Carmine 	        #1A3338
 
 ---
 
-Color 	                     HEX 	     
-	
-Indigo White 	            #ebf6f7 	
-Midnight Indigo 	        #0e1b40 	
-Twilight Indigo 	        #131925 	
-Indigo Dusk 	            #4A4067 	
-Faded Indigo 	            #BFD2E0 	
-Indigo Blue 	            #3F0FB7 	
-Indigo Gray 	            #CDC9D4 	
-Indigo Purple 	            #2C106A 	
-Indigo Mist 	            #ece4f1 	
-Indigo Denim 	            #2F314E 	
-Kachi Indigo 	            #393e4f 	
-Light Indigo 	            #6D5ACF 	
-Mystic Indigo 	            #4A128E 	
-Navy Indigo 	            #4C5E87 	
-Nightshade Indigo 	        #4f4352 	
-Ocean Indigo 	            #485479 	
-Orchid 	                #da70d6 	
-Pale Indigo 	            #9892B1 	
-Persian Indigo 	        #32127A 	
-Slate Indigo 	            #4E6172 	
-Smoky Indigo 	            #38417E 	
-Steel Indigo 	            #35586C 	
-Stormy Indigo 	            #484D6D 	
-Supreme Indigo 	        #382080 	
-Japanese Indigo 	        #264348 	
-Aesthetic Indigo 	        #36285B 	
-Muted Indigo 	            #4C367E 	
-Indigo Red 	            #695A78 	
-Vintage Indigo 	        #4A556B 	
-Indigo (Pantone) 	        #4C3957 	
-Pastel Indigo 	            #8686AF 	
-Indigo Bunting 	        #006CA9 	
-Indigo Carmine 	        #1A3338 
 
----
 

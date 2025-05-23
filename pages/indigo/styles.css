@@ -11,13 +11,18 @@ body {
     text-align: center;
     padding: 0 1rem 0 1rem;
 }
+.container {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
 .chart {
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(11.25rem, 1fr));  */
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
     gap: 0.6rem;
-    padding-top: 1.75rem;
-    border-top: 1px solid #C0C0C0;
+    padding: 1.75rem 0;
 }
 .color-box {
     /* padding: 1.25rem;
@@ -54,3 +59,10 @@ a:hover {
 a:visited {
     color: inherit; 
 }
+footer {
+    border-top: 1px solid #C0C0C0;
+    padding: 1rem ;
+    color: #ebf6f7;
+    text-align: left;
+}
+
