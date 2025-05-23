@@ -443,8 +443,9 @@ aside {
 }
 
 .side-menu {
-  margin-top: 60px; 
-  position: fixed;
+  margin-top: 3rem; 
+  /* position: fixed; */
+  position: absolute;
   top: 1rem;
   left: 2rem;
 }
