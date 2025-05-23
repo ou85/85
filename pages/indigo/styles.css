@@ -60,9 +60,13 @@ a:visited {
     color: inherit; 
 }
 footer {
-    border-top: 1px solid #C0C0C0;
-    padding: 1rem ;
+    /* border-top: 1px solid #C0C0C0; */
+    /* padding: 1rem ; */
     color: #ebf6f7;
     text-align: left;
+    max-width: 60rem;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
 }
 
