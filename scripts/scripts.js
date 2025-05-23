@@ -286,7 +286,7 @@ for (let i = 0; i < animals.length; i++) {
 }
 
 // ARRAYS in OBJECTS
-document.write(`<h2>## Arrays in Objects</h2>`);
+document.write(`<h2>Arrays in Objects</h2>`);
 const charactrs = [
   { name: "Ken the Ninja", age: 14 },
   { name: "Master Wooly", age: 100 },
@@ -313,7 +313,7 @@ for (let i = 0; i < charactrs.length; i++) {
 
 // OBJECTS and FUNCTIONS
 
-document.write(`<h2>## Objects and Functions</h2>`);
+document.write(`<h2>Objects and Functions</h2>`);
 const user11 = {
   name: "Bob",
   greet: () => {
@@ -337,7 +337,7 @@ const animal = new Animal("Mocha", 8); // Pass the arguments 「"Mocha"」 「8�
 
 console.log(`Name: ${animal.name}`);
 console.log(`Age: ${animal.age}`);
-document.write(`<h2>## Constructor arguments</h2>`);
+document.write(`<h2>Constructor arguments</h2>`);
 document.write(`<p>Name: ${animal.name}</p>`);
 document.write(`<p>Age: ${animal.age}</p>`);
 document.write(`<p>...</p>`);
