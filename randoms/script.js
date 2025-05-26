@@ -17,16 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const randomDiv = document.getElementById('random');
     randomDiv.innerHTML = '';
     randomDiv.style.display = 'grid';
-    randomDiv.style.gridTemplateColumns = 'repeat(5, 2rem)';
-    randomDiv.style.gridTemplateRows = 'repeat(5, 2rem)';
-    randomDiv.style.width = '10rem';
-    randomDiv.style.height = '10rem';
+    randomDiv.style.gridTemplateColumns = 'repeat(10, 2rem)';
+    randomDiv.style.gridTemplateRows = 'repeat(10, 2rem)';
+    randomDiv.style.width = '20rem';
+    randomDiv.style.height = '20rem';
     randomDiv.style.overflow = 'hidden';
     randomDiv.style.gap = '0';
+    randomDiv.style.borderRadius = '0.3rem';
 
-    const boxSize = 5; // rem
-    const cols = 5;
-    const rows = 5;
+    const boxSize = 2; // rem
+    const cols = 10;
+    const rows = 10;
     const boxes = [];
 
     for (let y = 0; y < rows; y++) {
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const box = document.createElement('div');
             box.style.width = box.style.height = boxSize + 'rem';
             box.style.background = indigoColors[Math.floor(Math.random() * indigoColors.length)];
-            box.style.transition = 'background 5.3s';
+            box.style.transition = 'background 3.3s';
             randomDiv.appendChild(box);
             boxes.push(box);
         }
