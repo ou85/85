@@ -1,5 +1,5 @@
 const menuItems = [
-    { label: 'analog clock',    link: 'analogclock.html' },
+    { label: 'analog clock',    link: './pages/analog_clock/analog_clock.html' },
     { label: 'weather',         link: 'weather.html' },
     { label: 'elipsis',         link: 'ellipsis.html' },
     { label: 'time',            link: 'time.html' },

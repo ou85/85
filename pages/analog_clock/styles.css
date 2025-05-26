@@ -43,7 +43,7 @@ body {
   justify-content: center;
   align-items: center;
   /* background: url(https://user-images.githubusercontent.com/42720361/80282419-a293a400-8711-11ea-81c7-1c44e2980db2.png); */
-  background: url(../images/analog-clock-background.png);
+  background: url(../../images/analog-clock-background.png);
   background-size: cover;
   border: 16px solid #091921;
   border-radius: 50%;
