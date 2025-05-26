@@ -8,15 +8,30 @@ header{
     width: 100%;
     padding: 1rem;
     height: 1.5rem;
+    font-size: 1rem;
+    color: #fc9867;
     text-align: center;
     background-color: #000;
 }
-body {
+/* body {
     display: flex;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
     background-color: #000;
+} */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    font-size: 1.5rem;
+    line-height: 1.1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: rgb(210, 242, 210);
+    font-family: monospace;
 }
 a, a:visited{
     color: #ffd866;
@@ -39,4 +54,8 @@ a, a:visited{
     transform-origin: center;
     background-color: var(--line-color);
     transform: translateX(-50%) rotate(var(--rotation));
+}
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
