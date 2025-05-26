@@ -16,7 +16,7 @@ const menuItems = [
     { label: 'image carousel',  link: 'image_carousel.html' },
     { label: 'side menu no gradient', link: 'sidemenu.html' },
     { label: 'cat and mouse',   link: 'cat_and_mouse.html' },
-    { label: 't free techno',   link: 't_free_techno/tfree.html' },
+    { label: 't free techno',   link: './pages/t_free_techno/tfree.html' },
     { label: 'calm login',      link: 'login_calm.html' },
     { label: 'fire login',      link: 'login_fire.html' },
     { label: 'login',           link: 'login.html' }
