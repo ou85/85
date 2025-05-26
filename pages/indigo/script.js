@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     randomDiv.innerHTML = '';
     randomDiv.style.display = 'grid';
     randomDiv.style.gridTemplateColumns = 'repeat(120, 0.5rem)';
-    randomDiv.style.gridTemplateRows = 'repeat(1, 0.5rem)';
+    randomDiv.style.gridTemplateRows = 'repeat(2, 0.5rem)';
     randomDiv.style.width = '120rem';
     randomDiv.style.height = '1rem';
     randomDiv.style.overflow = 'hidden';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const boxSize = 0.5; // rem
     const cols = 120;
-    const rows = 1;
+    const rows = 2;
     const boxes = [];
 
     for (let y = 0; y < rows; y++) {
