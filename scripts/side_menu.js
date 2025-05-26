@@ -12,7 +12,7 @@ function initializeSideMenu() {
     <div>
       <ul class="nav">
         <li class="nav-link menuWrapper">
-          <a href="analogclock.html" class="nav-link">
+          <a href="./pages/analog_clock/analog_clock.html" class="nav-link">
             analog clock
           </a>
         </li>
