@@ -45,6 +45,7 @@
       <script>
         let path = "shiftingtiles/gallery";
         let webPath = "https://picsum.photos/900";
+        webPath = undefined; // to use local images
         let photos = [];
         for (let i = 600; i <= 700; i++) {
           webPath != undefined
@@ -53,12 +54,73 @@
         }
         console.log(photos);
 
+        // Preload images
+        // photos.forEach(src => {
+        //   const img = new Image();
+        //   img.src = src;
+        // });
+
+        // Preload images with load/error handling
+        // let loaded = 0;
+        // photos.forEach(src => {
+        //   const img = new Image();
+        //   img.onload = () => {
+        //     loaded++;
+        //     console.log(`Loaded: ${src} (${loaded}/${photos.length})`);
+        //     if (loaded === photos.length) {
+        //       console.log("All images loaded.");
+        //     }
+        //   };
+        //   img.onerror = () => {
+        //     console.log(`Load error: ${src}`);
+        //   };
+        //   img.src = src;
+        // });
+
         $(".gallery").shiftingtiles(
           (function get_photos() {
             return photos;
           })()
         );
       </script>
+
+      <!-- <script>
+        let path = "shiftingtiles/gallery";
+        let webPath = "https://picsum.photos/900";
+        // let webPath = undefined; // используем локальные картинки
+        let photos = [];
+        for (let i = 600; i <= 700; i++) {
+          webPath
+            ? photos.push(`${webPath}/${i}`)
+            : photos.push(`${path}/${i}.jpg`);
+        }
+        
+        let loadedPhotos = [];
+        let checked = 0;
+        
+        photos.forEach(src => {
+          const img = new Image();
+          img.onload = () => {
+            loadedPhotos.push(src);
+            checked++;
+            console.log(`Loaded: ${src} (${checked}/${photos.length})`);
+            if (checked === photos.length) {
+              console.log("Все изображения проверены.");
+              $(".gallery").shiftingtiles(loadedPhotos);
+            }
+          };
+          img.onerror = () => {
+            checked++;
+            console.log(`Ошибка загрузки: ${src} (${checked}/${photos.length})`);
+            if (checked === photos.length) {
+              console.log("Все изображения проверены.");
+              $(".gallery").shiftingtiles(loadedPhotos);
+            }
+          };
+          img.src = src;
+        });
+      </script> -->
+      
     </div>
     <footer class="footer">
       <!-- <p>love and peace</p> -->
