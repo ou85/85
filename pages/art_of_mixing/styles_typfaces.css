@@ -1,0 +1,191 @@
+/* ===========================
+   GOOGLE FONTS IMPORTS
+   =========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Droid+Serif:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Francois+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap");
+
+/* ===========================
+   FONT CLASSES
+   =========================== */
+
+.font-open-sans { font-family: 'Open Sans', sans-serif; }
+.font-roboto { font-family: 'Roboto', sans-serif; }
+.font-oswald { font-family: 'Oswald', sans-serif; }
+.font-lato { font-family: 'Lato', sans-serif; }
+.font-droid-sans { font-family: 'Droid Sans', sans-serif; }
+.font-pt-sans { font-family: 'PT Sans', sans-serif; }
+.font-source-sans { font-family: 'Source Sans Pro', sans-serif; }
+.font-droid-serif { font-family: 'Droid Serif', serif; }
+.font-ubuntu { font-family: 'Ubuntu', sans-serif; }
+.font-raleway { font-family: 'Raleway', sans-serif; }
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+.font-pt-sans-narrow { font-family: 'PT Sans Narrow', sans-serif; }
+.font-oxygen { font-family: 'Oxygen', sans-serif; }
+.font-arimo { font-family: 'Arimo', sans-serif; }
+.font-yanone { font-family: 'Yanone Kaffeesatz', sans-serif; }
+.font-lora { font-family: 'Lora', serif; }
+.font-lobster { font-family: 'Lobster', cursive; }
+.font-bitter { font-family: 'Bitter', serif; }
+.font-francois-one { font-family: 'Francois One', sans-serif; }
+.font-arvo { font-family: 'Arvo', serif; }
+
+/* ===========================
+   GLOBAL STYLES
+   =========================== */
+
+body {
+    background: #000;
+    color: #eee;
+    margin: 1rem auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+
+.page {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===========================
+   TITLE BLOCK
+   =========================== */
+
+.title-block {
+    text-align: center;
+    width: 60%;
+    margin: 10px auto;
+}
+
+.line {
+    width: 60%;
+    height: 2px;
+    background: #777;
+    margin: 10px auto;
+}
+
+.title-small {
+    font-size: 16px;
+    color: #bbb;
+}
+
+.title-main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* ===========================
+   GRID LAYOUT
+   =========================== */
+
+.grid-container {
+    margin: 10rem  auto 2rem auto;
+    position: relative;
+    display: flex;
+}
+
+/* LEFT LABELS (ROWS) */
+.row-labels {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+}
+
+.label {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #ddd;
+    width:7.5rem;
+    margin-right: 2rem;
+    justify-content: flex-end;
+    border: 1px solid #000;
+}
+
+/* TOP LABELS (COLUMNS) */
+.col-labels {
+    position: absolute;
+    left: 7.5rem;
+    top: -9rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.col {
+    width: 2rem;
+    height: 8rem;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.25rem;
+    color: #ddd;
+    border: 1px solid #000;
+}
+
+.column{
+    z-index: 10;
+    height:44.625rem;
+    border: 1px solid #c1f114;
+}
+
+/* ===========================
+   MATRIX
+   =========================== */
+
+.matrix {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row :hover{
+    border: 1px solid rgb(0, 255, 26);
+}
+
+.cell {
+    width: 2rem;
+    height: 2rem;
+    /* border: 1px solid #000; */
+    border: 1px solid #3c3a3a;
+}
+
+.cell :hover{
+    border: 1px solid rgb(0, 255, 26);
+}
+
+/* COLORS */
+.good { background: #e0e0e0; }
+.ok { background: #999; }
+.avoid { background: #444; }

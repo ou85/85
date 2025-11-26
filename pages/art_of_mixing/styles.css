@@ -1,0 +1,29 @@
+body {
+    background: #000;
+    color: #eee;
+    font-family: sans-serif;
+    padding: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 4px;
+}
+
+.cell {
+    background: #333;
+    border: 2px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.15s;
+    font-size: 20px;
+}
+
+.highlight {
+    background: #666 !important;
+    border-color: #fff !important;
+}
