@@ -54,7 +54,8 @@
 
 body {
     background: #000;
-    color: #eee;
+    /* color: #eee; */
+    color: #F8F8F2;
     margin: 1rem auto;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
@@ -189,3 +190,36 @@ body {
 .good { background: #e0e0e0; }
 .ok { background: #999; }
 .avoid { background: #444; }
+
+/* LEGEND */
+.legend-block {
+    font-size: 1rem;
+    min-width: 30%;
+    margin: .5rem auto;
+}
+
+.legend-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 1rem; 
+}
+
+.legend-row .cell {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #444;
+}
+
+.legend-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
