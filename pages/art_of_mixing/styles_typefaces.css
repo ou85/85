@@ -76,15 +76,16 @@ body {
 
 .title-block {
     text-align: center;
-    width: 60%;
+    /* width: 60%; */
+    max-width: 45rem;
     margin: 10px auto;
 }
 
 .line {
-    width: 60%;
+    width: 35rem;
     height: 2px;
     background: #777;
-    margin: 10px auto;
+    margin: .8rem auto;
 }
 
 .title-small {
@@ -107,6 +108,7 @@ body {
     margin: 10rem  auto 2rem auto;
     position: relative;
     display: flex;
+    transform: translateX(-4rem);
 }
 
 /* LEFT LABELS (ROWS) */
@@ -154,7 +156,7 @@ body {
 .column{
     z-index: 10;
     height:44.625rem;
-    border: 1px solid #c1f114;
+    /* border: 1px solid #c1f114; */
 }
 
 /* ===========================
@@ -172,7 +174,9 @@ body {
 }
 
 .row :hover{
-    border: 1px solid rgb(0, 255, 26);
+    /* border: 1px solid rgb(0, 255, 26); */
+    border: 1px solid rgb(221, 0, 255);
+    border-radius: .3rem;
 }
 
 .cell {
@@ -182,13 +186,13 @@ body {
     border: 1px solid #3c3a3a;
 }
 
-.cell :hover{
-    border: 1px solid rgb(0, 255, 26);
-}
+/* .cell :hover{
+    border: 2px solid hotpink;
+} */
 
 /* COLORS */
 .good { background: #e0e0e0; }
-.ok { background: #999; }
+.fair { background: #999; }
 .avoid { background: #444; }
 
 /* LEGEND */
