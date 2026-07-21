@@ -8,14 +8,12 @@ body {
     justify-content: center;
     height: 100vh;
 }
-
 .back {
     position: absolute;
     top: 0;
     left: 0;
     margin: 2rem 3rem; 
 }
-
 .knopka {
     background-color: #222; 
     border: 2px solid #333;  
@@ -28,18 +26,15 @@ body {
     border-radius: 5px;
     position: relative;
 }
-
 .knopka:hover {
     background: #333;
     border: 2px solid #ff1e42;
 }
-
 .clock-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .top-info {
     display: flex;
     justify-content: space-between;
@@ -48,120 +43,88 @@ body {
 }
 
 /* Flip Clock --------------------------------------------- */
-
 .flip-clock {
     display: flex;
     justify-content: center;
     gap: 1rem;
-
     padding: 2rem 0;
-
     border-top: 1px solid #555;
     border-bottom: 1px solid #555;
-
     perspective: 1000px;
 }
-
 .flip-section {
     position: relative;
-
     width: 10rem;
     height: 10rem;
-
     border-radius: 1rem;
     perspective: 800px;
 }
-
 .flip-half {
     position: absolute;
     left: 0;
-
     width: 100%;
     height: 50%;
-
     overflow: hidden;
     background-color: #555;
-
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
-
 .flip-value {
     position: absolute;
     left: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 200%;
-
     color: #fff;
-
     font-family: "Eurostile", sans-serif;
     font-size: 5.5rem;
     font-weight: bold;
     line-height: 1;
-
     user-select: none;
 }
-
 .static-top,
 .top-flap {
     top: 0;
-
     border-radius: 1rem 1rem 0 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
-
 .static-top .flip-value,
 .top-flap .flip-value {
     top: 0;
 }
-
 .static-bottom,
 .bottom-flap {
     bottom: 0;
-
     border-radius: 0 0 1rem 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-
 .static-bottom .flip-value,
 .bottom-flap .flip-value {
     bottom: 0;
 }
-
 .static-top {
     z-index: 1;
 }
-
 .static-bottom {
     z-index: 1;
 }
-
 .top-flap {
     z-index: 3;
-
     transform: rotateX(0deg);
     transform-origin: bottom;
 }
-
 .bottom-flap {
     z-index: 2;
-
     transform: rotateX(90deg);
     transform-origin: top;
 }
-
 .top-flap::after,
 .bottom-flap::after {
     content: "";
-
     position: absolute;
     inset: 0;
-
     pointer-events: none;
     opacity: 0;
 }
@@ -173,7 +136,6 @@ body {
         rgba(0, 0, 0, 0.35)
     );
 }
-
 .bottom-flap::after {
     background: linear-gradient(
         to top,
@@ -181,63 +143,50 @@ body {
         rgba(0, 0, 0, 0.25)
     );
 }
-
 .flip-section.flipping .top-flap {
     animation: flip-top 0.3s ease-in forwards;
 }
-
 .flip-section.flipping .bottom-flap {
     animation: flip-bottom 0.3s ease-out 0.3s forwards;
 }
-
 .flip-section.flipping .top-flap::after {
     animation: top-shadow 0.3s ease-in forwards;
 }
-
 .flip-section.flipping .bottom-flap::after {
     animation: bottom-shadow 0.3s ease-out 0.3s forwards;
 }
-
 @keyframes flip-top {
     from {
         transform: rotateX(0deg);
     }
-
     to {
         transform: rotateX(-90deg);
     }
 }
-
 @keyframes flip-bottom {
     from {
         transform: rotateX(90deg);
     }
-
     to {
         transform: rotateX(0deg);
     }
 }
-
 @keyframes top-shadow {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
-
 @keyframes bottom-shadow {
     from {
         opacity: 1;
     }
-
     to {
         opacity: 0;
     }
 }
-
 @media (prefers-reduced-motion: reduce) {
     .flip-section.flipping .top-flap,
     .flip-section.flipping .bottom-flap,
@@ -330,7 +279,6 @@ form {
 }
 .search-button:hover {border: 3px solid var(--clock);}
 .ajax-section {  min-height: 100px;}
-
 @keyframes slide-in-left {
   0% {transform: translateX(-100%);}
   100% {transform: translateX(0);}
