@@ -3,23 +3,19 @@ body {
     background-color: #222;
     color: #fff;
     font-family: "Titillium Web", sans-serif;
-    /* font-family: 'Eurostile', sans-serif; */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 
-/* Блок "Назад" */
 .back {
-    margin: 1rem auto;
     position: absolute;
     top: 0;
     left: 0;
     margin: 2rem 3rem; 
 }
 
-/* Кнопка */
 .knopka {
     background-color: #222; 
     border: 2px solid #333;  
@@ -31,13 +27,6 @@ body {
     font-size: smaller;
     border-radius: 5px;
     position: relative;
-
-    /* Центрирование внутри "back" */
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%); */
 }
 
 .knopka:hover {
@@ -45,21 +34,16 @@ body {
     border: 2px solid #ff1e42;
 }
 
-/* Основной контейнер часов */
 .clock-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    border-radius: 1rem;
 }
 
 .top-info {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #555;
     padding-bottom: 1rem;
 }
 
@@ -78,17 +62,28 @@ body {
 .date-day {
     align-items: flex-end;
     text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .city, .temp, .date, .day {
     margin: 0.2rem 0;
+}
+.date{
+   animation: slide-in 1s forwards;
+}
+.day{    
+   animation: slide-in 1.5s forwards;
 }
 
 /* Flip Clock */
 .flip-clock {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1rem;    
+    border-bottom: 1px solid #555; 
+    border-top: 1px solid #555; 
+    padding: 2rem 0;
 }
 
 .flip-section {
@@ -111,7 +106,6 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 5.5rem;
-    /* font-family: monospace, Helvetica, sans-serif; */
     font-family: 'Eurostile', sans-serif;
     font-weight: bold;
     color: #fff;
@@ -136,7 +130,7 @@ body {
     content: "";
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: #000;
     top: 50%;
     left: 0;
@@ -162,3 +156,91 @@ body {
     0% { transform: rotateX(180deg); }
     100% { transform: rotateX(0deg); }
 }
+
+
+/* WEATHER __________________________________________________*/
+.bottom-banner {
+    display: flex;
+    color: var(--text_light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+@keyframes slide-in {
+  0% {transform: translateX(100%);}
+  100% {transform: translateX(0);}
+}
+form {
+  animation: slide-in 1s forwards;
+  display: flex;
+  align-items: center;
+}
+.bottom-banner form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.bottom-banner form input {
+  background: var(--bg_main);
+  color:antiquewhite;
+  width: 120px;
+  height: 25px;
+  font-size: 14px;
+  border: none;
+  outline: none; 
+}
+.bottom-banner form input:focus {
+  border: none;
+  outline: none; 
+  border-bottom: 2px solid var(--clock); 
+}
+.bottom-banner form input::placeholder {
+  color: currentColor; 
+}
+.bottom-banner form button {
+  padding: 3px 3px;
+  margin-left: 5px;
+  background: var(--bg_main);
+}
+.bottom-banner form .msg {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  max-width: 100%;
+  min-height: 40px;
+}
+.search-button {
+  background: transparent;
+  color: inherit;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.search-button:hover {
+  border: 3px solid var(--clock);
+}
+.ajax-section {
+  min-height: 100px;
+}
+
+@keyframes slide-in-left {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(0);}
+}
+.ajax-section .city {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    animation: slide-in-left 1s forwards;
+}
+.city-name{font-size: 24px;}
+ul, li { 
+  list-style-type: none;
+}
+
+/* ========================== */

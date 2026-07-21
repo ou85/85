@@ -15,8 +15,9 @@ a {
   text-decoration: none;
   color: #fff;
 }
-
+.back{font-family: "Titillium Web", sans-serif;}
 .flip-clock {
+  
   text-align: center;
   perspective: 400px;
   margin: 20px auto;
