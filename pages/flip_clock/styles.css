@@ -35,10 +35,17 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.top-info {
+/* .top-info {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-bottom: 1rem;
+} */
+.top-info {
+    display: grid;
+    grid-template-columns: 10rem 10rem;
+    gap: 1rem;
+    width: 21rem;
     padding-bottom: 1rem;
 }
 
@@ -198,12 +205,21 @@ body {
 }
 
 /* WEATHER __________________________________________________*/
-.weather, .date-day {
+/* .weather, .date-day {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     font-size: 1rem;
+} */
+.weather,
+.date-day {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    min-width: 0;
+    font-size: 1rem;
+    overflow: visible;
 }
 .weather {align-items: flex-start;}
 .date-day {
@@ -336,5 +352,4 @@ form {
     font-size: 0.8rem;
     color: #999;
   }
-
   /* ------------------------------------------------ */
