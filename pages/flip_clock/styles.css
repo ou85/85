@@ -23,7 +23,7 @@ body {
     font: 1rem/1.3;
     font-weight: 600;
     font-size: smaller;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     position: relative;
 }
 .knopka:hover {
@@ -35,12 +35,6 @@ body {
     flex-direction: column;
     align-items: center;
 }
-/* .top-info {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-bottom: 1rem;
-} */
 .top-info {
     display: grid;
     grid-template-columns: 10rem 10rem;
@@ -98,9 +92,7 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 .static-top .flip-value,
-.top-flap .flip-value {
-    top: 0;
-}
+.top-flap .flip-value {top: 0;}
 .static-bottom,
 .bottom-flap {
     bottom: 0;
@@ -108,15 +100,9 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 .static-bottom .flip-value,
-.bottom-flap .flip-value {
-    bottom: 0;
-}
-.static-top {
-    z-index: 1;
-}
-.static-bottom {
-    z-index: 1;
-}
+.bottom-flap .flip-value {bottom: 0;}
+.static-top {z-index: 1;}
+.static-bottom {z-index: 1;}
 .top-flap {
     z-index: 3;
     transform: rotateX(0deg);
@@ -135,7 +121,6 @@ body {
     pointer-events: none;
     opacity: 0;
 }
-
 .top-flap::after {
     background: linear-gradient(
         to bottom,
@@ -150,49 +135,25 @@ body {
         rgba(0, 0, 0, 0.25)
     );
 }
-.flip-section.flipping .top-flap {
-    animation: flip-top 0.3s ease-in forwards;
-}
-.flip-section.flipping .bottom-flap {
-    animation: flip-bottom 0.3s ease-out 0.3s forwards;
-}
-.flip-section.flipping .top-flap::after {
-    animation: top-shadow 0.3s ease-in forwards;
-}
-.flip-section.flipping .bottom-flap::after {
-    animation: bottom-shadow 0.3s ease-out 0.3s forwards;
-}
+.flip-section.flipping .top-flap {animation: flip-top 0.3s ease-in forwards;}
+.flip-section.flipping .bottom-flap {animation: flip-bottom 0.3s ease-out 0.3s forwards;}
+.flip-section.flipping .top-flap::after {animation: top-shadow 0.3s ease-in forwards;}
+.flip-section.flipping .bottom-flap::after {animation: bottom-shadow 0.3s ease-out 0.3s forwards;}
 @keyframes flip-top {
-    from {
-        transform: rotateX(0deg);
-    }
-    to {
-        transform: rotateX(-90deg);
-    }
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(-90deg);}
 }
-@keyframes flip-bottom {
-    from {
-        transform: rotateX(90deg);
-    }
-    to {
-        transform: rotateX(0deg);
-    }
+@keyframes flip-bottom {from {
+    transform: rotateX(90deg);}
+    to {transform: rotateX(0deg);}
 }
 @keyframes top-shadow {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 @keyframes bottom-shadow {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 @media (prefers-reduced-motion: reduce) {
     .flip-section.flipping .top-flap,
@@ -205,13 +166,6 @@ body {
 }
 
 /* WEATHER __________________________________________________*/
-/* .weather, .date-day {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 1rem;
-} */
 .weather,
 .date-day {
     display: flex;
@@ -233,7 +187,6 @@ body {
 .day{animation: slide-in 1.5s forwards;}
 .bottom-banner {
     display: flex;
-    /* color: var(--text_light); */
     color: #555;
     display: flex;
     justify-content: space-between;
@@ -270,16 +223,16 @@ form {
 }
 .bottom-banner form input::placeholder {color: currentColor;}
 .bottom-banner form button {
-  padding: 3px 3px;
-  margin-left: 5px;
+  padding: 0.1875rem 0.1875rem;
+  margin-left: 0.3125rem;
   background: var(--bg_main);
 }
 .bottom-banner form .msg {
-  position: absolute;
-  bottom: -60px;
   left: 0;
+  position: absolute;
+  bottom: -3.75rem;
   max-width: 100%;
-  min-height: 40px;
+  min-height: 2.5rem;
 }
 .search-button {
   background: transparent;
@@ -294,7 +247,7 @@ form {
   outline: inherit;
 }
 .search-button:hover {border: 3px solid var(--clock);}
-.ajax-section {  min-height: 100px;}
+.ajax-section {  min-height: 6.25rem;}
 @keyframes slide-in-left {
   0% {transform: translateX(-100%);}
   100% {transform: translateX(0);}
@@ -304,32 +257,28 @@ form {
     letter-spacing: 0.06em;
     animation: slide-in-left 1s forwards;
 }
-.city-name{font-size: 24px;}
+.city-name{font-size: 1.5rem;}
 ul, li { list-style-type: none;}
 
 /* FORM ------------------------------------------ */
 form {
+    gap: 0.625rem;
     display: flex;
-    gap: 10px;
     align-items: center;
   }
 
   #search {
     padding: 0.75rem 0;
     border: 1px solid #222;
-    font-size: 14px;
+    font-size: 0.875rem;
     outline: none;
     transition: border-color 0.3s ease;
     min-width: 18.75rem;
     margin-left: 1rem;
 
   }
-  #search:hover {
-    border-bottom: 1px solid #555;
-  }
-  #search:focus {
-    border-bottom: 1px solid #555;
-  }
+  #search:hover {border-bottom: 1px solid #555;}
+  #search:focus {border-bottom: 1px solid #555;}
   .search-button {
     padding: 0.75rem 1.25rem;
     border: 1px solid #222;
@@ -341,12 +290,8 @@ form {
     align-items: center;
     justify-content: center;
   }
-  .search-button:hover {
-    border: 1px solid #b0a9a9;
-  }
-  .search-button:active {
-    transform: scale(0.98);
-  }
+  .search-button:hover {border: 1px solid #b0a9a9;}
+  .search-button:active {transform: scale(0.98);}
   .msg {
     margin-left: 1rem;
     font-size: 0.8rem;
