@@ -15,6 +15,8 @@
   --page-padding-y: 5vh; */
   --page-padding-x: 10vw;
   --page-padding-y: 10vh;
+
+  --side: 4;
 }
 * {box-sizing: border-box;}
 html,
@@ -55,6 +57,7 @@ a:visited {color: inherit;}
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 .legend-item {
   width: 1.25rem;
@@ -74,7 +77,6 @@ a:visited {color: inherit;}
   overflow: hidden;
 }
 .pi-grid {
-  --side: 4;
   display: grid;
   grid-template-columns: repeat(var(--side), var(--cell-size));
   grid-template-rows: repeat(var(--side), var(--cell-size));
@@ -86,7 +88,6 @@ a:visited {color: inherit;}
   background: #0b0d11;
   overflow: hidden;
   box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.28);
-
   padding: 1rem;
   box-sizing: content-box;
 }
@@ -102,6 +103,17 @@ a:visited {color: inherit;}
   line-height: 1;
   user-select: none;
 }
+.header,
+.legend {
+  width: calc(
+    var(--side) * var(--cell-size)
+    + 2rem
+    + 2px
+  );
+  max-width: 100%;
+  justify-self: center;
+}
+
 .pi-cell.dot {color: #ffffff;}
 
 .d0 { color: #e63946; }
@@ -175,13 +187,6 @@ a:visited {color: inherit;}
   function calculateSide() {
     const rect = stage.getBoundingClientRect();
     const cellSize = getCellSizePx();
-
-    // ------------------------------------------------------
-    // const columns = Math.floor(rect.width / cellSize);
-    // const rows = Math.floor(rect.height / cellSize);
-    // ------------------------------------------------------
-
-    // ------------------------------------------------------
     const gridStyle = getComputedStyle(grid);
     
     const frameWidth =
@@ -198,7 +203,6 @@ a:visited {color: inherit;}
     
     const columns = Math.floor((rect.width - frameWidth) / cellSize);
     const rows = Math.floor((rect.height - frameHeight) / cellSize);
-    // ------------------------------------------------------
     
     return Math.max(
       MIN_SIDE,
@@ -218,7 +222,12 @@ a:visited {color: inherit;}
     renderedSide = side;
 
     const count = side * side;
-    grid.style.setProperty('--side', String(side));
+
+    document.documentElement.style.setProperty(
+      '--side',
+      String(side)
+    );
+
 
     const fragment = document.createDocumentFragment();
 
