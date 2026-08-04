@@ -1,0 +1,673 @@
+
+:root {
+  --red: #ff1e42;
+  --border: #1e2432;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+
+    background-image: linear-gradient(to bottom, #131313, #000);
+	perspective: 45rem;
+	transform-style: preserve-3d;
+}
+
+html {
+	font-size: 0.75vmin;
+}
+
+.digit,
+.colon {
+	margin: 0;
+}
+
+/* ==================================================
+  Back button
+   ================================================== */
+
+.back {
+	position: fixed;
+	z-index: 100;
+	top: clamp(12px, 2vw, 28px);
+	left: clamp(12px, 3vw, 42px);
+
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	font-family: "Roboto", sans-serif;
+	font-size: 13px;
+}
+
+.knopka {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 20px;
+    padding: 4px 12px;
+
+    color: #a9a9a9;
+    background: rgba(0, 0, 0, 0.65);
+
+    border: 2px solid #333;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.knopka:hover {
+    border: 2px solid var(--red);
+}
+
+/* ========================================================================== */
+
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	animation: camera-rotate 40s ease-in-out forwards infinite;
+}
+
+/* =========================
+   Основная сцена
+   ========================= */
+
+main {
+	--saturation: 100%;
+	--lightness: 50%;
+
+	--digit-height: 16rem;
+	--segment-color: #fff;
+
+	--segment-transition:
+		0.3s cubic-bezier(0.17, 0.67, 0.5, 1.15);
+
+	--glow:
+		drop-shadow(0 0 4px currentColor)
+		drop-shadow(0 0 10px currentColor);
+
+	display: flex;
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+
+	color: hsl(210deg, var(--saturation), var(--lightness));
+
+	translate: 0 1rem 10rem;
+	transform-style: preserve-3d;
+
+	animation: camera-pan 30s linear forwards infinite;
+	animation-composition: add;
+
+	/*
+	Для анимации оттенка можно использовать:
+    */
+    
+	/* animation:
+		camera-pan 30s linear forwards infinite,
+		hue-rotate 70s linear -40s forwards infinite; */
+	
+}
+
+/* =========================
+   Группы цифр
+   ========================= */
+
+main .digits {
+	transform-style: preserve-3d;
+}
+
+main .digits .group {
+	display: flex;
+	gap: 2rem;
+}
+
+/* =========================
+   Цифра
+   ========================= */
+
+main .digit {
+	position: relative;
+
+	height: var(--digit-height);
+	aspect-ratio: 1 / 2;
+
+	filter: var(--glow);
+}
+
+/* Общие настройки сегментов */
+
+main .digit > span {
+	--active: 0;
+	--sign-x: 1;
+	--sign-y: 1;
+
+	position: absolute;
+
+	background-color: var(--segment-color);
+	opacity: calc(0.03 + 0.97 * var(--active));
+
+	transform: scale(var(--sign-x), var(--sign-y));
+
+	transition:
+		opacity var(--segment-transition),
+		transform var(--segment-transition);
+
+	animation-composition: add;
+}
+
+/* =========================
+   Верхний и нижний сегменты
+   ========================= */
+
+main .digit > span.end {
+	width: 100%;
+	height: 10%;
+
+	clip-path: polygon(
+		15% 0%,
+		7.5% 20%,
+		25% 100%,
+		75% 100%,
+		92.5% 20%,
+		85% 0%
+	);
+}
+
+main .digit > span.end.top {
+	top: 0;
+}
+
+main .digit > span.end.bottom {
+	top: auto;
+	bottom: 0;
+
+	--sign-y: -1;
+}
+
+/* =========================
+   Боковые сегменты
+   ========================= */
+
+main .digit > span.side {
+	width: 20%;
+	height: 50%;
+
+	clip-path: polygon(
+		0% 15%,
+		20% 7.5%,
+		100% 22.5%,
+		100% 85%,
+		20% 95%,
+		0% 90%
+	);
+}
+
+/* Левые сегменты */
+
+main .digit > span.side.left {
+	top: 0;
+	left: 0;
+}
+
+main .digit > span.side.left.bottom {
+	top: auto;
+	bottom: 0;
+
+	--sign-y: -1;
+}
+
+/* Правые сегменты */
+
+main .digit > span.side.right {
+	top: 0;
+	right: 0;
+	left: auto;
+
+	--sign-x: -1;
+}
+
+main .digit > span.side.right.bottom {
+	top: auto;
+	bottom: 0;
+
+	--sign-y: -1;
+}
+
+/* =========================
+   Средний сегмент
+   ========================= */
+
+main .digit > span.middle {
+	top: 45%;
+
+	width: 100%;
+	height: 10%;
+
+	clip-path: polygon(
+		22.5% 0%,
+		6.5% 50%,
+		22.5% 100%,
+		77.5% 100%,
+		93.5% 50%,
+		77.5% 0%
+	);
+}
+
+/* =========================
+   Активные сегменты цифр
+   ========================= */
+
+/* 0 */
+
+main .digit[data-digit="0"] > span:not(.middle) {
+	--active: 1;
+}
+
+/* 1 */
+
+main .digit[data-digit="1"] > span.right {
+	--active: 1;
+}
+
+/* 2 */
+
+main .digit[data-digit="2"] > span:not(
+	.top.left,
+	.bottom.right
+) {
+	--active: 1;
+}
+
+/* 3 */
+
+main .digit[data-digit="3"] > span:not(.left) {
+	--active: 1;
+}
+
+/* 4 */
+
+main .digit[data-digit="4"] > span:not(
+	.end,
+	.bottom.left
+) {
+	--active: 1;
+}
+
+/* 5 */
+
+main .digit[data-digit="5"] > span:not(
+	.top.right,
+	.bottom.left
+) {
+	--active: 1;
+}
+
+/* 6 */
+
+main .digit[data-digit="6"] > span:not(.top.right) {
+	--active: 1;
+}
+
+/* 7 */
+
+main .digit[data-digit="7"] > span.top,
+main .digit[data-digit="7"] > span.right {
+	--active: 1;
+}
+
+/* 8 */
+
+main .digit[data-digit="8"] > span {
+	--active: 1;
+}
+
+/* 9 */
+
+main .digit[data-digit="9"] > span:not(.bottom.left) {
+	--active: 1;
+}
+
+/* =========================
+   Двоеточие
+   ========================= */
+
+main .colon-group {
+	transform-style: preserve-3d;
+}
+
+main .colon-group .colon > span {
+	display: flex;
+	flex-direction: column;
+
+	width: 4rem;
+	height: var(--digit-height);
+
+	align-items: center;
+	justify-content: space-evenly;
+
+	filter: var(--glow);
+}
+
+main .colon-group .colon > span::before,
+main .colon-group .colon > span::after {
+	content: "";
+
+	display: block;
+
+	width: 2rem;
+	aspect-ratio: 1 / 1;
+
+	background-color: var(--segment-color);
+	border-radius: 50%;
+}
+
+/* =========================
+   Отражение и тени
+   ========================= */
+
+main .shadow {
+	position: absolute;
+	top: 0;
+
+	transform-origin: bottom center;
+
+	/*
+	90 градусов могут не отображаться в Safari,
+	поэтому используется 90.1.
+	*/
+	transform:
+		translateY(1rem)
+		translateZ(2rem)
+		rotateX(-90.1deg);
+}
+
+main .shadow .digit > span {
+	opacity: var(--active);
+}
+
+/* Размытая дальняя тень */
+
+main .shadow.shadow1 {
+	opacity: 0.5;
+
+	filter:
+		var(--glow)
+		blur(4rem);
+}
+
+main .shadow.shadow1 > span,
+main .shadow.shadow1 .digit {
+	-webkit-mask-image:
+		linear-gradient(
+			to bottom,
+			#fff,
+			rgba(0, 0, 0, 0.5)
+		);
+
+	mask-image:
+		linear-gradient(
+			to bottom,
+			#fff,
+			rgba(0, 0, 0, 0.5)
+		);
+}
+
+/* Более чёткое отражение */
+
+main .shadow.shadow2 {
+	opacity: 0.4;
+
+	filter:
+		var(--glow)
+		blur(4px);
+}
+
+main .shadow.shadow2 > span,
+main .shadow.shadow2 .digit {
+	opacity: var(--active);
+
+	-webkit-mask-image:
+		linear-gradient(
+			to top,
+			#000,
+			rgba(0, 0, 0, 0.1) 60%,
+			transparent
+		);
+
+	mask-image:
+		linear-gradient(
+			to top,
+			#000,
+			rgba(0, 0, 0, 0.1) 60%,
+			transparent
+		);
+}
+
+/* =========================
+   Движение камеры
+   ========================= */
+
+@keyframes camera-rotate {
+	0%,
+	100% {
+		transform: rotateY(-10deg);
+	}
+
+	50% {
+		transform: rotateY(10deg);
+	}
+}
+
+@keyframes camera-pan {
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+
+	20% {
+		transform: translate(1rem, 2rem);
+	}
+
+	40% {
+		transform: translate(-2rem, 2.5rem);
+	}
+
+	50% {
+		transform: translate(-1.5rem, 1.5rem);
+	}
+
+	70% {
+		transform: translate(-0.5rem, -0.5rem);
+	}
+
+	90% {
+		transform: translate(1.5rem, -1rem);
+	}
+}
+
+/* =========================
+   Смена цвета
+   ========================= */
+
+@keyframes hue-rotate {
+	0% {
+		color: hsl(
+			0deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	8.33% {
+		color: hsl(
+			30deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	16.67% {
+		color: hsl(
+			60deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	25% {
+		color: hsl(
+			90deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	33.33% {
+		color: hsl(
+			120deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	41.67% {
+		color: hsl(
+			150deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	50% {
+		color: hsl(
+			180deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	58.33% {
+		color: hsl(
+			210deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	66.67% {
+		color: hsl(
+			240deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	75% {
+		color: hsl(
+			270deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	83.33% {
+		color: hsl(
+			300deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	91.67% {
+		color: hsl(
+			330deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+
+	100% {
+		color: hsl(
+			360deg,
+			var(--saturation),
+			var(--lightness)
+		);
+	}
+}
+
+/* =========================
+   Исправления для Safari
+   ========================= */
+
+.safari .digit > span {
+	/*
+	3D-transform вместе с анимацией opacity
+	может ломать фильтры в Safari.
+	*/
+	transition: none !important;
+}
+
+.safari .digit > span::before {
+	content: "";
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: block;
+
+	/*
+	Увеличенная область предотвращает
+	обрезание элемента во время изменения.
+	*/
+	width: 400%;
+	height: 400%;
+
+	transform: translate(-50%, -50%);
+}
+
+/* Исправление размеров и позиционирования */
+
+main .digits,
+main .colon-group {
+	position: relative;
+	flex: 0 0 auto;
+	transform-style: preserve-3d;
+}
+
+main .digit {
+	width: 8rem;
+	height: 16rem;
+	aspect-ratio: auto;
+	flex: 0 0 8rem;
+}
+
+main .colon {
+	width: 4rem;
+	height: 16rem;
+	flex: 0 0 4rem;
+}
