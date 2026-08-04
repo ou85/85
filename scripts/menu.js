@@ -5,6 +5,7 @@ const menuItems = [
     { label: 'time',                    link: 'time.html' },
     { label: 'flip',                    link: './pages/flip_clock/flip_clock.html' },
     { label: 'indexmoz',                link: 'indexmoz.html' },
+    { label: 'ultimate ride',           link: './pages/ultimate_ride/ultimate-ride.html?quality=low' },
     { label: 'pi dynamic square',       link: './pages/pi_dynamic_square/pi_dynamic_square.html' },
     { label: 'jsarray | table',         link: 'jsarray-in-table.html' },
     { label: 'react babel',             link: 'react_babel.html' },
