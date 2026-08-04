@@ -2,23 +2,189 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml;utf8,
-            <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 100 100'>
-            <circle cx='50' cy='50' r='38' fill='none' stroke='black' stroke-width='10'/>
-            <line x1='50' y1='50' x2='50' y2='30' stroke='black' stroke-width='10' stroke-linecap='round'/>
-            <line x1='50' y1='50' x2='70' y2='50' stroke='black' stroke-width='8' stroke-linecap='round'/>
-            <circle cx='50' cy='50' r='5' fill='black'/>
-            </svg> " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Digital Clock</title>
-    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+
+        background-color: #0f3854;
+        background-image: radial-gradient(ellipse at center, #0a2e38 0%, #000 70%);
+
+        background-size: 100%;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      [v-cloak] {
+        display: none;
+      }
+
+      #clock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: max-content;
+        max-width: calc(100vw - 30px);
+
+        color: #daf6ff;
+        font-family: "Share Tech Mono", monospace;
+        text-align: center;
+
+        text-shadow:
+          0 0 20px rgba(10, 175, 230, 1),
+          0 0 20px rgba(10, 175, 230, 0);
+
+        transform: translate(-50%, -50%);
+      }
+
+      #clock .time {
+        padding: 5px 0;
+
+        font-size: clamp(46px, 10vw, 80px);
+        line-height: 1;
+        letter-spacing: 0.05em;
+
+        white-space: nowrap;
+      }
+
+      #clock .date {
+        font-size: clamp(16px, 3vw, 24px);
+        letter-spacing: 0.1em;
+
+        white-space: nowrap;
+      }
+
+      #clock .text {
+        padding-top: 20px;
+
+        font-size: clamp(10px, 2vw, 12px);
+        letter-spacing: 0.1em;
+
+        opacity: 0.7;
+      }
+
+      /* ==================================================
+        Back button
+        ================================================== */
+      .back {
+        position: fixed;
+        z-index: 100;
+        top: clamp(12px, 2vw, 28px);
+        left: clamp(12px, 3vw, 42px);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Roboto", sans-serif;
+        font-size: 13px;
+      }
+      .knopka {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        padding: 4px 12px;
+        color: #daf6ff;
+        background: rgba(0, 0, 0, 0.65);
+        border: 2px solid #333;
+        border-radius: 7px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+      .knopka:hover {
+        border: 2px solid #daf6ff8a;
+        box-shadow:
+            0 0 5px rgba(10, 175, 230, 0.9),
+            0 0 12px rgba(10, 175, 230, 0.7),
+            0 0 20px rgba(10, 175, 230, 0.4);
+      }
+    </style>
   </head>
+
   <body>
     <div class="back">
-      <a class="knopka" href="digital_clock.html" style="background-color: black; color: darkgray"> BACK </a>
+      <a class="knopka" href="digital_clock.html"> BACK </a>
     </div>
+
+    <main id="clock" v-cloak>
+      <p class="date">{{ date }}</p>
+      <p class="time">{{ time }}</p>
+      <p class="text">DIGITAL CLOCK with Vue.js</p>
+    </main>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script> -->
+    <script src="vue.min.js"></script>
+
+    <script>
+      "use strict";
+
+      const week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+      const clock = new Vue({
+        el: "#clock",
+
+        data: {
+          time: "",
+          date: "",
+        },
+
+        mounted() {
+          this.updateTime();
+        },
+
+        methods: {
+          updateTime() {
+            const currentDate = new Date();
+
+            this.time = [
+              this.zeroPadding(currentDate.getHours(), 2),
+              this.zeroPadding(currentDate.getMinutes(), 2),
+              this.zeroPadding(currentDate.getSeconds(), 2),
+            ].join(":");
+
+            this.date =
+              [
+                this.zeroPadding(currentDate.getFullYear(), 4),
+                this.zeroPadding(currentDate.getMonth() + 1, 2),
+                this.zeroPadding(currentDate.getDate(), 2),
+              ].join("-") +
+              " " +
+              week[currentDate.getDay()];
+
+            const delay = 1000 - currentDate.getMilliseconds();
+
+            window.setTimeout(() => this.updateTime(), delay);
+          },
+
+          zeroPadding(number, length) {
+            return String(number).padStart(length, "0");
+          },
+        },
+      });
+    </script>
   </body>
 </html>
