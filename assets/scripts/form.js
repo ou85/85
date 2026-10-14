@@ -39,7 +39,7 @@ const uiConfig = {
   },
   signInFlow: "popup",
   //   signInSuccessUrl: "signedIn",
-  signInSuccessUrl: "sidemenu_gradient.html",
+  signInSuccessUrl: "../menus/gradient-side-menu.html",
   signInOptions: [
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
