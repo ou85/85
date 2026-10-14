@@ -12,77 +12,77 @@ function initializeSideMenu() {
     <div>
       <ul class="nav">
         <li class="nav-link menuWrapper">
-          <a href="./pages/analog_clock/analog_clock.html" class="nav-link">
+          <a href="../../../pages/clocks/analog-clock/analog_clock.html" class="nav-link">
             analog clock
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="ellipsis.html" class="nav-link">
+          <a href="../../../pages/experiments/ellipsis/index.html" class="nav-link">
             elipsis
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="indexmoz.html" class="nav-link">
+          <a href="../../../pages/experiments/indexmoz/index.html" class="nav-link">
             indexmoz
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="jsarray-in-table.html" class="nav-link">
+          <a href="../../../pages/experiments/javascript-array-table/index.html" class="nav-link">
             jsarray | table
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="react_babel.html" class="nav-link">
+          <a href="../../../pages/experiments/react/react-babel.html" class="nav-link">
             react babel
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="react.html" class="nav-link">
+          <a href="../../../pages/experiments/react/react.html" class="nav-link">
             react
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="shiftingtiles.html" class="nav-link">
+          <a href="../../../pages/galleries/shifting-tiles/index.html" class="nav-link">
             shifting tiles
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="webgallery/webgallery.html" class="nav-link">
+          <a href="../../../pages/galleries/web-gallery/index.html" class="nav-link">
             tiles
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="time.html" class="nav-link">
+          <a href="../../../pages/clocks/time/index.html" class="nav-link">
             time
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="weather.html" class="nav-link">
+          <a href="../../../pages/experiments/weather/index.html" class="nav-link">
             weather
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="sidemenu_gradient.html" class="nav-link">
+          <a href="../../../pages/experiments/menus/gradient-side-menu.html" class="nav-link">
             side menu with gradient
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="login.html" class="nav-link">
+          <a href="../../../pages/experiments/login-demos/login.html" class="nav-link">
             login
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="login_fire.html" class="nav-link">
+          <a href="../../../pages/experiments/login-demos/fire-login.html" class="nav-link">
             fire login
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="login_calm.html" class="nav-link">
+          <a href="../../../pages/experiments/login-demos/calm-login.html" class="nav-link">
             calm login
           </a>
         </li>
         <li class="nav-link menuWrapper">
-          <a href="image_carousel.html" class="nav-link">
+          <a href="../../../pages/galleries/image-carousel/index.html" class="nav-link">
             image carousel
           </a>
         </li>
@@ -104,7 +104,7 @@ const menuFooterContent = `
         >
           <img
             alt="^..^"
-            src="images/firefox-icon.png"
+            src="../../../assets/images/firefox-icon.png"
             width="32"
             height="32"
             class="rounded-circle me-2"

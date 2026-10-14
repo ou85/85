@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Titillium Web';
-    src: url('../../styles/TitilliumWeb.woff2') format('truetype');
+    src: url('../../../assets/styles/TitilliumWeb.woff2') format('truetype');
 }
 body {
     font-family: 'Titillium Web', sans-serif;

@@ -1,65 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 100 100'>
-      <circle cx='50' cy='50' r='38' fill='none' stroke='black' stroke-width='10'/>
-      <line x1='50' y1='50' x2='50' y2='30' stroke='black' stroke-width='10' stroke-linecap='round'/>
-      <line x1='50' y1='50' x2='70' y2='50' stroke='black' stroke-width='8' stroke-linecap='round'/>
-      <circle cx='50' cy='50' r='5' fill='black'/>
-    </svg> ">
-    <title>Analog Clock</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <div class="back">
-      <a class="knopka" href="../../index.html" style="background-color: black; color: darkgray"      >
-        BACK
-      </a>
-      <b>:</b>
-      <a class="knopka" href="analog_clock_2.html" style="background-color: black; color: darkgray"      >
-        CLOCK
-      </a>
-    </div>
-
-    <div class="container">
-      <!-- Глюкало 
-        <div class="light">
-          <span></span>
-        </div> -->
-
-      <div class="clock">
-        <div class="hour">
-          <div class="hr" id="hr"></div>
-        </div>
-        <div class="min">
-          <div class="mn" id="mn"></div>
-        </div>
-
-        <div class="sec">
-          <div class="sc" id="sc"></div>
-
-          <script type="text/javascript">
-            const deg = 6;
-            const hr = document.querySelector("#hr");
-            const mn = document.querySelector("#mn");
-            const sc = document.querySelector("#sc");
-            setInterval(() => {
-              let day = new Date();
-              let hh = day.getHours() * 30;
-              let mm = day.getMinutes() * deg;
-              let ss = day.getSeconds() * deg;
-
-              hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-              mn.style.transform = `rotateZ(${mm}deg)`;
-              sc.style.transform = `rotateZ(${ss}deg)`;
-            });
-          </script>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=../clocks/analog-clock/analog_clock.html">
+  <link rel="canonical" href="../clocks/analog-clock/analog_clock.html">
+  <title>Page moved</title>
+</head>
+<body>
+  <p>This page moved. <a href="../clocks/analog-clock/analog_clock.html">Open the updated page</a>.</p>
+</body>
 </html>

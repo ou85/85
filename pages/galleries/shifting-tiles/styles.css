@@ -1,0 +1,79 @@
+:root {
+  --bg_main: #091921;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+  --clock: #55c49f;
+  --clock-darker: #2f6d58;
+}
+
+body {
+  background: var(--bg_main);
+}
+
+a {
+  color: var(--text_light); /* Цвет текста */
+  text-decoration: none;
+}
+a:hover {
+  border-top: 0.2rem solid #55c49f;
+}
+
+a:visited {
+  color: var(--text_light); /* Цвет текста */
+}
+
+.container {
+  margin: 1px auto;
+  height: 1%;
+  position: relative;
+  /* padding: 0.2rem; */
+  color: var(--text_light);
+  font-weight: 600;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  /* background-color: #53627c; */
+}
+
+/* clock ================================ */
+.clockpage {
+  margin: auto;
+  max-width: 500px;
+  min-width: 100px;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 2rem; /* 3rem */
+  padding: 0.2rem; /*1rem; */
+  font-weight: bold;
+  border-bottom: 0.2rem solid #55c49f;
+  margin-bottom: 1rem; /* 2rem */
+  /* background-color: #2f6d58; */
+}
+
+#dayOfWeek {
+  display: block;
+  font-weight: normal;
+  font-size: 1.1rem; /* 1.6rem */
+}
+
+.footer {
+  margin: auto;
+  max-width: 500px;
+  min-width: 100px;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1rem;
+  color: var(--text_med); /* Цвет текста */
+  /* padding: 1rem; */
+  padding-top: 1200px;
+  padding-bottom: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  /* background-color: #2f6d58; */
+}

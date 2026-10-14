@@ -1,56 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Chars</title>
-    <link rel="icon" type="image/png" sizes="114x114" href="../images/CPT.png" />
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=../pages/experiments/random-text/random_chars.html">
+  <link rel="canonical" href="../pages/experiments/random-text/random_chars.html">
+  <title>Page moved</title>
 </head>
-<header>
-    <a href="../index.html">retrossum</a>:<a href="random_lines.html">proximus</a>
-</header>
 <body>
-    <script>
-        const container = document.createElement('pre');
-        document.body.appendChild(container);
-
-        const screenWidth = 15;                                         // width in characters
-        let line = '';
-
-        const characters = 'aueowrszxcvnm<>aueowrszxcvn:mτπυωνεσα~мияэпкт';
-        const colors = [
-            '#78dce8',
-            '#ffd866',
-            '#a9dc76',
-            '#ab9df2',
-            '#ff6188',
-            '#fc9867',
-        ]; 
-        console.log("Number of Characters: ", characters.length);
-
-        setInterval(() => {
-            const randomChar = getRandomChar();
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            line += `<span style="color: ${randomColor}">${randomChar}</span>`;
-
-            if (line.length / 38 >= screenWidth) {                      // adjusted for HTML length
-                container.innerHTML += line + '<br>';                   // add line to container
-                line = ''; 
-
-                // Scroll up
-                if (container.innerHTML.split('<br>').length > 15) {    // 15 lines
-                    container.innerHTML = container.innerHTML.split('<br>').slice(1).join('<br>');
-                }
-            }
-        }, 50);                                                        // speed
-    
-        function getRandomChar() {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            return characters[randomIndex];
-        }
-    
-    </script> 
+  <p>This page moved. <a href="../pages/experiments/random-text/random_chars.html">Open the updated page</a>.</p>
 </body>
 </html>

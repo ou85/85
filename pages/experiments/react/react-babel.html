@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<style>
+:root {
+  --bg_main: #091921;               /* #0a1f44 */
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+}
+body
+{
+/* display: flex; */   
+    justify-content: center;
+    align-items: center;    
+    min-height: 100vh;
+    background: var(--bg_main);
+}
+
+.container {
+  background: var(--bg_main); 
+  margin: 10px auto;
+  width: 80%;
+  /* height: 30px; */
+  /* background-color: #ccc; */   /* for div tetst */
+  position: relative;
+  padding: 1em;  
+  color: var(--text_light);
+  font: 1rem/1.3 "Roboto", sans-serif;    
+  font-weight: 600;
+  font-size: smaller;
+  text-align: center;
+}  
+
+.knopka {
+    border:0px solid var(--darkred);  /* #ccc;  рамка*/    
+    background: var(--red);           /*фон */   
+    padding: .4em .8em;               /*отступы внутри */   
+    text-decoration: none;            /*убрать подчеркивание ссылки */  
+    color: var(--text_light);
+    font: 1rem/1.3 "Roboto", sans-serif; 
+    font-weight: 600;
+    font-size: smaller;
+    border-radius: 5px;
+
+    /* Выравнивание по центру блока .back */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+  .knopka:hover {
+    background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
+    border:2px solid var(--red);
+  }  
+  
+  .back{ 
+    margin: 50px auto;
+    width: 100px;
+    height: 50px;
+    /* background-color: #ccc; */        /* for test */
+    position: relative;
+  } 
+  </style>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>85 | babel</title>    
+  </head>
+
+  <body>
+  <div class="back">
+    <a class = "knopka" href="../../../index.html">BACK</a></div>
+  </div>    
+  <div class="container">    
+  
+    <h2>Add React in One Minute</h2>
+    <p>This page demonstrates using React with no build tooling.</p>
+    <p>React is loaded as a script tag.</p> 
+   
+    <p>
+      This is the first comment.
+      <!-- We will put our React component inside this div. -->
+      <div class="like_button_container" data-commentid="1"></div>
+    </p>
+
+    <p>
+      This is the second comment.
+      <!-- We will put our React component inside this div. -->
+      <div class="like_button_container" data-commentid="2"></div>
+    </p>
+
+    <p>
+      This is the third comment.
+      <!-- We will put our React component inside this div. -->
+      <div class="like_button_container" data-commentid="3"></div>
+    </p>
+
+    <p>
+      This is just a comment.
+      <!-- We will put our React component inside this div. -->
+      <div class="like_button_container" data-commentid="999"></div>
+    </p>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <script src="../../../assets/scripts/plus_button.js"></script>
+  </body>
+</html>

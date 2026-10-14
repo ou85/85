@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<style>
+:root {
+  --bg_main: #091921;               /* #0a1f44 */
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+}
+body
+{
+/* display: flex; */   
+    justify-content: center;
+    align-items: center;    
+    min-height: 100vh;
+    background: var(--bg_main);
+}
+
+.container {
+  background: var(--bg_main); 
+  margin: 10px auto;
+  width: 80%;
+  /* height: 30px; */
+  /* background-color: #ccc; */   /* for div tetst */
+  position: relative;
+  padding: 1em;  
+  color: var(--text_light);
+  font: 1rem/1.3 "Roboto", sans-serif;    
+  font-weight: 600;
+  font-size: smaller;
+  text-align: center;
+}  
+
+.knopka {
+    border:0px solid var(--darkred);  /* #ccc;  рамка*/    
+    background: var(--red);           /*фон */   
+    padding: .4em .8em;               /*отступы внутри */   
+    text-decoration: none;            /*убрать подчеркивание ссылки */  
+    color: var(--text_light);
+    font: 1rem/1.3 "Roboto", sans-serif; 
+    font-weight: 600;
+    font-size: smaller;
+    border-radius: 5px;
+
+    /* Выравнивание по центру блока .back */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+  .knopka:hover {
+    background: var(--darkred);         /* Цвет ссылки при наведении на нее курсора мыши */   
+    border:2px solid var(--red);
+  }  
+  
+  .back{ 
+    margin: 50px auto;
+    width: 100px;
+    height: 50px;
+    /* background-color: #ccc; */        /* for test */
+    position: relative;
+  } 
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>85 | Add React in One Minute</title>
+  </head>
+  <body>
+  <div class="back">
+    <a class = "knopka" href="../../../index.html">BACK</a></div>
+  </div>    
+  <div class="container">    
+    <h2>Add React in One Minute</h2>
+    <p>This page demonstrates using React with no build tooling.</p>
+    <p>React is loaded as a script tag.</p> 
+   
+    <!-- We will put our React component inside this div. -->
+    <div id="like_button_container">    
+
+      <!-- Load React. -->
+      <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+      <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+      <!-- Adding JSX. 
+           Use: <script type="text/babel" src="like_button.js"></script> --> 
+      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+
+    <!-- Load our React component. -->     
+    <script src="../../../assets/scripts/like_button.js"></script>
+    </div> 
+
+    <!-- Youtube component. -->  
+    <br>
+    <iframe
+      width="600"
+      height="338"     
+      src="https://www.youtube.com/embed/uoRiPAUVklU"
+      title="YouTube video player"
+      frameborder="5"      
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>   
+    <iframe
+      width="600"
+      height="338"     
+      src="https://www.youtube.com/embed/AKrjiN4AfjY" 
+      title="YouTube video player"
+      frameborder="5"      
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+  ></iframe>   
+
+  <!-- Flickr-->
+  <!-- <a data-flickr-embed="true" 
+     href="https://www.flickr.com/photos/fabianf_/27208961682/in/faves-136053866@N07/" 
+     title="Planting Windpower">
+     <img 
+        src="https://live.staticflickr.com/7392/27208961682_86974917a5_5k.jpg"       
+        width="600" 
+        height="900" 
+        alt="Planting Windpower">
+  </a> -->
+  <!-- <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script> -->
+
+  <a data-flickr-embed="true" 
+      href="https://www.flickr.com/photos/fabianf_/27208961682/in/faves-136053866@N07/" 
+      title="Planting Windpower">
+      <img src="https://live.staticflickr.com/7392/27208961682_96bfdbc2fd_z.jpg" width="427" height="640" alt="Planting Windpower"/>
+  </a>
+  <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+  </div> 
+  </body>
+</html>
