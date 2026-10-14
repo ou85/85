@@ -1,14 +1,14 @@
 # 85
 
-Коллекция небольших статических сайтов, интерактивных страниц и экспериментов.
-Опубликованная версия: <https://ou85.github.io/85/>.
+A collection of small static websites, interactive pages, and experiments.
+Published version: <https://ou85.github.io/85/>.
 
-## Структура
+## Structure
 
 ```text
 .
-├── index.html                 # главная страница и встроенные JavaScript-примеры
-├── scripts/                   # внешние скрипты главной страницы
+├── index.html                 # home page and inline JavaScript examples
+├── scripts/                   # external scripts used by the home page
 ├── pages/
 │   ├── clocks/
 │   │   ├── analog-clock/
@@ -18,7 +18,7 @@
 │   ├── galleries/
 │   │   ├── basic-image-carousel/
 │   │   ├── image-carousel/
-│   │   ├── shifting-tiles/     # галерея с переключением изображений
+│   │   ├── shifting-tiles/     # gallery with image transitions
 │   │   └── web-gallery/
 │   └── experiments/
 │       ├── art-of-mixing/
@@ -38,26 +38,26 @@
 │       └── weather/
 ├── assets/
 │   ├── images/
-│   │   └── gallery/            # 146 изображений для галерей
-│   ├── scripts/                # общие библиотеки и скрипт бокового меню демо
-│   └── styles/                 # общие стили, шрифты и CSS-библиотеки
-└── tmp/todo.md                # согласованный план реорганизации
+│   │   └── gallery/            # 146 images shared by the gallery projects
+│   ├── scripts/                # shared libraries and the demo side-menu script
+│   └── styles/                 # shared styles, fonts, and CSS libraries
+└── tmp/todo.md                 # project reorganization task reference
 ```
 
-Каждый проект хранит собственные страницы, стили и скрипты рядом друг с другом. Общие ресурсы и библиотеки собраны в `assets/`. Внешние скрипты главной страницы находятся в `scripts/`, а встроенные скрипты `index.html` оставлены на месте.
+Each project keeps its own pages, styles, and scripts together. Shared resources and libraries live in `assets/`. The home page's external scripts are in `scripts/`; its inline scripts remain in `index.html`.
 
-## Просмотр локально
+## Run locally
 
-Из корневой папки запустите простой HTTP-сервер:
+From the repository root, start a simple HTTP server:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Затем откройте <http://localhost:8000/>. Сервер нужен, в частности, для страниц, которые загружают JSON-файлы через `fetch`.
+Then open <http://localhost:8000/>. A server is required for pages that load JSON files with `fetch`.
 
-## Навигация и старые адреса
+## Navigation and legacy URLs
 
-Главная страница строит основное боковое меню из `assets/scripts/menu.js`. Старые HTML-переходники удалены. Ссылки меню ведут непосредственно на страницы в `pages/`.
+The home page builds its main side menu from `scripts/menu.js`. Legacy HTML redirect pages have been removed, and menu links point directly to pages under `pages/`.
 
-Некоторые эксперименты используют внешние CDN, шрифты или сервисы. Для них требуется подключение к интернету. Отдельные демо могут зависеть от доступности этих внешних ресурсов.
+Some experiments use external CDNs, fonts, or services and require an internet connection. Their availability may depend on those external providers.
