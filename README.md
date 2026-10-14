@@ -9,6 +9,8 @@ Published version: <https://ou85.github.io/85/>.
 .
 ├── index.html                 # home page and inline JavaScript examples
 ├── scripts/                   # external scripts used by the home page
+├── tools/
+│   └── check_links.py         # local link and resource checker
 ├── pages/
 │   ├── clocks/
 │   │   ├── analog-clock/
@@ -55,6 +57,16 @@ python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000/>. A server is required for pages that load JSON files with `fetch`.
+
+## Check local links
+
+Run the local link checker from the repository root:
+
+```sh
+python3 tools/check_links.py
+```
+
+It checks local HTML links and resources, page anchors, CSS imports and `url(...)` references, and static links in JavaScript. It also checks numbered image ranges declared by the gallery scripts. External URLs and other paths assembled dynamically at runtime are not checked.
 
 ## Navigation and legacy URLs
 
