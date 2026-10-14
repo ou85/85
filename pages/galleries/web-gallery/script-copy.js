@@ -27,33 +27,6 @@ setInterval(updateClock, 1000);
 
 // Set up photo grid
 
-function getNumberOfFiles() {
-  console.log("Counter for pictures is loaded");
-  const folderPath = "/webgallery/Pictures";
-  let fileCount = 0;
-
-  fetch(folderPath)
-    .then((response) => response.text())
-    .then((html) => {
-      const parser = new DOMParser();
-      const htmlDoc = parser.parseFromString(html, "text/html");
-      const fileList = htmlDoc.querySelectorAll("a[href]");
-      fileList.forEach((fileLink) => {
-        const fileName = fileLink.getAttribute("href").split("/").pop();
-        if (
-          fileName.endsWith(".jpg") ||
-          fileName.endsWith(".jpeg") ||
-          fileName.endsWith(".png")
-        ) {
-          fileCount++;
-        }
-      });
-      console.log(`Number of files in "Pictures" folder is: ${fileCount}`);
-      return fileCount;
-    })
-    .catch((error) => console.error(error));
-}
-
 function fadeIn(element) {
   let opacity = 0;
   element.style.display = "block";
@@ -68,9 +41,8 @@ function fadeIn(element) {
   }, 1000 / 10);
 }
 
-getNumberOfFiles();
-
-let amountOfPicures = 140; // <========================= Amount of pictures in folder "Pictures"
+const imageDirectory = "../../../assets/images/gallery";
+let amountOfPicures = 146; // Number of images in the shared gallery folder
 
 const photoGrid = document.getElementById("photo-grid");
 
@@ -84,7 +56,7 @@ function changeRandomImage() {
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
   const randomImageIndex = getRandomInt(1, amountOfPicures);
-  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
   // Fade out current image
   // fadeIn(image);
@@ -100,7 +72,7 @@ for (let i = 0; i < 9; i++) {
   const link = document.createElement("a");
   const image = document.createElement("img");
   const randomImageIndex = getRandomInt(1, amountOfPicures);
-  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl); 
   link.setAttribute("href", imageUrl);
   // Random picture link

@@ -43,11 +43,11 @@
       <div class="gallery"></div>
 
       <script>
-        let path = "gallery";
+        let path = "../../../assets/images/gallery";
         let webPath = "https://picsum.photos/900";
         webPath = undefined; // to use local images
         let photos = [];
-        for (let i = 600; i <= 700; i++) {
+        for (let i = 1; i <= 101; i++) {
           webPath != undefined
             ? photos.push(`${webPath}/${i}`)
             : photos.push(`${path}/${i}.jpg`);
@@ -85,11 +85,11 @@
       </script>
 
       <!-- <script>
-        let path = "gallery";
+        let path = "../../../assets/images/gallery";
         let webPath = "https://picsum.photos/900";
         // let webPath = undefined; // используем локальные картинки
         let photos = [];
-        for (let i = 600; i <= 700; i++) {
+        for (let i = 1; i <= 101; i++) {
           webPath
             ? photos.push(`${webPath}/${i}`)
             : photos.push(`${path}/${i}.jpg`);

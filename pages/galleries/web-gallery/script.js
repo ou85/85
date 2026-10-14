@@ -1,5 +1,5 @@
 // Note: This assumes that all of your images are named "X.jpg" where X is a number from 0 to 999,
-// and that they are all located in the "Pictures" folder in the same directory as your HTML file.
+// and that they are all located in the shared gallery image folder.
 // If your file names or folder structure is different,
 // you will need to modify the JavaScript code accordingly.
 
@@ -36,7 +36,8 @@ setInterval(updateClock, 1000);
 //
 const photoGrid = document.getElementById("photo-grid");
 let imageIndexes = [];
-let amountOfPicures = 146; // <============== Amount of pictures in folder "Pictures"
+const imageDirectory = "../../../assets/images/gallery";
+let amountOfPicures = 146; // Number of images in the shared gallery folder
 let refreshRate = 30000; // <============== Page Refresh rate
 
 console.log("Images in rotation: " + amountOfPicures);
@@ -51,7 +52,7 @@ function changeRandomImage() {
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
   const randomImageIndex = checkDouble(); //getRandomInt(1, amountOfPicures);
-  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
 }
 
@@ -88,7 +89,7 @@ for (let i = 1; i < 10; i++) {
   const link = document.createElement("a");
   const image = document.createElement("img");
   const randomImageIndex = checkDouble();
-  const imageUrl = `Pictures/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
   image.setAttribute("src", imageUrl);
   link.setAttribute("href", imageUrl);
   // Random picture link
