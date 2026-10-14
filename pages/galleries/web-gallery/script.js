@@ -1,4 +1,4 @@
-// Note: This assumes that all of your images are named "X.jpg" where X is a number from 0 to 999,
+// Note: This assumes that all of your images are named "X.webp" where X is a number from 0 to 999,
 // and that they are all located in the shared gallery image folder.
 // If your file names or folder structure is different,
 // you will need to modify the JavaScript code accordingly.
@@ -52,7 +52,7 @@ function changeRandomImage() {
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
   const randomImageIndex = checkDouble(); //getRandomInt(1, amountOfPicures);
-  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.webp`;
   image.setAttribute("src", imageUrl);
 }
 
@@ -89,7 +89,7 @@ for (let i = 1; i < 10; i++) {
   const link = document.createElement("a");
   const image = document.createElement("img");
   const randomImageIndex = checkDouble();
-  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.webp`;
   image.setAttribute("src", imageUrl);
   link.setAttribute("href", imageUrl);
   // Random picture link

@@ -40,7 +40,7 @@ Published version: <https://ou85.github.io/85/>.
 │       └── weather/
 ├── assets/
 │   ├── images/
-│   │   └── gallery/            # 146 images shared by the gallery projects
+│   │   └── gallery/            # 146 shared WebP images
 │   ├── scripts/                # shared libraries and the demo side-menu script
 │   └── styles/                 # shared styles, fonts, and CSS libraries
 └── tmp/todo.md                 # project reorganization task reference

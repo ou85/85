@@ -56,7 +56,7 @@ function changeRandomImage() {
   const cell = cells[randomIndex];
   const image = cell.querySelector("img");
   const randomImageIndex = getRandomInt(1, amountOfPicures);
-  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.webp`;
   image.setAttribute("src", imageUrl);
   // Fade out current image
   // fadeIn(image);
@@ -72,7 +72,7 @@ for (let i = 0; i < 9; i++) {
   const link = document.createElement("a");
   const image = document.createElement("img");
   const randomImageIndex = getRandomInt(1, amountOfPicures);
-  const imageUrl = `${imageDirectory}/${randomImageIndex}.jpg`;
+  const imageUrl = `${imageDirectory}/${randomImageIndex}.webp`;
   image.setAttribute("src", imageUrl); 
   link.setAttribute("href", imageUrl);
   // Random picture link
