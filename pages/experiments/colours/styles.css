@@ -1,9 +1,5 @@
-@font-face {
-    font-family: 'Terminus';
-    src: url('Terminus.ttf') format('truetype');
-}
 body {
-    font-family: 'Terminus', monospace;
+    font-family: monospace;
     font-size: 1.1rem;
     color: #C0C0C0;
     background-color: #4E4E4E; 

@@ -84,5 +84,4 @@ window.onload = function () {
   GetClock();
   setInterval(GetClock, 1000);
   clockTimer();
-  lifeSite(); // Calling lifeSite function from scripts/scripts.js
 };

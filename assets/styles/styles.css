@@ -121,7 +121,6 @@ header {
   background-repeat: no-repeat;
   background-position: right 50%;
   background-size: cover;
-  background-image: url("/twitt.jpg");/* Paste the CSS for the background image */
 }
 
 .top-message {
